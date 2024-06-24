@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+
+    <appender name="NOP" class="ch.qos.logback.core.helpers.NOPAppender"/>
+
+<!--    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+<!--            <level>INFO</level>-->
+<!--        </filter>-->
+
+<!--        &lt;!&ndash; encoders are assigned the type-->
+<!--             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default &ndash;&gt;-->
+<!--        <encoder>-->
+<!--            <pattern>%d{HH:mm:ss.SSS} %cyan(%-5level) %gray([%-16.16thread]) %logger{15} %msg %yellow(%ex{16}) %n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%-7.7thread] [%highlight(%X{training_loss_init}) %green(%X{training_loss_grid}) %yellow(%X{training_loss_cvxl}) %magenta(%X{training_loss_grad})] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator" level="INFO" additivity="false">
+        <appender-ref ref="NOP"/>
+    </logger>
+    <logger name="org.apache.kafka.common.utils.AppInfoParser" level="INFO" additivity="false">
+        <appender-ref ref="NOP"/>
+    </logger>
+    <logger name="org.apache.kafka.clients.Metadata" level="INFO" additivity="false">
+        <appender-ref ref="NOP"/>
+    </logger>
+    <logger name="org.apache.kafka.clients.consumer.internals.SubscriptionState" level="INFO" additivity="false">
+        <appender-ref ref="NOP"/>
+    </logger>
+    <logger name="org.apache.kafka.clients.producer.ProducerConfig" level="INFO" additivity="false">
+        <appender-ref ref="NOP"/>
+    </logger>
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

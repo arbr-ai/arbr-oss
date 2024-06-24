@@ -1,0 +1,16 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.arbr.platform.autoconfigure.aws.s3.AwsCredentialsConfig,\
+com.arbr.platform.autoconfigure.aws.s3.AwsS3BucketAutoConfiguration,\
+com.arbr.platform.autoconfigure.aws.s3.S3ServiceFactoryConfig,\
+com.arbr.platform.autoconfigure.aws.s3.S3ServicesConfig,\
+com.arbr.platform.autoconfigure.completions.ChatCompletionProviderAutoConfiguration,\
+com.arbr.platform.autoconfigure.completions.CompletionProviderConfigurationBundleAutoConfiguration,\
+com.arbr.platform.autoconfigure.completions.OpenAiAutoConfiguration,\
+com.arbr.platform.autoconfigure.credentials.WorkflowCredentialsAutoConfiguration,\
+com.arbr.platform.autoconfigure.process.DbResourceStoreAutoConfiguration,\
+com.arbr.platform.autoconfigure.process.WorkflowRoutineConfig,\
+com.arbr.platform.autoconfigure.process.WorkflowInitializationServiceAutoConfiguration,\
+com.arbr.platform.autoconfigure.process.WorkflowCancellationServiceAutoConfiguration,\
+com.arbr.platform.autoconfigure.process.WorkflowExecutorServiceConfig,\
+com.arbr.platform.autoconfigure.process.WorkflowStateServiceAutoConfiguration,\
+com.arbr.platform.autoconfigure.relational_prompting.RelationalPromptingAutoConfiguration

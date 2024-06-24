@@ -1,0 +1,267 @@
+
+{%root%}
+
+package {%root.packageDomain%}.core.resource
+
+import com.arbr.content_formats.json_schematized.JsonSchema
+import com.arbr.platform.data_structures_common.immutable.ImmutableLinkedMap
+import com.arbr.data_structures_common.immutable.immutableLinkedMapOf
+import {%root.packageDomain%}.core.partial.*
+import com.arbr.platform.object_graph.common.ObjectModel
+import com.arbr.og.object_model.common.ObjectTypeTensorFactory
+import com.arbr.og.object_model.common.model.ProposedForeignKeyCollectionStream
+import com.arbr.og.object_model.common.model.ProposedValue
+import com.arbr.og.object_model.common.model.ProposedValueStream
+import com.arbr.og.object_model.common.model.PropertyKeyRelationship
+import com.arbr.og.object_model.common.model.collections.OneToManyResourceMap
+import com.arbr.og.object_model.common.properties.DependencyTracingValueProvider
+import com.arbr.og.object_model.common.values.SourcedValueGeneratorInfo
+import com.arbr.og.object_model.common.values.SourcedValueKind
+import com.arbr.platform.object_graph.impl.ObjectModelResource
+import com.arbr.platform.object_graph.impl.ObjectRef
+import com.arbr.platform.object_graph.impl.PartialObjectGraph
+import com.fasterxml.jackson.annotation.JsonIgnore
+import com.arbr.platform.ml.linear.typed.base.GroundField
+import com.arbr.platform.ml.linear.typed.base.Scalar
+import com.arbr.platform.ml.linear.typed.shape.Dim
+import com.arbr.platform.ml.linear.typed.shape.Shape
+import com.arbr.platform.ml.linear.typed.tensor.base.ProductTensor
+import com.arbr.platform.ml.linear.typed.tensor.base.Tensor
+import reactor.core.publisher.Flux
+import reactor.core.publisher.Mono
+import java.util.*
+import kotlin.jvm.optionals.getOrNull
+import {%root.packageDomain%}.core.resource.field.*
+import {%root.packageDomain%}.core.types.ResourceStream
+{%root.schema:#schema%}
+{%_root%}
+
+{%schema%}
+import {%root.packageDomain%}.core.types.{%schema.titleName%}ForeignKey
+import {%root.packageDomain%}.core.types.{%schema.titleName%}
+{%schema.table:#table%}
+{%_schema%}
+
+{%table%}
+import {%root.packageDomain%}.core.schema.{%schema.titleName%}{%table.titleName%}JsonSchema
+
+class {%schema.titleName%}{%table.titleName%}(
+    override val uuid: String,
+    {%table.simplePropertyField:#field_property_simple%}
+    {%table.outboundReferenceField:#field_property%}
+    {%table.foreignRecord:#foreign_table_ref%}
+): ObjectModelResource<
+    {%schema.titleName%}{%table.titleName%},
+    Partial{%table.titleName%},
+    {%schema.titleName%}ForeignKey,
+>, ResourceStream<{%schema.titleName%}.{%table.titleName%}> {
+    override val resourceTypeName: String = "{%table.titleName%}"
+
+    @JsonIgnore
+    fun updateFlux(): Flux<ProposedValue<*>> {
+        return Flux.merge(
+            {%table.simplePropertyField:#field_flux_publisher%}
+            {%table.outboundReferenceField:#foreign_single_flux_publisher%}
+            {%table.foreignRecord:#foreign_flux_publisher%}
+        )
+    }
+
+    @JsonIgnore
+    override fun toPartial(
+        partialObjectGraph: PartialObjectGraph<*, *, {%schema.titleName%}ForeignKey>,
+    ): Partial{%table.titleName%} {
+        return Partial{%table.titleName%}(
+            partialObjectGraph,
+            uuid,
+        ).also { p ->
+            {%table.simplePropertyField:#field_flux_partial%}
+            {%table.outboundReferenceField:#foreign_single_partial%}
+            {%table.foreignRecord:#foreign_flux_partial%}
+        }
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    @JsonIgnore
+    override fun properties(): ImmutableLinkedMap<String, ProposedValueStream<ObjectModel.ObjectValue<*, *, *, *>>> {
+        return immutableLinkedMapOf<String, ProposedValueStream<ObjectModel.ObjectValue<*, *, *, *>>>(
+            {%table.simplePropertyField:#field_to_property%}
+        )
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    @JsonIgnore
+    override fun getChildren(): Map<{%schema.titleName%}ForeignKey, ProposedForeignKeyCollectionStream<*, *, {%schema.titleName%}ForeignKey>> {
+        return mapOf<{%schema.titleName%}ForeignKey, ProposedForeignKeyCollectionStream<*, *, {%schema.titleName%}ForeignKey>>(
+            {%table.foreignRecord:#foreign_children%}
+        )
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    @JsonIgnore
+    override fun getForeignKeys(): Map<{%schema.titleName%}ForeignKey, ProposedValueStream<ObjectRef<*, *, {%schema.titleName%}ForeignKey>>> {
+        return mapOf<{%schema.titleName%}ForeignKey, ProposedValueStream<ObjectRef<*, *, {%schema.titleName%}ForeignKey>>>(
+            {%table.outboundReferenceField:#foreign_single_parents%}
+        )
+    }
+
+    override fun setParent(
+        foreignKey: {%schema.titleName%}ForeignKey,
+        newUuid: String?,
+    ): Mono<Void> {
+        {%table.anyOutboundReferenceField:#outbound_ref_set_parent_fk_switch%}
+        return Mono.error(IllegalArgumentException(foreignKey.name))
+    }
+
+    override fun setParentConditionally(
+        foreignKey: {%schema.titleName%}ForeignKey,
+        expectedUuid: String?,
+        newUuid: String?,
+    ): Mono<Void> {
+        {%table.anyOutboundReferenceField:#outbound_ref_set_parent_conditionally_fk_switch%}
+        return Mono.error(IllegalArgumentException(foreignKey.name))
+    }
+
+    {%table.field:#field%}
+}
+
+{%_table%}
+
+{%outbound_ref_set_parent_fk_switch%}
+when (foreignKey) {
+    {%table.outboundReferenceField:#foreign_single_set%}
+    else -> {
+        // Fall through
+    }
+}
+{%_outbound_ref_set_parent_fk_switch%}
+
+{%outbound_ref_set_parent_conditionally_fk_switch%}
+when (foreignKey) {
+    {%table.outboundReferenceField:#foreign_single_set_conditionally%}
+    else -> {
+        // Fall through
+    }
+}
+{%_outbound_ref_set_parent_conditionally_fk_switch%}
+
+
+{%field_flux_publisher%}
+{%simplePropertyField.resourcePropertyName%}.getLatestValueFlux().map { ProposedValue({%simplePropertyField.resourcePropertyName%}.identifier, it.getOrNull()) },
+
+{%_field_flux_publisher%}
+
+{%foreign_single_flux_publisher%}
+{%outboundReferenceField.resourcePropertyName%}.getLatestValueFlux().map { ProposedValue({%outboundReferenceField.resourcePropertyName%}.identifier, it.getOrNull()) },
+
+{%_foreign_single_flux_publisher%}
+
+{%foreign_flux_publisher%}
+{%foreignRecord.resourcePropertyName%}.getLatestValueFlux().map { ProposedValue({%foreignRecord.resourcePropertyName%}.items.identifier, it.items) },
+
+{%_foreign_flux_publisher%}
+
+{%field_flux_partial%}
+p.{%simplePropertyField.resourcePropertyName%} = {%simplePropertyField.resourcePropertyName%}.getLatestAcceptedValue()
+
+{%_field_flux_partial%}
+
+{%foreign_single_partial%}
+p.{%outboundReferenceField.resourcePropertyName%} = {%outboundReferenceField.resourcePropertyName%}.getLatestAcceptedValue()?.partialRef()
+
+{%_foreign_single_partial%}
+
+{%foreign_flux_partial%}
+p.{%foreignRecord.resourcePropertyName%} = {%foreignRecord.resourcePropertyName%}.items.getLatestAcceptedValue()?.mapValuesNotNull { it.value.resource()?.toPartial(partialObjectGraph) }
+
+{%_foreign_flux_partial%}
+
+{%foreign_children%}
+{%foreignRecord.schemaTitleName%}ForeignKey.{%foreignRecord.schemaConstantName%}__{%foreignRecord.tableConstantName%}__FK__{%foreignRecord.fieldConstantName%} to ({%foreignRecord.resourcePropertyName%}.items as ProposedForeignKeyCollectionStream<*, *, {%schema.titleName%}ForeignKey>),
+
+{%_foreign_children%}
+
+
+{%foreign_single_set%}
+{%schema.titleName%}ForeignKey.{%schema.constantName%}__{%table.constantName%}__FK__{%outboundReferenceField.constantName%} -> {
+    return {%outboundReferenceField.resourcePropertyName%}
+        .proposeAsync { Mono.just(ObjectRef.OfUuid(newUuid)) }
+        .then()
+}
+
+{%_foreign_single_set%}
+
+{%foreign_single_set_conditionally%}
+{%schema.titleName%}ForeignKey.{%schema.constantName%}__{%table.constantName%}__FK__{%outboundReferenceField.constantName%} -> {
+    return {%outboundReferenceField.resourcePropertyName%}
+        .proposeAsync { existingRef ->
+            if (existingRef?.uuid == expectedUuid) {
+                Mono.just(ObjectRef.OfUuid(newUuid))
+            } else {
+                Mono.justOrEmpty(existingRef)
+            }
+        }
+        .then()
+}
+
+{%_foreign_single_set_conditionally%}
+
+
+{%foreign_single_parents%}
+{%schema.titleName%}ForeignKey.{%schema.constantName%}__{%table.constantName%}__FK__{%outboundReferenceField.constantName%} to ({%outboundReferenceField.resourcePropertyName%} as ProposedValueStream<ObjectRef<*, *, {%schema.titleName%}ForeignKey>>),
+
+{%_foreign_single_parents%}
+
+{%field%}
+
+object {%field.titleName%} : ObjectModel.ObjectType<{%field.valueType%}, Dim.VariableT, Dim.VariableF, {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value> {
+
+    override val tensor: Tensor<Dim.VariableT, GroundField.Real, Scalar> = ObjectTypeTensorFactory.typeTensor(
+        this::class.java,
+        Dim.VariableT,
+    )
+
+    override val jsonSchema: JsonSchema = {%schema.titleName%}{%table.titleName%}JsonSchema.{%field.resourcePropertyName%}
+
+    override val embeddingKey = {%field.embeddingKey%}
+
+    override fun initialize(
+        kind: SourcedValueKind,
+        value: {%field.valueType%},
+        sourcedValueGeneratorInfo: SourcedValueGeneratorInfo,
+    ): {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value = {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value.initialize(
+        kind,
+        value,
+        sourcedValueGeneratorInfo,
+    )
+
+    override fun trace(
+        kind: SourcedValueKind,
+        sourcedValueGeneratorInfo: SourcedValueGeneratorInfo,
+        tracingValueProvider: DependencyTracingValueProvider<{%field.valueType%}>,
+    ): {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value = {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value.trace(
+        kind,
+        sourcedValueGeneratorInfo,
+        tracingValueProvider,
+    )
+}
+{%_field%}
+
+{%field_property_simple%}
+val {%simplePropertyField.resourcePropertyName%}: ProposedValueStream<{%simplePropertyField.schemaTitle%}{%simplePropertyField.tableTitle%}{%simplePropertyField.titleName%}Value>,
+
+{%_field_property_simple%}
+
+{%field_property%}
+val {%outboundReferenceField.resourcePropertyName%}: ProposedValueStream<{%outboundReferenceField.pvsType%}>,
+
+{%_field_property%}
+
+{%foreign_table_ref%}
+val {%foreignRecord.resourcePropertyName%}: OneToManyResourceMap<{%foreignRecord.resourcePropertyQualifiedType%}, {%foreignRecord.resourcePropertyPartialType%}, {%schema.titleName%}ForeignKey>,
+
+{%_foreign_table_ref%}
+
+{%field_to_property%}
+"{%simplePropertyField.resourcePropertyName%}" to ({%simplePropertyField.resourcePropertyName%} as ProposedValueStream<ObjectModel.ObjectValue<*, *, *, *>>),
+
+{%_field_to_property%}

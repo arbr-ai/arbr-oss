@@ -1,0 +1,9 @@
+package {{packageDomain}}.core.types
+
+import {{packageDomain}}.core.types.naming.NamedSchemaKey
+
+enum class RootSchemaKey: NamedSchemaKey {
+    {{#schema}}
+        {{pSchemaConstantName}},
+    {{/schema}}
+}

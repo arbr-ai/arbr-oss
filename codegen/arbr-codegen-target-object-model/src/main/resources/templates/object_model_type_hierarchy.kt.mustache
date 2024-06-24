@@ -1,0 +1,81 @@
+package {{packageDomain}}.core.types
+
+import {{packageDomain}}.core.types.naming.NamedProperty
+import {{packageDomain}}.core.types.naming.NamedResource
+import {{packageDomain}}.core.types.naming.NamedSchema
+import {{packageDomain}}.core.types.naming.NamedPropertyKey
+import {{packageDomain}}.core.types.naming.NamedResourceKey
+import com.arbr.og.object_model.common.model.PropertyKeyRelationship
+
+{{#schema}}
+data object {{titleName}} {
+    {{#table}}
+    data object {{titleName}}: {{pSchemaTitleName}}Resource(
+        RootSchemaKey.{{pSchemaConstantName}},
+        {{pSchemaTitleName}}ResourceKey.{{pSchemaConstantName}}__{{pTableConstantName}},
+    ) {
+        {{#simplePropertyField}}
+        data object {{titleName}}: {{pSchemaTitleName}}Property<{{pSchemaTitleName}}.{{pTableTitleName}}>(
+            RootSchemaKey.{{pSchemaConstantName}},
+            {{pSchemaTitleName}}ResourceKey.{{pSchemaConstantName}}__{{pTableConstantName}},
+            {{pSchemaTitleName}}PropertyKey.{{pSchemaConstantName}}__{{pTableConstantName}}__{{constantName}},
+            PropertyKeyRelationship.PROPERTY,
+        )
+        {{/simplePropertyField}}
+        {{#outboundReferenceField}}
+        data object {{titleName}}: {{pSchemaTitleName}}Property<{{pSchemaTitleName}}.{{pTableTitleName}}>(
+            RootSchemaKey.{{pSchemaConstantName}},
+            {{pSchemaTitleName}}ResourceKey.{{pSchemaConstantName}}__{{pTableConstantName}},
+            {{pSchemaTitleName}}PropertyKey.{{pSchemaConstantName}}__{{pTableConstantName}}__FK__{{constantName}},
+            PropertyKeyRelationship.PARENT,
+        )
+        {{/outboundReferenceField}}
+        {{#foreignRecord}}
+        data object {{titleName}}: {{pSchemaTitleName}}Property<{{pSchemaTitleName}}.{{pTableTitleName}}>(
+            RootSchemaKey.{{pSchemaConstantName}},
+            {{pSchemaTitleName}}ResourceKey.{{pSchemaConstantName}}__{{pTableConstantName}},
+            {{pSchemaTitleName}}PropertyKey.{{pSchemaConstantName}}__{{pTableConstantName}}__IFK__{{schemaConstantName}}__{{tableConstantName}}__{{fieldConstantName}},
+            PropertyKeyRelationship.CHILD_COLLECTION,
+        )
+        {{/foreignRecord}}
+    }
+    {{/table}}
+}
+
+data object {{titleName}}Schema: RootSchema<{{pSchemaTitleName}}ResourceKey, {{pSchemaTitleName}}PropertyKey>(
+    RootSchemaKey.{{pSchemaConstantName}},
+)
+
+/**
+ * Resource with bound resource and property identifier types
+ */
+sealed class {{titleName}}Resource(
+    override val schemaKey: RootSchemaKey,
+    override val resourceKey: {{pSchemaTitleName}}ResourceKey,
+): NamedResource<RootSchemaKey, {{pSchemaTitleName}}ResourceKey, {{pSchemaTitleName}}PropertyKey, {{titleName}}Schema>
+
+/**
+ * Property with bound resource and property identifier types
+ */
+sealed class {{titleName}}Property<R: {{titleName}}Resource>(
+    schemaKey: RootSchemaKey,
+    resourceKey: {{pSchemaTitleName}}ResourceKey,
+    propertyKey: {{pSchemaTitleName}}PropertyKey,
+    relationship: PropertyKeyRelationship,
+): NamedProperty<RootSchemaKey, {{pSchemaTitleName}}ResourceKey, {{pSchemaTitleName}}PropertyKey, {{titleName}}Schema, R>(
+    schemaKey,
+    resourceKey,
+    propertyKey,
+    relationship,
+)
+{{/schema}}
+
+/**
+ * Schema with bound schema type only
+ */
+sealed class RootSchema<
+    ResourceKeyType: NamedResourceKey,
+    PropertyKeyType: NamedPropertyKey,
+>(
+    override val schemaKey: RootSchemaKey,
+): NamedSchema<RootSchemaKey, ResourceKeyType, PropertyKeyType>

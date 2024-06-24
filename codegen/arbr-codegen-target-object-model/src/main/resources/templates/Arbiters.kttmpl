@@ -1,0 +1,122 @@
+{%root%}
+package {%root.packageDomain%}.engine.arbiter.base
+
+import {%root.packageDomain%}.core.partial.*
+import {%root.packageDomain%}.core.resource.*
+import {%root.packageDomain%}.core.resource.field.*
+import com.arbr.og_engine.file_system.VolumeState
+import com.arbr.og_engine.core.WorkflowResourceModel
+import com.arbr.og_engine.core.WorkflowSingleResourceProcessor
+import com.arbr.og_engine.arbiter.WorkflowResourceArbiter
+import com.arbr.util_common.reactor.nonBlocking
+import com.arbr.platform.object_graph.impl.ObjectRef
+import com.arbr.platform.object_graph.impl.Partial
+import com.arbr.og.object_model.common.model.Proposal
+import com.arbr.og.object_model.common.values.SourcedValue
+import {%root.packageDomain%}.core.partial.PartialRoot
+import {%root.packageDomain%}.core.resource.ArbrRoot
+import org.springframework.stereotype.Component
+import reactor.core.publisher.Mono
+import java.util.*
+import kotlin.jvm.optionals.getOrNull
+
+{%root.schema:#schema%}
+{%_root%}
+
+{%schema%}
+import {%root.packageDomain%}.core.types.{%schema.titleName%}ForeignKey
+{%schema.table:#table%}
+{%_schema%}
+
+{%table%}
+abstract class AbstractWorkflow{%table.titleName%}Arbiter: WorkflowResourceArbiter<{%schema.titleName%}{%table.titleName%}>() {
+
+    /**
+     * Decide and accept/reject each proposal.
+     */
+    open fun arbitrate(
+        workflowResourceModel: WorkflowResourceModel,
+        resource: {%schema.titleName%}{%table.titleName%},
+
+        {%table.field:#field_property%}
+        {%table.foreignRecord:#foreign_table_ref%}
+    ): Mono<Void> {
+        return nonBlocking {
+            val proposals = listOfNotNull(
+                {%table.field:#field_accept%}
+                {%table.foreignRecord:#foreign_table_accept%}
+            )
+
+            proposals.forEach { proposal ->
+                proposal.accept()
+            }
+        }.then()
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    override fun processPendingProposals(
+        parentSingleResourceProcessor: WorkflowSingleResourceProcessor<*, *, *>,
+        workflowResourceModel: WorkflowResourceModel,
+        resource: {%schema.titleName%}{%table.titleName%},
+    ): Mono<Void> {
+        val proposals = listOf(
+            {%table.field:#field_update%}
+            {%table.foreignRecord:#foreign_table_update%}
+        )
+        return Mono.zip(
+            proposals
+        ) { it }.flatMap { arr ->
+            var j = 0
+            arbitrate(
+                workflowResourceModel,
+                resource,
+                {%table.field:#field_arr%}
+                {%table.foreignRecord:#foreign_table_arr%}
+            )
+        }
+    }
+}
+{%_table%}
+
+{%field_property%}
+
+{%field.resourcePropertyName%}Update: Proposal<{%field.pvsType%}>?,
+{%_field_property%}
+
+{%foreign_table_ref%}
+
+{%foreignRecord.resourcePropertyName%}ItemsUpdate: Proposal<Map<String, ObjectRef<out {%foreignRecord.resourcePropertyQualifiedType%}, {%foreignRecord.resourcePropertyPartialType%}, {%schema.titleName%}ForeignKey>>>?,
+{%_foreign_table_ref%}
+
+
+{%field_accept%}
+
+{%field.resourcePropertyName%}Update,
+{%_field_accept%}
+
+{%foreign_table_accept%}
+
+{%foreignRecord.resourcePropertyName%}ItemsUpdate,
+{%_foreign_table_accept%}
+
+
+{%field_update%}
+
+updateProposal(parentSingleResourceProcessor, resource.{%field.resourcePropertyName%}),
+{%_field_update%}
+
+{%foreign_table_update%}
+
+updateProposal(parentSingleResourceProcessor, resource.{%foreignRecord.resourcePropertyName%}.items),
+{%_foreign_table_update%}
+
+
+{%field_arr%}
+
+(arr[j].also { j++ } as Optional<Proposal<{%field.pvsType%}>>).getOrNull(),
+{%_field_arr%}
+
+{%foreign_table_arr%}
+
+(arr[j].also { j++ } as Optional<Proposal<Map<String, ObjectRef<out {%foreignRecord.resourcePropertyQualifiedType%}, {%foreignRecord.resourcePropertyPartialType%}, {%schema.titleName%}ForeignKey>>>>).getOrNull(),
+{%_foreign_table_arr%}

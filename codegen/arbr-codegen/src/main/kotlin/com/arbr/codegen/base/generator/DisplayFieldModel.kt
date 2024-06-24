@@ -1,0 +1,25 @@
+package com.arbr.codegen.base.generator
+
+data class DisplayFieldModel(
+    val index: String,
+    val titleName: String,
+    val valueType: String,
+    val valueTypeNonNull: String,
+    val dbType: String,
+    val constantName: String,
+    val embeddingKey: String,
+    val resourcePropertyName: String,
+    val simplePropertyName: String,
+    val nullableMark: String,
+    val required: String,
+    val pvsType: String,
+    val partialType: String,
+    val jsonValue: String,
+    val partialIntoModelValue: String,
+    val schemaTitle: String,
+    val tableTitle: String,
+    val relationship: String,
+    val propertyIdentifierName: String,
+    val jsonSchema: String,
+    val reflexiveReferentPropertyName: String,
+)

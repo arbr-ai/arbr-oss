@@ -1,0 +1,37 @@
+package {{packageDomain}}.core.types
+
+import {{packageDomain}}.core.view.provider.*
+import {{packageDomain}}.core.resource.*
+import {{packageDomain}}.core.types.naming.NamedResource
+import {{packageDomain}}.core.types.naming.NamedResourceKey
+import com.arbr.og.object_model.common.model.view.ProposedValueStreamViewProvider
+
+class ResourceViewProviders: ResourceViewProviderFactory {
+
+    {{#schema}}
+    @Suppress("UNCHECKED_CAST")
+    override fun <
+            RK: NamedResourceKey,
+            R : NamedResource<*, RK, *, *>,
+            RV : ResourceView<R>,
+            > resourceViewProvider(
+        proposedValueStreamProvider: ProposedValueStreamViewProvider<RK>,
+        resource: R,
+    ): TypedResourceViewProvider<R, RV> {
+        proposedValueStreamProvider as ProposedValueStreamViewProvider<{{titleName}}ResourceKey>
+
+        return when (resource) {
+            {{#table}}
+            {{pSchemaTitleName}}.{{titleName}} -> TypedResourceViewProvider { resourceStream ->
+                {{pSchemaTitleName}}{{titleName}}ViewProvider(proposedValueStreamProvider)
+                    .provideResourceView(
+                        resourceStream as {{pSchemaTitleName}}{{titleName}}
+                    ) as RV
+            }
+            {{/table}}
+            else -> throw IllegalStateException("Invalid resource $resource")
+        }
+    }
+    {{/schema}}
+
+}

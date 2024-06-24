@@ -1,0 +1,17 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+og-codegen/out_src_ext
+og-codegen/out_src_lib
+
+.DS_Store
+.idea
+
+og/src/test/resources/tmp_git
+
+api-server-minimal/docs/api-gen-out
+tmp
+repos
+/arbr-codegen/graphql-compiler/openapi-converter/target/

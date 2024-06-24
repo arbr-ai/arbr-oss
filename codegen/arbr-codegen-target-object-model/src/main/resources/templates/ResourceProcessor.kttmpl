@@ -1,0 +1,54 @@
+{%root%}
+package {%root.packageDomain%}.processor.base
+
+import com.arbr.og_engine.file_system.VolumeState
+import com.arbr.og_engine.arbiter.WorkflowResourceArbiter
+import com.arbr.og_engine.core.*
+import com.arbr.engine.services.workflow.state.WorkflowCancellationService
+import com.arbr.engine.services.workflow.state.WorkflowResourceLifecycleService
+import com.arbr.og.object_model.impl.*
+import org.slf4j.Logger
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Qualifier
+import org.springframework.beans.factory.annotation.Value
+import org.springframework.context.annotation.ComponentScan
+import org.springframework.stereotype.Component
+
+{%root.schema:#schema%}
+{%_root%}
+
+{%schema%}
+import {%root.packageDomain%}.core.types.{%schema.titleName%}ForeignKey
+{%schema.table:#table%}
+{%_schema%}
+
+{%table%}
+import {%root.packageDomain%}.core.partial.Partial{%table.titleName%}
+import {%root.packageDomain%}.core.resource.{%schema.titleName%}{%table.titleName%}
+import {%root.packageDomain%}.engine.arbiter.base.AbstractWorkflow{%table.titleName%}Arbiter
+
+@Component
+@ComponentScan("com.arbr.object_model.processor.config")
+class Workflow{%table.titleName%}Processor(
+    private val cancellationService: WorkflowCancellationService,
+    private val lifecycleService: WorkflowResourceLifecycleService,
+    private val {%table.propertyName%}UnaryFunctions: List<WorkflowResourceUnaryFunction<{%schema.titleName%}{%table.titleName%}, Partial{%table.titleName%}, *, *, *, *, {%schema.titleName%}ForeignKey>>,
+    @Autowired(required = false)
+    private val {%table.propertyName%}Arbiter: WorkflowResourceArbiter<{%schema.titleName%}{%table.titleName%}>?,
+    private val propertyValueLockManager: PropertyValueLockManager,
+    @Value("\${topdown.resource-processing.max-edge-retries:3}")
+    private val maxEdgeRetries: Int,
+    @Qualifier("resourceLogger")
+    private val resourceLogger: Logger,
+): WorkflowSingleResourceProcessor<{%schema.titleName%}{%table.titleName%}, Partial{%table.titleName%}, {%schema.titleName%}ForeignKey>(
+    cancellationService,
+    lifecycleService,
+    {%table.propertyName%}UnaryFunctions,
+    {%table.propertyName%}Arbiter ?: object : AbstractWorkflow{%table.titleName%}Arbiter() {},
+    propertyValueLockManager,
+    maxEdgeRetries,
+    resourceLogger,
+) {
+    override val resourceDisplayName = "{%table.titleName%}"
+}
+{%_table%}

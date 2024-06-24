@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <springProperty name="topdown.logging.dir" source="topdown.logging.dir"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %cyan([%-16.16logger]) %gray([%-16.16thread]) %highlight([%X{com.topdown.tags.log}]) %msg %yellow(%ex{16}) %n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="NOP" class="ch.qos.logback.core.helpers.NOPAppender"/>
+
+    <springProfile name="file_logging">
+        <timestamp key="nowTimestamp" datePattern="yyyy-MM-dd'_'HH-mm-ss.SSS"/>
+        <appender name="GENERAL_FILE" class="ch.qos.logback.core.FileAppender">
+            <file>${topdown.logging.dir}/general_${nowTimestamp}.log</file>
+            <encoder>
+                <pattern>%d{HH:mm:ss.SSS} %cyan(%-5level) %cyan(%logger{10}) %magenta([%-16.16thread]) %highlight([%X{com.topdown.tags.log}]) %msg %yellow(%ex{16}) %n
+                </pattern>
+            </encoder>
+        </appender>
+
+        <appender name="RESOURCES_FILE" class="ch.qos.logback.core.FileAppender">
+            <file>${topdown.logging.dir}/resource_lifecycle_${nowTimestamp}.log</file>
+            <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+                <Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} - %msg%n</Pattern>
+            </encoder>
+        </appender>
+
+        <appender name="OBJECTS_FILE" class="ch.qos.logback.core.FileAppender">
+            <file>${topdown.logging.dir}/objects_${nowTimestamp}.log</file>
+            <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+                <Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} - %msg%n</Pattern>
+            </encoder>
+        </appender>
+
+        <appender name="LATENCY_FILE" class="ch.qos.logback.core.FileAppender">
+            <file>${topdown.logging.dir}/latency_${nowTimestamp}.csv</file>
+            <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+                <Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS},%msg%n</Pattern>
+            </encoder>
+        </appender>
+
+        <appender name="PROPOSALS_FILE" class="ch.qos.logback.core.FileAppender">
+            <file>${topdown.logging.dir}/proposals_${nowTimestamp}.log</file>
+            <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+                <Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} - %msg%n</Pattern>
+            </encoder>
+        </appender>
+
+        <appender name="OPERATION_STATES_FILE" class="ch.qos.logback.core.FileAppender">
+            <file>${topdown.logging.dir}/operation_states_${nowTimestamp}.log</file>
+            <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+                <Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} - %msg%n</Pattern>
+            </encoder>
+        </appender>
+
+        <appender name="PARTIAL_UPDATES_FILE" class="ch.qos.logback.core.FileAppender">
+            <file>${topdown.logging.dir}/partial_updates_${nowTimestamp}.log</file>
+            <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+                <Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} - %msg%n</Pattern>
+            </encoder>
+        </appender>
+
+        <appender name="LOCKS_FILE" class="ch.qos.logback.core.FileAppender">
+            <file>${topdown.logging.dir}/locks_${nowTimestamp}.log</file>
+            <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+                <Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} [%thread] %msg%n</Pattern>
+            </encoder>
+        </appender>
+
+        <appender name="PUBLISHER_FILE" class="ch.qos.logback.core.FileAppender">
+            <file>${topdown.logging.dir}/publisher_${nowTimestamp}.log</file>
+            <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+                <Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} %msg%n</Pattern>
+            </encoder>
+        </appender>
+    </springProfile>
+
+    <logger name="org.jooq.Constants" level="INFO" additivity="false">
+        <appender-ref ref="NOP"/>
+    </logger>
+
+    <!-- Filter out some noisy Kafka startup and heartbeat logs -->
+    <logger name="org.apache.kafka.clients.consumer.ConsumerConfig" level="INFO" additivity="false">
+        <appender-ref ref="NOP"/>
+    </logger>
+    <logger name="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator" level="INFO" additivity="false">
+        <appender-ref ref="NOP"/>
+    </logger>
+    <logger name="org.apache.kafka.common.utils.AppInfoParser" level="INFO" additivity="false">
+        <appender-ref ref="NOP"/>
+    </logger>
+    <logger name="org.apache.kafka.clients.Metadata" level="INFO" additivity="false">
+        <appender-ref ref="NOP"/>
+    </logger>
+    <logger name="org.apache.kafka.clients.consumer.internals.SubscriptionState" level="INFO" additivity="false">
+        <appender-ref ref="NOP"/>
+    </logger>
+
+    <springProfile name="file_logging">
+        <logger name="com.arbr.engine.app.logging.ResourceLoggingConfig" level="INFO" additivity="false">
+            <appender-ref ref="RESOURCES_FILE"/>
+        </logger>
+    </springProfile>
+    <springProfile name="!file_logging">
+        <logger name="com.arbr.engine.app.logging.ResourceLoggingConfig" level="INFO" additivity="false">
+            <appender-ref ref="NOP"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="file_logging">
+        <logger name="com.example.topdown.app.logging.ObjectLogger" level="INFO" additivity="false">
+            <appender-ref ref="OBJECTS_FILE"/>
+        </logger>
+    </springProfile>
+    <springProfile name="!file_logging">
+        <logger name="com.example.topdown.app.logging.ObjectLogger" level="INFO" additivity="false">
+            <appender-ref ref="NOP"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="file_logging">
+        <logger name="com.arbr.engine.app.config.logging.LatencyLogger" level="INFO" additivity="false">
+            <appender-ref ref="LATENCY_FILE"/>
+        </logger>
+    </springProfile>
+    <springProfile name="!file_logging">
+        <logger name="com.arbr.engine.app.config.logging.LatencyLogger" level="INFO" additivity="false">
+            <appender-ref ref="NOP"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="file_logging">
+        <logger name="com.arbr.platform.object_graph.arbiter.WorkflowResourceArbiter" level="INFO"
+                additivity="false">
+            <appender-ref ref="PROPOSALS_FILE"/>
+        </logger>
+    </springProfile>
+    <springProfile name="!file_logging">
+        <logger name="com.arbr.platform.object_graph.arbiter.WorkflowResourceArbiter" level="INFO"
+                additivity="false">
+            <appender-ref ref="NOP"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="file_logging">
+        <logger name="com.example.topdown.services.workflow.util.concurrency.AtomicEnum" level="DEBUG"
+                additivity="false">
+            <appender-ref ref="OPERATION_STATES_FILE"/>
+        </logger>
+    </springProfile>
+    <springProfile name="!file_logging">
+        <logger name="com.example.topdown.services.workflow.util.concurrency.AtomicEnum" level="DEBUG"
+                additivity="false">
+            <appender-ref ref="NOP"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="file_logging">
+        <logger name="com.arbr.relational_prompting.alignable.PartialTrackingResourceAlignerUpdateLogger"
+                level="INFO" additivity="false">
+            <appender-ref ref="PARTIAL_UPDATES_FILE"/>
+        </logger>
+    </springProfile>
+    <springProfile name="!file_logging">
+        <logger name="com.arbr.relational_prompting.alignable.PartialTrackingResourceAlignerUpdateLogger"
+                level="INFO" additivity="false">
+            <appender-ref ref="NOP"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="file_logging">
+        <logger name="com.topdown.concurrency.Lock" level="DEBUG" additivity="false">
+            <appender-ref ref="LOCKS_FILE"/>
+        </logger>
+    </springProfile>
+    <springProfile name="!file_logging">
+        <logger name="com.topdown.concurrency.Lock" level="DEBUG" additivity="false">
+            <appender-ref ref="NOP"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="file_logging">
+        <logger name="com.topdown.WorkflowResourcePublisher" level="INFO" additivity="false">
+            <appender-ref ref="PUBLISHER_FILE"/>
+        </logger>
+    </springProfile>
+    <springProfile name="!file_logging">
+        <logger name="com.topdown.WorkflowResourcePublisher" level="INFO" additivity="false">
+            <appender-ref ref="NOP"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="file_logging">
+        <logger name="com" level="DEBUG" additivity="true">
+            <appender-ref ref="GENERAL_FILE"/>
+        </logger>
+    </springProfile>
+    <springProfile name="!file_logging">
+        <logger name="com" level="DEBUG" additivity="true">
+            <appender-ref ref="NOP"/>
+        </logger>
+    </springProfile>
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

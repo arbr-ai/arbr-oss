@@ -1,0 +1,14 @@
+directive @nullable on FIELD_DEFINITION
+
+scalar Long
+
+{{#types}}
+"""{{{description}}}"""
+type {{name}} {
+{{#fields}}
+    "{{{description}}}"
+    {{name}}: {{typeName}}{{#directives}} @{{name}}{{/directives}}
+{{/fields}}
+}
+
+{{/types}}

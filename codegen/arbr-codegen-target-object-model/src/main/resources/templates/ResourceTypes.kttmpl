@@ -1,0 +1,55 @@
+{%root%}
+
+package {%root.packageDomain%}.core
+
+import com.arbr.api.workflow.resource.WorkflowResourceType
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+
+@Configuration
+class WorkflowResourceTypes {
+
+    {%root.schema:#schema_a%}
+
+    companion object {
+        {%root.schema:#schema_b%}
+    }
+}
+
+{%_root%}
+
+{%schema_a%}
+{%schema.table:#table_a%}
+{%_schema_a%}
+
+{%table_a%}
+
+@Bean
+fun workflowResourceType{%table.titleName%}(): WorkflowResourceType = {%table.propertyName%}
+{%_table_a%}
+
+
+{%schema_b%}
+{%schema.table:#constant%}
+
+{%schema.table:#value%}
+
+val values: List<WorkflowResourceType> = listOf(
+    {%schema.table:#value_ref%}
+)
+{%_schema_b%}
+
+{%constant%}
+
+private const val WORKFLOW_RESOURCE_TYPE_{%table.constantName%} = "{%table.propertyName%}"
+{%_constant%}
+
+{%value%}
+
+val {%table.propertyName%} = WorkflowResourceType(WORKFLOW_RESOURCE_TYPE_{%table.constantName%})
+{%_value%}
+
+{%value_ref%}
+
+{%table.propertyName%},
+{%_value_ref%}

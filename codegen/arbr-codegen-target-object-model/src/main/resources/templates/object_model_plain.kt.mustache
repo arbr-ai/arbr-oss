@@ -1,0 +1,18 @@
+package {{packageDomain}}.core.model
+
+{{#schema}}
+
+{{#table}}
+data class {{schemaTitleName}}{{titleName}}Model(
+    {{#simplePropertyField}}
+    val {{resourcePropertyName}}: {{valueType}},
+    {{/simplePropertyField}}
+    {{#outboundReferenceField}}
+    val {{resourcePropertyName}}: {{{schemaTitle}}}{{{partialType}}}Model{{{nullableMark}}},
+    {{/outboundReferenceField}}
+    {{#foreignRecord}}
+    val {{resourcePropertyName}}: List<{{{resourcePropertyQualifiedType}}}Model>,
+    {{/foreignRecord}}
+)
+{{/table}}
+{{/schema}}

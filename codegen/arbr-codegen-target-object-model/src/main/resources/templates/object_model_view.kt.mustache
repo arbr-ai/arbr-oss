@@ -1,0 +1,22 @@
+package {{packageDomain}}.core.view
+
+{{#schema}}
+import {{packageDomain}}.core.resource.field.*
+import {{packageDomain}}.core.types.{{titleName}}
+import {{packageDomain}}.core.types.ResourceView
+import com.arbr.og.object_model.common.properties.FieldValueViewContainer
+
+{{#table}}
+interface {{schemaTitleName}}{{titleName}}View: ResourceView<{{schemaTitleName}}.{{titleName}}> {
+    {{#simplePropertyField}}
+    var {{resourcePropertyName}}: {{{pvsType}}}
+    {{/simplePropertyField}}
+    {{#outboundReferenceField}}
+    var {{resourcePropertyName}}: {{{schemaTitle}}}{{{partialType}}}View
+    {{/outboundReferenceField}}
+    {{#foreignRecord}}
+    var {{resourcePropertyName}}: FieldValueViewContainer<{{{resourcePropertyQualifiedType}}}View, ResourceView<*>, *>
+    {{/foreignRecord}}
+}
+{{/table}}
+{{/schema}}

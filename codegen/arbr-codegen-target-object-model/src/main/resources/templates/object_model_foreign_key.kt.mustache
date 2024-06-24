@@ -1,0 +1,13 @@
+package {{packageDomain}}.core.types
+
+import {{packageDomain}}.core.types.naming.NamedForeignKey
+
+{{#schema}}
+enum class {{titleName}}ForeignKey: NamedForeignKey {
+    {{#table}}
+    {{#outboundReferenceField}}
+    {{pSchemaConstantName}}__{{pTableConstantName}}__FK__{{constantName}},
+    {{/outboundReferenceField}}
+    {{/table}}
+}
+{{/schema}}

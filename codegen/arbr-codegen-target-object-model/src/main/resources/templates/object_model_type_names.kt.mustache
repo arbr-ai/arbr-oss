@@ -1,0 +1,11 @@
+package {{packageDomain}}.core.types
+
+import {{packageDomain}}.core.types.naming.NamedResourceKey
+
+{{#schema}}
+enum class {{titleName}}ResourceKey: NamedResourceKey {
+    {{#table}}
+    {{pSchemaConstantName}}__{{constantName}},
+    {{/table}}
+}
+{{/schema}}

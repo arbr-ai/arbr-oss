@@ -1,0 +1,16 @@
+package {{packageDomain}}.core.schema
+
+import com.arbr.content_formats.json_schematized.JsonSchema
+import com.arbr.content_formats.mapper.Mappers
+
+{{#schema}}
+{{#table}}
+object {{schemaTitleName}}{{titleName}}JsonSchema {
+    private val mapper = Mappers.mapper
+
+    {{#field}}
+    val {{resourcePropertyName}}: JsonSchema = mapper.readValue({{{jsonSchema}}}, JsonSchema::class.java)
+    {{/field}}
+}
+{{/table}}
+{{/schema}}

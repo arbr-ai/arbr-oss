@@ -1,0 +1,12 @@
+package com.arbr.graphql.lang.node
+
+data class GraphQlLanguageNodeFieldDefinition(
+	override val directives: List<GraphQlLanguageNodeDirective>?,
+	val inputValueDefinitions: List<GraphQlLanguageNodeInputValueDefinition>?,
+	override val name: String?,
+	val type: GraphQlLanguageNodeType?,
+	override val description: GraphQlLanguageNodeDescription?,
+	override val sourceLocation: GraphQlLanguageNodeSourceLocation?,
+	override val comments: List<GraphQlLanguageNodeComment>,
+	override val additionalData: Map<String, String>,
+): GraphQlLanguageNodeAbstractDescribedNode, GraphQlLanguageNodeDirectivesContainer, GraphQlLanguageNodeNamedNode

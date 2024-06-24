@@ -1,0 +1,78 @@
+{%root%}
+package {%root.packageDomain%}.core.partial_type_tensor
+
+import com.arbr.og.object_model.common.*
+import {%root.packageDomain%}.core.partial.*
+import {%root.packageDomain%}.core.resource.*
+import {%root.packageDomain%}.core.resource.field.*
+import com.arbr.platform.object_graph.impl.Partial
+import com.arbr.platform.ml.linear.typed.shape.Dim
+import com.arbr.platform.ml.linear.typed.tensor.base.ProductTensor
+import com.arbr.platform.ml.linear.typed.tensor.base.SumTensor
+import com.arbr.platform.ml.linear.typed.tensor.base.Tensor
+{%root.schema:#schemai%}
+
+{%root.schema:#schema%}
+{%_root%}
+
+{%schemai%}
+{%schema.table:#tablei%}
+{%_schemai%}
+
+{%tablei%}
+import {%root.packageDomain%}.core.partial.Partial{%table.titleName%}
+import {%root.packageDomain%}.core.resource.{%schema.titleName%}{%table.titleName%}
+{%_tablei%}
+
+
+{%schema%}
+{%schema.table:#table%}
+{%_schema%}
+
+{%table%}
+
+object PartialTypeTensor{%table.titleName%} {
+    val tensorType = ObjectTensorTypeImpl.forValueClass(
+        Partial{%table.titleName%}::class.java,
+        ProductTensor.of(
+            SingletonTensorImpl("{%table.titleName%}", Dim.VariableP),
+            {%table.outboundReferenceField:#foreign_single_tensor%}
+            {%table.anySimplePropertyField:#field_property_tensor_any%}
+        ),
+    )
+}
+{%_table%}
+
+{%shape_type%}
+ST
+{%_shape_type%}
+
+{%shape_value%}
+SF
+{%_shape_value%}
+
+
+{%field_property_tensor_any%}
+SumTensor.of(
+    /*
+      Properties
+     */
+    {%anySimplePropertyField.simplePropertyField:#field_property_tensor%}
+),
+{%_field_property_tensor_any%}
+
+{%field_property_tensor%}
+{%simplePropertyField.schemaTitle%}{%simplePropertyField.tableTitle%}.{%simplePropertyField.titleName%}.tensor,
+
+{%_field_property_tensor%}
+
+{%foreign_single_tensor%}
+{%outboundReferenceField.schemaTitle%}{%table.titleName%}.{%outboundReferenceField.titleName%}.tensor,
+
+{%_foreign_single_tensor%}
+
+
+{%foreign_record_tensor%}
+ObjectListTensorFactory.ofList({%foreignRecord.schemaTitleName%}{%foreignRecord.tableTitleName%}.{%foreignRecord.titleName%}.tensor),
+
+{%_foreign_record_tensor%}

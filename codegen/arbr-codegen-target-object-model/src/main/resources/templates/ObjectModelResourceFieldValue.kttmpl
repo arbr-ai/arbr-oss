@@ -1,0 +1,144 @@
+
+{%root%}
+@file:Suppress("DataClassPrivateConstructor")
+
+package {%root.packageDomain%}.core.resource.field
+
+import com.arbr.platform.object_graph.common.ObjectModel
+import com.arbr.og.object_model.common.properties.DependencyTracingValueProvider
+import com.arbr.og.object_model.common.values.SourcedValue
+import com.arbr.og.object_model.common.values.SourcedValueGeneratorInfo
+import com.arbr.og.object_model.common.values.SourcedValueKind
+import com.arbr.og.object_model.common.values.TracedSourcedValueImpl
+import com.arbr.platform.ml.linear.typed.base.GroundField
+import com.arbr.platform.ml.linear.typed.base.Scalar
+import com.arbr.platform.ml.linear.typed.shape.Dim
+import com.arbr.platform.ml.linear.typed.shape.Shape
+import java.util.*
+{%root.schema:#schema%}
+{%_root%}
+
+{%schema%}
+{%schema.table:#table%}
+{%_schema%}
+
+{%table%}
+import com.arbr.object_model.core.resource.{%schema.titleName%}{%table.titleName%}
+import {%root.packageDomain%}.core.types.{%schema.titleName%}
+import {%root.packageDomain%}.core.types.ResourceFieldValue
+
+{%table.field:#field%}
+{%_table%}
+
+{%field%}
+sealed interface {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value: ObjectModel.ObjectValue<
+    {%field.valueType%},
+    Dim.VariableT,
+    Dim.VariableF,
+    {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value
+>, ResourceFieldValue<{%schema.titleName%}.{%table.titleName%}, {%schema.titleName%}.{%table.titleName%}.{%field.titleName%}> {
+
+    private data class Concrete(
+        override val kind: SourcedValueKind,
+        override val value: {%field.valueType%},
+        override val generatorInfo: SourcedValueGeneratorInfo,
+    ): ObjectModel.ObjectValueImpl<{%field.valueType%}, Dim.VariableT, Dim.VariableF, {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value>(
+        kind,
+        value,
+        {%schema.titleName%}{%table.titleName%}.{%field.titleName%},
+        generatorInfo,
+    ), {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value {
+        override val objectType: ObjectModel.ObjectType<
+            {%field.valueType%},
+            Dim.VariableT,
+            Dim.VariableF,
+            {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value,
+        > = {%schema.titleName%}{%table.titleName%}.{%field.titleName%}
+    }
+
+    private class Trace(
+        override val kind: SourcedValueKind,
+        override val generatorInfo: SourcedValueGeneratorInfo,
+        private val tracingValueProvider: DependencyTracingValueProvider<{%field.valueType%}>,
+    ): ObjectModel.ObjectValue<{%field.valueType%}, Dim.VariableT, Dim.VariableF, {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value>, {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value {
+        override val id: String = UUID.randomUUID().toString()
+
+        override val value by tracingValueProvider.providingValue()
+
+        override val objectType: ObjectModel.ObjectType<
+            {%field.valueType%},
+            Dim.VariableT,
+            Dim.VariableF,
+            {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value,
+        > = {%schema.titleName%}{%table.titleName%}.{%field.titleName%}
+
+        override fun <W, U: ObjectModel.ObjectValue<W, *, *, U>> map(
+            type: ObjectModel.ObjectType<W, *, *, U>,
+            f: ({%field.valueType%}) -> W,
+        ): U {
+            val nextProvider = tracingValueProvider.transformWith(f)
+            return type.trace(kind, generatorInfo, nextProvider)
+        }
+
+        override fun <W> mapValue(
+            f: ({%field.valueType%}) -> W,
+        ): SourcedValue<W> {
+            val nextProvider = tracingValueProvider.transformWith(f)
+            return TracedSourcedValueImpl(
+                kind,
+                nextProvider,
+                typeName,
+                schema,
+                generatorInfo,
+            )
+        }
+    }
+
+    companion object {
+
+        fun initialize(
+            kind: SourcedValueKind,
+            value: {%field.valueType%},
+            sourcedValueGeneratorInfo: SourcedValueGeneratorInfo,
+        ): {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value = Concrete(
+            kind,
+            value,
+            sourcedValueGeneratorInfo,
+        )
+
+        fun constant(value: {%field.valueType%}): {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value = Concrete(
+            SourcedValueKind.CONSTANT, value, SourcedValueGeneratorInfo(
+                emptyList()
+            )
+        )
+
+        fun materialized(value: {%field.valueType%}): {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value = Concrete(
+            SourcedValueKind.MATERIALIZED, value, SourcedValueGeneratorInfo(
+                emptyList()
+            )
+        )
+
+        fun input(value: {%field.valueType%}): {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value = Concrete(
+            SourcedValueKind.INPUT, value, SourcedValueGeneratorInfo(
+                emptyList()
+            )
+        )
+
+        fun generated(value: {%field.valueType%}, sourcedValueGeneratorInfo: SourcedValueGeneratorInfo): {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value = Concrete(
+            SourcedValueKind.GENERATED,
+            value,
+            sourcedValueGeneratorInfo,
+        )
+
+        fun trace(
+            kind: SourcedValueKind,
+            sourcedValueGeneratorInfo: SourcedValueGeneratorInfo,
+            tracingValueProvider: DependencyTracingValueProvider<{%field.valueType%}>,
+        ): {%schema.titleName%}{%table.titleName%}{%field.titleName%}Value = Trace(
+            kind,
+            sourcedValueGeneratorInfo,
+            tracingValueProvider,
+        )
+    }
+}
+{%_field%}

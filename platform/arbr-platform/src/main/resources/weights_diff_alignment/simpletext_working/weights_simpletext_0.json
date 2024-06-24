@@ -1,0 +1,211 @@
+{
+  "sha" : "642a623d5670a14e8d64cebf65d56c829102b76d",
+  "name" : "clean_2024-04-05_08-57-04_NamedMetricKind(name=OP_MATRIX_DEL_NUL)",
+  "parameters" : [ {
+    "metricKind" : "MCONSTANT",
+    "value" : {
+      "numerator" : 0,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "STR_WEIGHT",
+    "value" : {
+      "numerator" : 5000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "STR_NORM",
+    "value" : {
+      "numerator" : 0,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "DIFF_OP_BASELINE",
+    "value" : {
+      "numerator" : 54713000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "ADJ_MERGE",
+    "value" : {
+      "numerator" : 25250000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "ADJ_INDUCE",
+    "value" : {
+      "numerator" : 0,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "ADJ_DEDUCE",
+    "value" : {
+      "numerator" : 100000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "ADJ_ROOT_NODE",
+    "value" : {
+      "numerator" : 50000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "ADJ_CHILD_NODE",
+    "value" : {
+      "numerator" : 100000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "ADJ_EDGE_GENERAL",
+    "value" : {
+      "numerator" : 0,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "TKW_DROP",
+    "value" : {
+      "numerator" : 50000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "TKW_MATCH",
+    "value" : {
+      "numerator" : 50000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "TKW_EDIT",
+    "value" : {
+      "numerator" : 628500,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "TKW_APPLY",
+    "value" : {
+      "numerator" : 100000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "TKW_SKIP",
+    "value" : {
+      "numerator" : 50617000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "TKW_SKIP_PRE",
+    "value" : {
+      "numerator" : 54969000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "TKW_SKIP_POST",
+    "value" : {
+      "numerator" : 54969000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_NUL_NUL",
+    "value" : {
+      "numerator" : 50000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_NUL_ADD",
+    "value" : {
+      "numerator" : 100000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_NUL_NOP",
+    "value" : {
+      "numerator" : 50000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_NUL_DEL",
+    "value" : {
+      "numerator" : 50000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_ADD_NUL",
+    "value" : {
+      "numerator" : 100000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_ADD_ADD",
+    "value" : {
+      "numerator" : 50000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_ADD_NOP",
+    "value" : {
+      "numerator" : 0,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_ADD_DEL",
+    "value" : {
+      "numerator" : 50000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_NOP_NUL",
+    "value" : {
+      "numerator" : 0,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_NOP_ADD",
+    "value" : {
+      "numerator" : 50000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_NOP_NOP",
+    "value" : {
+      "numerator" : 100000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_NOP_DEL",
+    "value" : {
+      "numerator" : 100000000,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_DEL_NUL",
+    "value" : {
+      "numerator" : 0,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_DEL_ADD",
+    "value" : {
+      "numerator" : 0,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_DEL_NOP",
+    "value" : {
+      "numerator" : 0,
+      "denominator" : 1000000
+    }
+  }, {
+    "metricKind" : "OP_MATRIX_DEL_DEL",
+    "value" : {
+      "numerator" : 50000000,
+      "denominator" : 1000000
+    }
+  } ],
+  "training_score" : {
+    "numerator" : 858686,
+    "denominator" : 1000000
+  },
+  "test_score" : {
+    "numerator" : 844578,
+    "denominator" : 1000000
+  }
+}

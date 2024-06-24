@@ -1,0 +1,86 @@
+{%root%}
+package {%root.packageDomain%}.engine.parser
+
+import {%root.packageDomain%}.core.partial.*
+import {%root.packageDomain%}.core.resource.*
+import {%root.packageDomain%}.core.resource.field.*
+import com.arbr.og.alignable.PartialNodeAlignableValue
+import com.arbr.og.alignable.PartialRefAlignable
+import com.arbr.platform.object_graph.common.ObjectModelResourceParser
+import com.arbr.platform.object_graph.impl.ObjectModelResource
+import com.arbr.platform.object_graph.impl.ObjectRef
+import {%root.packageDomain%}.core.partial.PartialRoot
+import {%root.packageDomain%}.core.resource.ArbrRoot
+import {%root.packageDomain%}.core.types.ResourceStreamParser
+import org.springframework.stereotype.Component
+{%root.schema:#schemai%}
+
+{%root.schema:#schema%}
+{%_root%}
+
+{%schemai%}
+import {%root.packageDomain%}.core.types.{%schema.titleName%}
+import {%root.packageDomain%}.core.types.{%schema.titleName%}ForeignKey
+{%schema.table:#tablei%}
+{%_schemai%}
+
+{%tablei%}
+import {%root.packageDomain%}.core.resource.provider.{%schema.titleName%}{%table.titleName%}StreamProvider
+{%_tablei%}
+
+
+{%schema%}
+{%schema.table:#table%}
+{%_schema%}
+
+{%table%}
+
+// TODO: Avoid relying on Spring DI for resource associated objects
+@Component
+class ObjectModelResource{%table.titleName%}Parser: ObjectModelResourceParser<
+    {%schema.titleName%}{%table.titleName%},
+    Partial{%table.titleName%},
+    {%schema.titleName%}ForeignKey,
+>, ResourceStreamParser<{%schema.titleName%}.{%table.titleName%}> {
+    private val provider = {%schema.titleName%}{%table.titleName%}StreamProvider()
+
+    override val key: String = "{%table.titleName%}"
+
+    override fun parseNodeValue(
+        nodeValue: PartialNodeAlignableValue,
+    ): ObjectModelResource<{%schema.titleName%}{%table.titleName%}, Partial{%table.titleName%}, {%schema.titleName%}ForeignKey> {
+        {%table.outboundReferenceField:#foreign_single_parse_val%}
+
+        return provider.provide(
+            nodeValue.uuid.element,
+            {%table.simplePropertyField:#field_property_parse%}
+            {%table.outboundReferenceField:#foreign_single_parse%}
+        )
+    }
+
+}
+{%_table%}
+
+
+{%foreign_single_parse_val%}
+val {%outboundReferenceField.resourcePropertyName%}Ref: PartialRefAlignable? = nodeValue.getParent({%schema.titleName%}ForeignKey.{%schema.constantName%}__{%table.constantName%}__FK__{%outboundReferenceField.constantName%})
+val {%outboundReferenceField.resourcePropertyName%}RefUuid: String? = {%outboundReferenceField.resourcePropertyName%}Ref?.uuid
+val {%outboundReferenceField.resourcePropertyName%}ObjectRef: ObjectRef.OfUuid<{%outboundReferenceField.schemaTitle%}{%outboundReferenceField.tableTitle%}, Partial{%outboundReferenceField.partialType%}, {%schema.titleName%}ForeignKey>? = if ({%outboundReferenceField.resourcePropertyName%}RefUuid == null) {
+    null
+} else {
+    ObjectRef.OfUuid<{%outboundReferenceField.schemaTitle%}{%outboundReferenceField.tableTitle%}, Partial{%outboundReferenceField.partialType%}, {%schema.titleName%}ForeignKey>(
+        {%outboundReferenceField.resourcePropertyName%}RefUuid
+    )
+}
+
+{%_foreign_single_parse_val%}
+
+{%field_property_parse%}
+{%simplePropertyField.resourcePropertyName%} = nodeValue.properties["{%simplePropertyField.resourcePropertyName%}"]?.element?.objectValue as? {%simplePropertyField.partialType%}?,
+
+{%_field_property_parse%}
+
+{%foreign_single_parse%}
+{%outboundReferenceField.resourcePropertyName%} = {%outboundReferenceField.resourcePropertyName%}ObjectRef,
+
+{%_foreign_single_parse%}

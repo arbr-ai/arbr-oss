@@ -1,0 +1,196 @@
+{
+  "sha": "aff07ded6cbaf9ee53ccf649a2762da62fc9d4ee",
+  "name": "hardcoded-clean_2024-01-09_12-32-24",
+  "parameters": [
+    {
+      "metricKind": "DROP",
+      "value": {
+        "numerator": 2535000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "MATCH",
+      "value": {
+        "numerator": 625000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "EDIT",
+      "value": {
+        "numerator": 2933853,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "APPLY",
+      "value": {
+        "numerator": 736378,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "INDUCE",
+      "value": {
+        "numerator": 2500000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "SKIP",
+      "value": {
+        "numerator": 1000000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "SKIP_PRE",
+      "value": {
+        "numerator": 1000000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "SKIP_POST",
+      "value": {
+        "numerator": 1000000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "STR_WEIGHT",
+      "value": {
+        "numerator": 2542000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "DIFF_OP_BASELINE",
+      "value": {
+        "numerator": 2524000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_NUL_NUL",
+      "value": {
+        "numerator": 2500000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_NUL_ADD",
+      "value": {
+        "numerator": 2500000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_NUL_NOP",
+      "value": {
+        "numerator": 2500000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_NUL_DEL",
+      "value": {
+        "numerator": 2500000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_ADD_NUL",
+      "value": {
+        "numerator": 2526860,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_ADD_ADD",
+      "value": {
+        "numerator": 2500000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_ADD_NOP",
+      "value": {
+        "numerator": 2500000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_ADD_DEL",
+      "value": {
+        "numerator": 2500000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_NOP_NUL",
+      "value": {
+        "numerator": 4447820,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_NOP_ADD",
+      "value": {
+        "numerator": 0,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_NOP_NOP",
+      "value": {
+        "numerator": 2527240,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_NOP_DEL",
+      "value": {
+        "numerator": 2525170,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_DEL_NUL",
+      "value": {
+        "numerator": 2592620,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_DEL_ADD",
+      "value": {
+        "numerator": 2500000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_DEL_NOP",
+      "value": {
+        "numerator": 2500000,
+        "denominator": 1000000
+      }
+    },
+    {
+      "metricKind": "OP_MATRIX_DEL_DEL",
+      "value": {
+        "numerator": 2500000,
+        "denominator": 1000000
+      }
+    }
+  ],
+  "training_score": {
+    "numerator": 826294,
+    "denominator": 1000000
+  },
+  "test_score": {
+    "numerator": 826294,
+    "denominator": 1000000
+  }
+}

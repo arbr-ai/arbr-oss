@@ -1,0 +1,342 @@
+directive @nullable on FIELD_DEFINITION
+scalar Long
+
+"Object model: Root"
+type Root {
+    ""
+    cancelled: Boolean
+    
+    ""
+    complete: Boolean
+    
+}
+
+
+"A GitHub repository comprising a software project"
+type Project {
+    ""
+    parent: Root
+    
+    "Project Description: A description of the project."
+    description: String
+    
+    "Repo Full Name: The full name of the repository, formatted like `organization/repo`."
+    fullName: String
+    
+    "Platform: The platform for the application, such as web, iOS, Android, or backend."
+    platform: String @nullable
+    
+    "Programming Language: The primary programming language used for the project."
+    primaryLanguage: String @nullable
+    
+    "Tech Stack Description: A description of the tech stack powering the application. Maximum 50 words."
+    techStackDescription: String @nullable
+    
+    "Project Title: The human-readable title for the software project."
+    title: String @nullable
+    
+}
+
+
+"Object model: VectorResource"
+type VectorResource {
+    ""
+    parent: Root
+    
+}
+
+
+"A file inside a GitHub repository."
+type File {
+    ""
+    parent: Project
+    
+    "File Contents: The contents of the file."
+    content: String @nullable
+    
+    "File Path: The path to the file within the GitHub repository."
+    filePath: String
+    
+    "Content is Binary: (true / false) Whether the file contains binary content."
+    isBinary: Boolean @nullable
+    
+    "Programming Language: The programming language of the file if relevant, or else \"plaintext\" for text files and \"binary\" for binary files."
+    sourceLanguage: String @nullable
+    
+    "File Summary: A summary of the contents of the file. This summary covers the structure and purpose of the file in the project. It focuses on specific factual aspects of the file. About 300 words."
+    summary: String @nullable
+    
+}
+
+
+"Object model: Task"
+type Task {
+    ""
+    parent: Project
+    
+    ""
+    branchName: String
+    
+    "Pull Request Body: The body of the pull request description."
+    pullRequestBody: String @nullable
+    
+    ""
+    pullRequestHtmlUrl: String
+    
+    "Pull Request Title: The title of the pull request for the code change associated with the task."
+    pullRequestTitle: String @nullable
+    
+    "Task Summary: Summary of the coding task to be completed."
+    taskQuery: String
+    
+    "Task Plan: A verbose plan for carrying out the task."
+    taskVerbosePlan: String @nullable
+    
+}
+
+
+"Object model: TaskEval"
+type TaskEval {
+    ""
+    parent: Task
+    
+    ""
+    cancelReason: Int
+    
+    ""
+    cancelled: Boolean
+    
+    "Task is Complete: (true/false) Whether the entire task is fully complete after the change."
+    complete: Boolean
+    
+    ""
+    finishedEarly: Boolean
+    
+    "Task is Mostly Complete: (true/false) Whether the change task is mostly complete after the change."
+    mostlyComplete: Boolean
+    
+    "Task is Partially Complete: (true/false) Whether the change makes significant progress towards completing the task."
+    partiallyComplete: Boolean
+    
+}
+
+
+"Object model: TaskRelevantFile"
+type TaskRelevantFile {
+    ""
+    parent: Task
+    
+    ""
+    file: File @nullable
+    
+}
+
+
+"Object model: Subtask"
+type Subtask {
+    ""
+    parent: Task
+    
+    "Subtask: A statement of the subtask which needs to be completed in order to accomplish the main task."
+    subtask: String
+    
+    ""
+    taskEval: TaskEval @nullable
+    
+}
+
+
+"Object model: SubtaskEval"
+type SubtaskEval {
+    ""
+    parent: Subtask
+    
+    "Subtask is Complete: (true/false) Whether the entire subtask is fully complete after the change."
+    complete: Boolean
+    
+    "Subtask is Mostly Complete: (true/false) Whether the subtask is mostly complete after the change."
+    mostlyComplete: Boolean
+    
+    "Subtask is Partially Complete: (true/false) Whether the change makes significant progress towards completing the subtask."
+    partiallyComplete: Boolean
+    
+}
+
+
+"Object model: SubtaskRelevantFile"
+type SubtaskRelevantFile {
+    ""
+    parent: Subtask
+    
+    ""
+    file: File @nullable
+    
+}
+
+
+"Object model: Commit"
+type Commit {
+    ""
+    parent: Subtask
+    
+    ""
+    commitHash: String
+    
+    "Commit Message: Short message for the git commit."
+    commitMessage: String
+    
+    "Diff Content: The content of the commit as given by `git diff`."
+    diffContent: String @nullable
+    
+    "Diff Summary: A summary of the content of the commit, where the content is given by `git diff`. About 300 words."
+    diffSummary: String @nullable
+    
+    ""
+    subtaskEval: SubtaskEval @nullable
+    
+}
+
+
+"Object model: CommitEval"
+type CommitEval {
+    ""
+    parent: Commit
+    
+    ""
+    buildSuccess: Boolean
+    
+    "Commit is Complete: (true/false) Whether the goal of the commit is complete after the change."
+    complete: Boolean
+    
+    "Error Message Contents: Content of error message(s) during the attempted build."
+    errorContent: String @nullable
+    
+    "Commit is Mostly Complete: (true/false) Whether the goal of the commit is mostly accomplished after the change."
+    mostlyComplete: Boolean
+    
+    "Commit is Partially Complete: (true/false) Whether the change makes significant progress towards completing the commit."
+    partiallyComplete: Boolean
+    
+    ""
+    renderSuccess: Boolean
+    
+}
+
+
+"Object model: CommitRelevantFile"
+type CommitRelevantFile {
+    ""
+    parent: Commit
+    
+    ""
+    file: File @nullable
+    
+}
+
+
+"Object model: FileOp"
+type FileOp {
+    ""
+    parent: Commit
+    
+    ""
+    baseFileContent: String @nullable
+    
+    "Change Description: A description of the specific code changes necessary in the file."
+    description: String @nullable
+    
+    "File Operation: A file operation to perform. One of [create_file, edit_file, delete_file]."
+    fileOperation: String @nullable
+    
+    ""
+    commitEval: CommitEval @nullable
+    
+    ""
+    implementedFile: File @nullable
+    
+    ""
+    targetFile: File @nullable
+    
+}
+
+
+"A segment (source element) of a file inside a GitHub repository."
+type FileSegment {
+    ""
+    parent: File
+    
+    ""
+    containsTodo: Boolean @nullable
+    
+    "Content Type: The type of content in the source element - usually the source code language."
+    contentType: String
+    
+    "Source Element Index: The index of the source element in the file among elements with the same kind (rule name) and name. Starts at index 0. This index makes the combination (rule_name, name, element_index) unique in a file."
+    elementIndex: Long
+    
+    "End Index: The byte-index within the file where the source element ends, exclusive."
+    endIndex: Long
+    
+    "Source Element Name: The name of the source element."
+    name: String @nullable
+    
+    "Source Element Kind: The kind of source element, such as class, function, etc."
+    ruleName: String
+    
+    "Start Index: The byte-index within the file where the source element starts, inclusive."
+    startIndex: Long
+    
+    ""
+    summary: String @nullable
+    
+    ""
+    parentSegment: FileSegment @nullable
+    
+}
+
+
+"Object model: FileSegmentOp"
+type FileSegmentOp {
+    ""
+    parent: FileOp
+    
+    ""
+    content: String @nullable
+    
+    "Content Type: The type of content in the source element - usually the source code language."
+    contentType: String
+    
+    "Change Description: A description of the specific code changes necessary in the source code element."
+    description: String @nullable
+    
+    "Source Element Index: The index of the source element in the file among elements with the same kind (rule name) and name. Starts at index 0. This index makes the combination (rule_name, name, element_index) unique in a file."
+    elementIndex: Long
+    
+    "Source Element Name: The name of the source element."
+    name: String @nullable
+    
+    "Source Element Operation: An operation to perform on the source code element. One of [add, edit, delete]."
+    operation: String @nullable
+    
+    "Source Element Kind: The kind of source element, such as class, function, etc."
+    ruleName: String
+    
+    ""
+    implementedFileSegment: FileSegment @nullable
+    
+}
+
+
+"Object model: FileSegmentOpDependency"
+type FileSegmentOpDependency {
+    ""
+    parent: FileSegmentOp
+    
+    "Dependency: A source element operation which is referenced by, or otherwise required by, the parent source element."
+    dependencyFileSegmentOp: FileSegmentOp @nullable
+    
+    ""
+    implementedFileSegment: FileSegment @nullable
+    
+}
+

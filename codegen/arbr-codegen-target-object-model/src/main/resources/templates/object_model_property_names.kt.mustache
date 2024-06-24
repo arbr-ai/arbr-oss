@@ -1,0 +1,19 @@
+package {{packageDomain}}.core.types
+
+import {{packageDomain}}.core.types.naming.NamedPropertyKey
+
+{{#schema}}
+enum class {{titleName}}PropertyKey: NamedPropertyKey {
+    {{#table}}
+    {{#simplePropertyField}}
+    {{pSchemaConstantName}}__{{pTableConstantName}}__{{constantName}},
+    {{/simplePropertyField}}
+    {{#outboundReferenceField}}
+    {{pSchemaConstantName}}__{{pTableConstantName}}__FK__{{constantName}},
+    {{/outboundReferenceField}}
+    {{#foreignRecord}}
+    {{pSchemaConstantName}}__{{pTableConstantName}}__IFK__{{schemaConstantName}}__{{tableConstantName}}__{{fieldConstantName}},
+    {{/foreignRecord}}
+    {{/table}}
+}
+{{/schema}}

@@ -1,0 +1,58 @@
+package {{packageDomain}}.core.view.provider
+
+{{#schema}}
+import {{packageDomain}}.core.resource.*
+import {{packageDomain}}.core.resource.field.*
+import {{packageDomain}}.core.view.*
+import com.arbr.og.object_model.common.model.view.ProposedValueStreamViewProvider
+import {{packageDomain}}.core.types.{{titleName}}
+import {{packageDomain}}.core.types.{{titleName}}ResourceKey
+import {{packageDomain}}.core.types.ResourceViewProvider
+import {{packageDomain}}.core.types.ResourceView
+import com.arbr.og.object_model.common.properties.FieldValueViewContainer
+
+{{#table}}
+class {{schemaTitleName}}{{titleName}}ViewProvider(
+    private val proposedValueStreamViewProvider: ProposedValueStreamViewProvider<{{schemaTitleName}}ResourceKey>,
+): ResourceViewProvider<{{schemaTitleName}}.{{titleName}}> {
+
+    fun provideResourceView(
+        {{propertyName}}: {{schemaTitleName}}{{titleName}},
+    ): {{schemaTitleName}}{{titleName}}View {
+        return {{schemaTitleName}}{{titleName}}DelegateView(
+            proposedValueStreamViewProvider,
+            {{propertyName}},
+        )
+    }
+
+    private class {{schemaTitleName}}{{titleName}}DelegateView(
+        provider: ProposedValueStreamViewProvider<{{schemaTitleName}}ResourceKey>,
+        {{propertyName}}: {{schemaTitleName}}{{titleName}},
+    ) : {{schemaTitleName}}{{titleName}}View {
+        override val uuid: String = {{propertyName}}.uuid
+
+        {{#simplePropertyField}}
+        override var {{resourcePropertyName}}: {{{pvsType}}} by provider.providePropertyView(
+            {{schemaTitle}}{{tableTitle}}.{{titleName}},
+            {{{pvsType}}}::class.java,
+            {{propertyName}}.{{resourcePropertyName}},
+        )
+        {{/simplePropertyField}}
+        {{#outboundReferenceField}}
+        override var {{resourcePropertyName}}: {{{schemaTitle}}}{{{partialType}}}View by provider.provideReferencePropertyView(
+            {{{schemaTitle}}}{{{partialType}}}::class.java,
+            {{schemaTitle}}.{{tableTitle}},
+            {{propertyName}}.{{resourcePropertyName}},
+        )
+        {{/outboundReferenceField}}
+        {{#foreignRecord}}
+        override var {{resourcePropertyName}}: FieldValueViewContainer<{{{resourcePropertyQualifiedType}}}View, ResourceView<*>, *> by provider.provideCollectionPropertyView(
+            {{{resourcePropertyQualifiedType}}}::class.java,
+            {{schemaTitleName}}.{{tableTitleName}},
+            {{propertyName}}.{{resourcePropertyName}}.items,
+        )
+        {{/foreignRecord}}
+    }
+}
+{{/table}}
+{{/schema}}

@@ -1,0 +1,81 @@
+package {{packageDomain}}.core.resource.provider
+
+{{#schema}}
+import {{packageDomain}}.core.resource.*
+import {{packageDomain}}.core.resource.field.*
+import {{packageDomain}}.core.view.*
+import {{packageDomain}}.core.partial.*
+import {{packageDomain}}.core.types.{{titleName}}
+import {{packageDomain}}.core.types.{{titleName}}ForeignKey
+import {{packageDomain}}.core.types.ResourceStreamProvider
+import com.arbr.platform.object_graph.impl.ObjectRef
+import com.arbr.og.object_model.common.model.ProposedValueStream
+import com.arbr.og.object_model.common.model.ProposedForeignKeyCollectionStream
+import com.arbr.og.object_model.common.model.collections.OneToManyResourceMap
+import com.arbr.platform.object_graph.impl.ObjectModelResource
+import com.arbr.og.store.DefaultKVStore
+import com.arbr.platform.object_graph.store.KVStore
+
+{{#table}}
+class {{schemaTitleName}}{{titleName}}StreamProvider(
+    private val objectKvStore: KVStore<String, ObjectModelResource<*, *, {{pSchemaTitleName}}ForeignKey>, {{pSchemaTitleName}}ForeignKey> = DefaultKVStore.loadConfiguredKvStore(),
+): ResourceStreamProvider<{{schemaTitleName}}.{{titleName}}> {
+    {{#field}}
+    private val {{resourcePropertyName}}Property = {{pSchemaTitleName}}.{{pTableTitleName}}.{{titleName}}
+    {{/field}}
+    {{#foreignRecord}}
+    private val {{resourcePropertyName}}Property = {{pSchemaTitleName}}.{{pTableTitleName}}.{{titleName}}
+    {{/foreignRecord}}
+
+    fun provide(
+        uuid: String,
+        {{#simplePropertyField}}
+        {{resourcePropertyName}}: {{schemaTitle}}{{tableTitle}}{{titleName}}Value? = null,
+        {{/simplePropertyField}}
+        {{#outboundReferenceField}}
+        {{resourcePropertyName}}: {{{pvsType}}}? = null,
+        {{/outboundReferenceField}}
+    ): {{schemaTitleName}}{{titleName}} {
+        return {{pSchemaTitleName}}{{pTableTitleName}}(
+            uuid,
+            {{#field}}
+            ProposedValueStream({{resourcePropertyName}}Property.attachedIdentifier(uuid), {{resourcePropertyName}}),
+            {{/field}}
+            {{#foreignRecord}}
+            OneToManyResourceMap(
+                ProposedForeignKeyCollectionStream<{{pSchemaTitleName}}{{tableTitleName}}, Partial{{tableTitleName}}, {{pSchemaTitleName}}ForeignKey>(
+                    {{resourcePropertyName}}Property.attachedIdentifier(uuid),
+                    {{pSchemaTitleName}}ForeignKey.{{schemaConstantName}}__{{tableConstantName}}__FK__{{fieldConstantName}},
+                    objectKvStore,
+                ),
+            ),
+            {{/foreignRecord}}
+        )
+    }
+
+    fun provideFromResourceView(
+        uuid: String,
+        {{#simplePropertyField}}
+        {{resourcePropertyName}}: {{schemaTitle}}{{tableTitle}}{{titleName}}Value? = null,
+        {{/simplePropertyField}}
+        {{#outboundReferenceField}}
+        {{resourcePropertyName}}: {{{schemaTitle}}}{{{partialType}}}View? = null,
+        {{/outboundReferenceField}}
+    ): {{schemaTitleName}}{{titleName}} {
+        return provide(
+            uuid,
+            {{#simplePropertyField}}
+            {{resourcePropertyName}},
+            {{/simplePropertyField}}
+            {{#outboundReferenceField}}
+            {{resourcePropertyName}}?.let { ObjectRef.OfUuid(it.uuid) },
+            {{/outboundReferenceField}}
+        )
+    }
+
+    override fun provideEmptyResource(uuid: String): {{{pSchemaTitleName}}}{{pTableTitleName}} {
+        return provide(uuid)
+    }
+}
+{{/table}}
+{{/schema}}

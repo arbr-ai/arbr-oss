@@ -1,0 +1,188 @@
+{%root%}
+package {%root.packageDomain%}.engine.delegator
+
+import com.arbr.og_engine.file_system.VolumeState
+import com.arbr.og_engine.core.WorkflowResourceModel
+import com.arbr.og_engine.core.WorkflowResourceDelegator
+import com.arbr.api.workflow.resource.WorkflowResourceType
+import com.arbr.og_engine.artifact.WorkflowResourceCreationArtifact
+import com.arbr.og_engine.artifact.WorkflowResourceUpdateArtifact
+import com.arbr.og.object_model.common.model.collections.OneToManyResourceMap
+import com.arbr.og.object_model.common.model.ProposedValueStream
+import org.slf4j.LoggerFactory
+import org.springframework.stereotype.Component
+import reactor.core.publisher.Flux
+import reactor.core.publisher.FluxSink
+import reactor.core.publisher.Mono
+import java.util.concurrent.ConcurrentHashMap
+import com.arbr.util_common.reactor.fireAndForget
+import com.arbr.platform.object_graph.impl.Partial
+import com.arbr.og_engine.artifact.Artifact
+import {%root.packageDomain%}.core.WorkflowResourceTypes
+{%root.schema:#schemai%}
+
+{%root.schema:#schema%}
+{%_root%}
+
+{%schemai%}
+{%schema.table:#tablei%}
+{%_schemai%}
+
+{%tablei%}
+import {%root.packageDomain%}.core.partial.Partial{%table.titleName%}
+import {%root.packageDomain%}.core.resource.{%schema.titleName%}{%table.titleName%}
+import {%root.packageDomain%}.core.types.{%schema.titleName%}ForeignKey
+import {%root.packageDomain%}.processor.base.Workflow{%table.titleName%}Processor
+
+{%_tablei%}
+
+{%schema%}
+{%schema.table:#table%}
+{%_schema%}
+
+{%table%}
+
+/**
+ * Forward notifications on individual {%table.titleName%} and their child collections
+ */
+@Component
+class Workflow{%table.titleName%}Delegator(
+    private val workflow{%table.titleName%}Processor: Workflow{%table.titleName%}Processor,
+    {%table.foreignTypeRecord:#foreign_table_prop%}
+) : WorkflowResourceDelegator<{%schema.titleName%}{%table.titleName%}, Partial{%table.titleName%}, {%schema.titleName%}ForeignKey>() {
+
+    private val singleUpdateSubscriptions = ConcurrentHashMap<String, Unit>()
+
+    {%table.foreignTypeRecord:#foreign_type_table_ref%}
+
+    private fun reportSingleResourceArtifacts(
+        {%table.propertyName%}: {%schema.titleName%}{%table.titleName%},
+        artifactSink: FluxSink<Artifact>,
+    ): Mono<Void> {
+        return if (singleUpdateSubscriptions.putIfAbsent({%table.propertyName%}.uuid, Unit) == null) {
+            // Subscribe to updates on object properties and propagate them as artifacts
+            {%table.propertyName%}
+                .updateFlux()
+                .filter {
+                    it.value != null
+                }
+                .doOnNext {
+                    artifactSink.next(
+                        WorkflowResourceUpdateArtifact(
+                            {%table.propertyName%}.uuid,
+                            WorkflowResourceTypes.{%table.propertyName%},
+                            propertyMap({%table.propertyName%}),
+                        )
+                    )
+                }
+                .collectList()
+                .fireAndForget(workflowDelegatorArtifactScheduler)
+        } else {
+            Mono.empty()
+        }
+    }
+
+    override fun processSingleUpdate(
+        volumeState: VolumeState,
+        workflowResourceModel: WorkflowResourceModel,
+        parentResourceUuid: String?,
+        streamingResource: OneToManyResourceMap<{%schema.titleName%}{%table.titleName%}, Partial{%table.titleName%}, {%schema.titleName%}ForeignKey>,
+        artifactSink: FluxSink<Artifact>,
+    ): Mono<Void> {
+        val items = streamingResource.items.getLatestValue()?.mapNotNull { it.value.resource() } ?: emptyList()
+
+        return Flux.fromIterable(items)
+            .concatMap { {%table.propertyName%} ->
+                Mono.defer {
+                    // Propagate subscriptions to the processor of this resource and then to subscribers on
+                    // collections of sub-resources.
+                    workflow{%table.titleName%}Processor.registerResource(
+                        volumeState,
+                        workflowResourceModel,
+                        {%table.propertyName%},
+                        artifactSink
+                    )
+                    .flatMap { didRegisterResource ->
+                        if (didRegisterResource) {
+                            artifactSink.next(
+                                WorkflowResourceCreationArtifact(
+                                    {%table.propertyName%}.uuid,
+                                    parentResourceUuid,
+                                    WorkflowResourceTypes.{%table.propertyName%},
+                                    propertyMap({%table.propertyName%}),
+                                )
+                            )
+
+                            reportSingleResourceArtifacts({%table.propertyName%}, artifactSink)
+                                .then()
+                                {%table.foreignTypeRecord:#foreign_type_table_call%}
+                        } else {
+                            Mono.empty()
+                        }
+                    }
+                }.cache()
+            }
+            .then()
+    }
+
+    companion object {
+        private val logger = LoggerFactory.getLogger(Workflow{%table.titleName%}Delegator::class.java)
+
+        fun propertyMap(item: {%schema.titleName%}{%table.titleName%}): Map<String, Any> = mapOf(
+            {%table.field:#field_display%}
+        ).mapNotNull { (k, pvs) ->
+             pvs.getLatestValue()?.let { k to it }
+        }.toMap()
+    }
+}
+{%_table%}
+
+{%foreign_type_table_ref%}
+{%foreignTypeRecord.foreignRecord:#foreign_table_ref%}
+{%_foreign_type_table_ref%}
+
+{%foreign_table_ref%}
+
+/**
+ * Push notifications to {%foreignRecord.titleName%} subscribers
+ */
+private fun subscribeTo{%foreignRecord.titleName%}Updates(
+    workflowResourceModel: WorkflowResourceModel,
+    volumeState: VolumeState,
+    {%table.propertyName%}: {%schema.titleName%}{%table.titleName%},
+    artifactSink: FluxSink<Artifact>,
+): Mono<Void> {
+    return {%foreignTypeRecord.resourcePropertyName%}Delegator.subscribeToUpdates(
+        volumeState,
+        workflowResourceModel,
+        {%table.propertyName%}.uuid,
+        {%table.propertyName%}.{%foreignRecord.resourcePropertyName%},
+        artifactSink
+    )
+}
+{%_foreign_table_ref%}
+
+{%foreign_type_table_call%}
+{%foreignTypeRecord.foreignRecord:#foreign_table_call%}
+{%_foreign_type_table_call%}
+
+{%foreign_table_call%}
+.then(
+    subscribeTo{%foreignRecord.titleName%}Updates(
+        workflowResourceModel,
+        volumeState,
+        {%table.propertyName%},
+        artifactSink,
+    )
+)
+{%_foreign_table_call%}
+
+{%foreign_table_prop%}
+private val {%foreignTypeRecord.resourcePropertyName%}Delegator: Workflow{%foreignTypeRecord.titleName%}Delegator,
+
+{%_foreign_table_prop%}
+
+{%field_display%}
+"{%field.simplePropertyName%}" to item.{%field.jsonValue%},
+
+{%_field_display%}

@@ -1,0 +1,18 @@
+package {{packageDomain}}.core.types
+
+import com.arbr.og.object_model.common.model.view.ResourceKeyResolver
+import {{packageDomain}}.core.types.naming.NamedProperty
+import {{packageDomain}}.core.types.naming.NamedResource
+import {{packageDomain}}.core.types.naming.NamedResourceKey
+
+{{#schema}}
+object {{titleName}}ResourceKeyResolver: ResourceKeyResolver<{{titleName}}ResourceKey> {
+    override fun resolveKey(resourceKey: {{titleName}}ResourceKey): NamedResource<*, {{titleName}}ResourceKey, *, *> {
+        return when (resourceKey) {
+            {{#table}}
+            {{pSchemaTitleName}}ResourceKey.{{pSchemaConstantName}}__{{pTableConstantName}} -> {{pSchemaTitleName}}.{{titleName}}
+            {{/table}}
+        }
+    }
+}
+{{/schema}}

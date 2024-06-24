@@ -1,0 +1,2 @@
+schema: object_model.graphqls
+documents: '**/*.graphql*'

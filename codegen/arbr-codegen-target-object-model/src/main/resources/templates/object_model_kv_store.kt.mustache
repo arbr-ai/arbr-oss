@@ -1,0 +1,11 @@
+package {{packageDomain}}.core.types
+
+import {{packageDomain}}.core.types.naming.NamedProperty
+import {{packageDomain}}.core.types.naming.NamedResource
+import {{packageDomain}}.core.types.suites.EnumLike
+import com.arbr.platform.object_graph.store.KVStore
+import com.arbr.platform.object_graph.impl.ObjectModelResource
+
+{{#schema}}
+interface {{titleName}}ObjectKvStore: KVStore<String, ObjectModelResource<*, *, *>, ArbrForeignKey>
+{{/schema}}

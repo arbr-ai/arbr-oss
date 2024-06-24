@@ -1,0 +1,45 @@
+package com.arbr.og.object_model.common.values.collections
+
+import com.arbr.og.object_model.common.values.SourcedValue
+import com.fasterxml.jackson.annotation.JsonIgnore
+
+sealed class SourcedStruct: Iterable<SourcedValue<*>> {
+
+    override fun iterator(): Iterator<SourcedValue<*>> {
+        return values().iterator()
+    }
+
+    @JsonIgnore
+    fun values(): List<SourcedValue<*>> {
+        return when (this) {
+            {{#struct}}
+            is SourcedStruct{{size}}<{{#generic}}*{{^last}}, {{/last}}{{/generic}}> -> listOf({{#field}}t{{index}}{{^last}}, {{/last}}{{/field}})
+            {{/struct}}
+        }
+    }
+
+    @JsonIgnore
+    fun getSchemaId(): String {
+        return joinToString("-") { it.typeName }
+    }
+
+    companion object {
+        fun of(values: List<SourcedValue<*>>): SourcedStruct {
+            return when (values.size) {
+                {{#struct}}
+                {{size}} -> SourcedStruct{{size}}({{#field}}values[{{indexZero}}]{{^last}}, {{/last}}{{/field}})
+                {{/struct}}
+                else -> throw Exception("Unsupported number of values for SourcedStruct: ${values.size}")
+            }
+        }
+    }
+}
+
+{{#struct}}
+data class SourcedStruct{{size}}<{{#generic}}S{{index}}: SourcedValue<*>{{^last}}, {{/last}}{{/generic}}>(
+    {{#field}}
+    val t{{index}}: S{{index}},
+    {{/field}}
+): SourcedStruct()
+
+{{/struct}}

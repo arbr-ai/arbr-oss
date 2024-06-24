@@ -1,0 +1,31 @@
+package {{packageDomain}}.core.types
+
+import {{packageDomain}}.core.view.provider.*
+import {{packageDomain}}.core.resource.*
+import {{packageDomain}}.core.resource.provider.*
+import java.util.UUID
+
+class ResourceStreamProviders: ResourceStreamProviderFactory {
+
+    {{#schema}}
+    @Suppress("UNCHECKED_CAST")
+    override fun <
+        R : GeneralResource,
+        RS : ResourceStream<R>,
+    > resourceStreamProvider(
+        resource: R,
+    ): TypedResourceStreamProvider<R, RS> {
+        return when (resource) {
+            {{#table}}
+            {{pSchemaTitleName}}.{{titleName}} -> TypedResourceStreamProvider<R, RS> { uuid ->
+                {{pSchemaTitleName}}{{titleName}}StreamProvider().provideEmptyResource(
+                    uuid
+                ) as RS
+            }
+            {{/table}}
+            else -> throw IllegalStateException("Invalid resource $resource")
+        }
+    }
+    {{/schema}}
+
+}

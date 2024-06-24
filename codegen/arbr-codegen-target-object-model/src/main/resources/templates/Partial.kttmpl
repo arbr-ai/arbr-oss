@@ -1,0 +1,256 @@
+
+{%root%}
+@file:Suppress("UNUSED_VARIABLE")
+
+package {%root.packageDomain%}.core.partial
+
+import com.arbr.data_structures_common.immutable.ImmutableLinkedSet
+import com.arbr.platform.data_structures_common.immutable.ImmutableLinkedMap
+import com.arbr.data_structures_common.immutable.immutableLinkedMapOf
+import com.arbr.platform.object_graph.common.ObjectModel
+import com.arbr.og.object_model.impl.*
+import com.fasterxml.jackson.annotation.JsonIgnore
+import java.util.*
+import {%root.packageDomain%}.core.partial.PartialRoot
+import {%root.packageDomain%}.core.resource.*
+import {%root.packageDomain%}.core.resource.field.*
+{%root.schema:#schema%}
+{%_root%}
+
+{%schema%}
+{%schema.table:#table%}
+{%_schema%}
+
+{%table%}
+import {%root.packageDomain%}.core.types.{%schema.titleName%}
+import {%root.packageDomain%}.core.types.{%schema.titleName%}ForeignKey
+
+@Suppress("UNCHECKED_CAST")
+data class Partial{%table.titleName%}(
+    private val partialObjectGraph: PartialObjectGraph<*, *, {%schema.titleName%}ForeignKey>,
+    override val uuid: String,
+): Partial<
+    {%schema.titleName%}{%table.titleName%},
+    Partial{%table.titleName%},
+    {%schema.titleName%}ForeignKey,
+> {
+
+    init {
+        partialObjectGraph.didCreateNode(uuid, this)
+    }
+
+    {%table.simplePropertyField:#field_property_mut%}
+    {%table.outboundReferenceField:#foreign_single_ref_mut%}
+    {%table.foreignRecord:#foreign_table_ref_mut%}
+
+    override fun updateParentConditionally(
+        key: {%schema.titleName%}ForeignKey,
+        expectedUuid: String?,
+        newUuid: String?
+    ) {
+        {%table.anyOutboundReferenceField:#outbound_ref_update_parent_conditionally_fk_switch%}
+        throw IllegalArgumentException(key.name)
+    }
+
+    override fun <
+        U : ObjectModelResource<U, Q, {%schema.titleName%}ForeignKey>,
+        Q : Partial<U, Q, {%schema.titleName%}ForeignKey>,
+    > updateChildren(
+        key: {%schema.titleName%}ForeignKey,
+        updater: ChildCollectionUpdater<U, Q>
+    ) {
+        {%table.anyForeignRecord:#foreign_key_update_children%}
+        throw IllegalArgumentException(key.name)
+    }
+
+    class Properties(
+        {%table.simplePropertyField:#field_property%}
+    ): PartialProperties<Partial{%table.titleName%}> {
+        override val propertyMap: ImmutableLinkedMap<String, ObjectModel.ObjectValue<*, *, *, *>?>
+            get() = immutableLinkedMapOf<String, ObjectModel.ObjectValue<*, *, *, *>?>(
+                {%table.simplePropertyField:#field_json%}
+            )
+    }
+    override val properties: PartialProperties<Partial{%table.titleName%}> get() = Properties(
+        {%table.simplePropertyField:#newc_simple_property%})
+
+    class Parents(
+        {%table.outboundReferenceField:#foreign_single_ref%}
+    ): PartialParents<Partial{%table.titleName%}, {%schema.titleName%}ForeignKey> {
+        override val parentMap: Map<{%schema.titleName%}ForeignKey, PartialRef<*, *>>
+            get() = listOfNotNull<Pair<{%schema.titleName%}ForeignKey, PartialRef<*, *>>>(
+                {%table.outboundReferenceField:#parent_uuids%}
+            ).toMap()
+    }
+    override val parents: PartialParents<Partial{%table.titleName%}, {%schema.titleName%}ForeignKey> get() = Parents(
+        {%table.outboundReferenceField:#newc_foreign_single%})
+
+    class Children(
+        {%table.foreignRecord:#foreign_table_ref%}
+    ): PartialChildren<Partial{%table.titleName%}, {%schema.titleName%}ForeignKey> {
+        override val foreignKeyChildMap: Map<{%schema.titleName%}ForeignKey, ImmutableLinkedSet<String>>
+            get() = listOfNotNull<Pair<{%schema.titleName%}ForeignKey, ImmutableLinkedSet<String>>>(
+                {%table.foreignRecord:#foreign_children%}
+            ).toMap()
+    }
+    override val children: PartialChildren<Partial{%table.titleName%}, {%schema.titleName%}ForeignKey> get() = Children(
+        {%table.foreignRecord:#newc_foreign_many%})
+
+    override val resourceTypeName: String = "{%table.titleName%}"
+
+}
+
+{%_table%}
+
+{%field_json%}
+"{%simplePropertyField.resourcePropertyName%}" to {%simplePropertyField.jsonValue%},
+
+{%_field_json%}
+
+{%foreign_children%}
+{%foreignRecord.resourcePropertyName%}?.let { {%foreignRecord.schemaTitleName%}ForeignKey.{%foreignRecord.schemaConstantName%}__{%foreignRecord.tableConstantName%}__FK__{%foreignRecord.fieldConstantName%} to ImmutableLinkedSet(it.keys) },
+
+{%_foreign_children%}
+
+{%parent_uuids%}
+
+{%outboundReferenceField.resourcePropertyName%}?.let { {%schema.titleName%}ForeignKey.{%schema.constantName%}__{%table.constantName%}__FK__{%outboundReferenceField.constantName%} to it },
+{%_parent_uuids%}
+
+
+{%field_property_mut%}
+
+var {%simplePropertyField.resourcePropertyName%}: {%simplePropertyField.partialType%}? = null
+{%_field_property_mut%}
+
+{%foreign_single_ref_mut%}
+var {%outboundReferenceField.resourcePropertyName%}: PartialRef<out {%outboundReferenceField.schemaTitle%}{%outboundReferenceField.tableTitle%}, Partial{%outboundReferenceField.partialType%}>? = null
+    set(value) {
+        val oldValue = field
+        field = value
+        partialObjectGraph.didSetParent(
+            this,
+            {%schema.titleName%}ForeignKey.{%schema.constantName%}__{%table.constantName%}__FK__{%outboundReferenceField.constantName%},
+            oldValue?.uuid,
+            value?.uuid,
+        )
+    }
+
+{%_foreign_single_ref_mut%}
+
+{%foreign_table_ref_mut%}
+
+var {%foreignRecord.resourcePropertyName%}: ImmutableLinkedMap<String, {%foreignRecord.resourcePropertyPartialType%}>? = null
+    set(value) {
+        val oldValue = field
+        field = value
+        partialObjectGraph.didSetChildren(
+            this,
+            {%foreignRecord.schemaTitleName%}ForeignKey.{%foreignRecord.schemaConstantName%}__{%foreignRecord.tableConstantName%}__FK__{%foreignRecord.fieldConstantName%},
+            oldValue as? ImmutableLinkedMap<String, Partial<*, *, {%foreignRecord.schemaTitleName%}ForeignKey>>?,
+            value as? ImmutableLinkedMap<String, Partial<*, *, {%foreignRecord.schemaTitleName%}ForeignKey>>?,
+        )
+    }
+{%_foreign_table_ref_mut%}
+
+
+{%outbound_ref_update_parent_conditionally_fk_switch%}
+when (key) {
+    {%table.outboundReferenceField:#parent_update%}
+    else -> {
+        // Fall through
+    }
+}
+{%_outbound_ref_update_parent_conditionally_fk_switch%}
+
+{%parent_update%}
+{%schema.titleName%}ForeignKey.{%schema.constantName%}__{%table.constantName%}__FK__{%outboundReferenceField.constantName%} -> if ({%outboundReferenceField.resourcePropertyName%}?.uuid == expectedUuid) {
+    {%outboundReferenceField.resourcePropertyName%} = PartialRef(newUuid)
+    return
+}
+
+{%_parent_update%}
+
+{%foreign_key_update_children%}
+when (key) {
+    {%anyForeignRecord.foreignRecord:#children_update%}
+    else -> {
+        // Fall through
+    }
+}
+{%_foreign_key_update_children%}
+
+{%children_update%}
+{%foreignRecord.schemaTitleName%}ForeignKey.{%foreignRecord.schemaConstantName%}__{%foreignRecord.tableConstantName%}__FK__{%foreignRecord.fieldConstantName%} -> {
+    {%foreignRecord.resourcePropertyName%} =
+        (
+            updater as ChildCollectionUpdater<{%foreignRecord.resourcePropertyQualifiedType%}, {%foreignRecord.resourcePropertyPartialType%}>
+            ).update(
+            {%foreignRecord.resourcePropertyName%}
+        )
+    return
+}
+
+{%_children_update%}
+
+
+
+{%field_property%}
+
+val {%simplePropertyField.resourcePropertyName%}: {%simplePropertyField.partialType%}? = null,
+{%_field_property%}
+
+{%foreign_single_ref%}
+val {%outboundReferenceField.resourcePropertyName%}: PartialRef<out {%outboundReferenceField.schemaTitle%}{%outboundReferenceField.tableTitle%}, Partial{%outboundReferenceField.partialType%}>? = null,
+
+{%_foreign_single_ref%}
+
+{%foreign_table_ref%}
+
+val {%foreignRecord.resourcePropertyName%}: ImmutableLinkedMap<String, {%foreignRecord.resourcePropertyPartialType%}>? = null,
+{%_foreign_table_ref%}
+
+{%field_into_model%}
+
+{%field.partialIntoModelValue%},
+{%_field_into_model%}
+
+{%foreign_field_into_model%}
+
+null,
+{%_foreign_field_into_model%}
+
+
+companion new() method args
+{%new_simple_property%}
+
+{%simplePropertyField.resourcePropertyName%}: {%simplePropertyField.partialType%}? = null,
+{%_new_simple_property%}
+
+{%new_foreign_single%}
+
+{%outboundReferenceField.resourcePropertyName%}: PartialRef<out {%outboundReferenceField.schemaTitle%}{%outboundReferenceField.tableTitle%}, Partial{%outboundReferenceField.partialType%}>? = null,
+{%_new_foreign_single%}
+
+{%new_foreign_many%}
+
+{%foreignRecord.resourcePropertyName%}: ImmutableLinkedMap<String, PartialNode<{%foreignRecord.resourcePropertyPartialType%}>>? = null,
+{%_new_foreign_many%}
+
+
+companion new() method constructor invocation
+{%newc_simple_property%}
+{%simplePropertyField.resourcePropertyName%},
+
+{%_newc_simple_property%}
+
+{%newc_foreign_single%}
+{%outboundReferenceField.resourcePropertyName%},
+
+{%_newc_foreign_single%}
+
+{%newc_foreign_many%}
+{%foreignRecord.resourcePropertyName%},
+
+{%_newc_foreign_many%}
+

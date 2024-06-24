@@ -1,0 +1,36 @@
+import React, { useEffect, useState } from 'react';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import Link from 'next/link';
+
+const Careers = () => {
+  const [jobListings, setJobListings] = useState([]);
+
+  useEffect(() => {
+    const jobFiles = fs.readdirSync(path.join(process.cwd(), 'careers')).filter(file => file.endsWith('.md'));
+    const jobs = jobFiles.map((file) => {
+      const markdownWithMetadata = fs.readFileSync(path.join(process.cwd(), 'careers', file)).toString();
+      const { data } = matter(markdownWithMetadata);
+      return data;
+    });
+    setJobListings(jobs);
+  }, []);
+
+  return (
+    <div>
+      <h1>Careers</h1>
+      {jobListings.map((job, index) => (
+        <div key={index}>
+          <h2>{job.title}</h2>
+          <p>{job.location}</p>
+          <Link href={`/careers/${job.slug}`}>
+            <a>Read More</a>
+          </Link>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Careers;
