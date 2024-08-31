@@ -18,6 +18,6 @@ abstract class ArbrObjectStringField @Inject constructor(
     }
 
     companion object {
-        const val DEFAULT_CODEC_CLASS = "com.arbr.og.encoder.ObjectStringFieldCodec"
+        const val DEFAULT_CODEC_CLASS = "com.arbr.platform.object_graph.encoder.ObjectStringFieldCodec"
     }
 }

@@ -1,10 +1,10 @@
-package com.arbr.og.object_model.common.functions.platform
+package com.arbr.platform.object_graph.common.functions.platform
 
-import com.arbr.object_model.core.types.ResourceView
+import com.arbr.platform.object_graph.types.ResourceView
 import com.arbr.platform.object_graph.common.ObjectModel
-import com.arbr.og.object_model.common.functions.spec.base.RFunctionConfigurable
-import com.arbr.og.object_model.common.properties.NonNullRequirementsProvider
-import com.arbr.og.object_model.common.values.SourcedValue
+import com.arbr.platform.object_graph.common.functions.spec.base.RFunctionConfigurable
+import com.arbr.platform.object_graph.common.properties.NonNullRequirementsProvider
+import com.arbr.platform.object_graph.common.values.SourcedValue
 
 abstract class ResourceFunctionContext {
     abstract val resourceViewInstantiators: ResourceViewInstantiators

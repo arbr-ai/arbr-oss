@@ -2,8 +2,8 @@ package com.arbr.content_formats.format
 
 import com.arbr.content_formats.format.tokenizer.TokenFormatter
 import com.arbr.content_formats.format.tokenizer.TokenizationSerializer
-import com.arbr.data_structures_common.partial_order.PartialOrder
-import com.arbr.data_structures_common.partial_order.PartialOrderFlatteningScheme
+import com.arbr.platform.data_structures_common.partial_order.PartialOrder
+import com.arbr.platform.data_structures_common.partial_order.PartialOrderFlatteningScheme
 
 class DiffLiteralSourceDocumentSerializer :
     TokenizationSerializer<DiffLiteralSourceDocument, DiffOperation> {

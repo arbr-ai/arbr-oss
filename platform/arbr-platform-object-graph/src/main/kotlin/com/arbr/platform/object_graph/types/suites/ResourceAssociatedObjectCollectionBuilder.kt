@@ -1,4 +1,4 @@
-package com.arbr.object_model.core.types.suites
+package com.arbr.platform.object_graph.types.suites
 
 interface ResourceAssociatedObjectCollectionBuilder<E : EnumLike, T: Any> {
 

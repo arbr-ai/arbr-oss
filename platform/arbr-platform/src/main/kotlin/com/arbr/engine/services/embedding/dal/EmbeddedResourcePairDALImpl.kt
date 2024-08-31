@@ -15,8 +15,8 @@ import com.arbr.relational_prompting.services.embedding.model.TemplateElementLit
 import com.arbr.relational_prompting.services.embedding.model.VectorResourceKeyValuePair
 import com.arbr.db.public.tables.pojos.EmbeddedResourcePair
 import com.arbr.db.public.tables.records.IndexedResourceRecord
-import com.arbr.og.object_model.common.values.SourcedValue
-import com.arbr.og.object_model.common.values.collections.SourcedStruct
+import com.arbr.platform.object_graph.common.values.SourcedValue
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import reactor.core.publisher.Flux

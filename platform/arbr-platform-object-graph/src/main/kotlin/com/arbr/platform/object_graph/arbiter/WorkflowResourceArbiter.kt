@@ -1,7 +1,7 @@
 package com.arbr.platform.object_graph.arbiter
 
-import com.arbr.og.object_model.common.model.Proposal
-import com.arbr.og.object_model.common.model.ProposedValueWriteStream
+import com.arbr.platform.object_graph.common.model.Proposal
+import com.arbr.platform.object_graph.common.model.ProposedValueWriteStream
 import com.arbr.platform.object_graph.core.WorkflowResourceModel
 import com.arbr.platform.object_graph.core.WorkflowSingleResourceProcessor
 import com.arbr.platform.object_graph.impl.ObjectModelResource
@@ -15,7 +15,7 @@ import java.util.*
 abstract class WorkflowResourceArbiter<T : ObjectModelResource<T, *, *>> {
 
     private val logger =
-        LoggerFactory.getLogger("com.arbr.og_engine.arbiter.WorkflowResourceArbiter")
+        LoggerFactory.getLogger("com.arbr.platform.object_graph.arbiter.WorkflowResourceArbiter")
 
     protected fun <V : Any> updateProposal(
         parentSingleResourceProcessor: WorkflowSingleResourceProcessor<*, *, *>,

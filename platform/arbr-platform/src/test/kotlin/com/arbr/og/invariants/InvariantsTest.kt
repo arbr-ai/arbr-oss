@@ -1,4 +1,4 @@
-package com.arbr.og.invariants
+package com.arbr.platform.object_graph.invariants
 
 import com.arbr.util_common.invariants.InvariantViolatedException
 import com.arbr.util_common.invariants.Invariants

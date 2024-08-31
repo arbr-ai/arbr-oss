@@ -1,14 +1,14 @@
-package com.arbr.og.object_model.common.functions.spec.base
+package com.arbr.platform.object_graph.common.functions.spec.base
 
-import com.arbr.object_model.core.types.ResourceView
-import com.arbr.object_model.core.types.naming.NamedPropertyKey
-import com.arbr.object_model.core.types.naming.NamedResourceKey
-import com.arbr.og.object_model.common.functions.platform.ResourceFunctionContext
-import com.arbr.og.object_model.common.model.CompoundPropertyIdentifier
-import com.arbr.og.object_model.common.model.PropertyIdentifierBase
-import com.arbr.og.object_model.common.model.PropertyKeyRelationship
-import com.arbr.og.object_model.common.properties.ConcreteFieldValueViewContainer
-import com.arbr.og.object_model.common.properties.FieldValueViewContainer
+import com.arbr.platform.object_graph.types.ResourceView
+import com.arbr.platform.object_graph.types.naming.NamedPropertyKey
+import com.arbr.platform.object_graph.types.naming.NamedResourceKey
+import com.arbr.platform.object_graph.common.functions.platform.ResourceFunctionContext
+import com.arbr.platform.object_graph.common.model.CompoundPropertyIdentifier
+import com.arbr.platform.object_graph.common.model.PropertyIdentifierBase
+import com.arbr.platform.object_graph.common.model.PropertyKeyRelationship
+import com.arbr.platform.object_graph.common.properties.ConcreteFieldValueViewContainer
+import com.arbr.platform.object_graph.common.properties.FieldValueViewContainer
 import java.util.*
 
 abstract class BaseRFunctionSpecifier<RV : ResourceView<*>>(

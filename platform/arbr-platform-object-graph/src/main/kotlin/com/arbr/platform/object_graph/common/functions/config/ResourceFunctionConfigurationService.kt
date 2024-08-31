@@ -1,10 +1,10 @@
-package com.arbr.og.object_model.common.functions.config
+package com.arbr.platform.object_graph.common.functions.config
 
-import com.arbr.object_model.core.types.ResourceStreamProviderFactory
-import com.arbr.object_model.core.types.ResourceViewProviderFactory
-import com.arbr.og.object_model.common.functions.api.ResourceFunction
-import com.arbr.og.object_model.common.functions.spec.base.ResourceViewInstantiatorsFactory
-import com.arbr.og.object_model.common.functions.spec.impl.ResourceFunctionConfig
+import com.arbr.platform.object_graph.types.ResourceStreamProviderFactory
+import com.arbr.platform.object_graph.types.ResourceViewProviderFactory
+import com.arbr.platform.object_graph.common.functions.api.ResourceFunction
+import com.arbr.platform.object_graph.common.functions.spec.base.ResourceViewInstantiatorsFactory
+import com.arbr.platform.object_graph.common.functions.spec.impl.ResourceFunctionConfig
 
 interface ResourceFunctionConfigurationService {
 

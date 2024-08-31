@@ -4,14 +4,14 @@ package {%root.packageDomain%}.engine.parser
 import {%root.packageDomain%}.core.partial.*
 import {%root.packageDomain%}.core.resource.*
 import {%root.packageDomain%}.core.resource.field.*
-import com.arbr.og.alignable.PartialNodeAlignableValue
-import com.arbr.og.alignable.PartialRefAlignable
+import com.arbr.platform.object_graph.alignable.PartialNodeAlignableValue
+import com.arbr.platform.object_graph.alignable.PartialRefAlignable
 import com.arbr.platform.object_graph.common.ObjectModelResourceParser
 import com.arbr.platform.object_graph.impl.ObjectModelResource
 import com.arbr.platform.object_graph.impl.ObjectRef
 import {%root.packageDomain%}.core.partial.PartialRoot
 import {%root.packageDomain%}.core.resource.ArbrRoot
-import {%root.packageDomain%}.core.types.ResourceStreamParser
+import {%root.packageDomain%}.types.ResourceStreamParser
 import org.springframework.stereotype.Component
 {%root.schema:#schemai%}
 
@@ -19,8 +19,8 @@ import org.springframework.stereotype.Component
 {%_root%}
 
 {%schemai%}
-import {%root.packageDomain%}.core.types.{%schema.titleName%}
-import {%root.packageDomain%}.core.types.{%schema.titleName%}ForeignKey
+import {%root.packageDomain%}.types.{%schema.titleName%}
+import {%root.packageDomain%}.types.{%schema.titleName%}ForeignKey
 {%schema.table:#tablei%}
 {%_schemai%}
 

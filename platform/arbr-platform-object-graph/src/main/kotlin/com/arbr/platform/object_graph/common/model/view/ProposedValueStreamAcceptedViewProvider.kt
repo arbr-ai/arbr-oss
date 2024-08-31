@@ -1,10 +1,10 @@
-package com.arbr.og.object_model.common.model.view
+package com.arbr.platform.object_graph.common.model.view
 
-import com.arbr.object_model.core.types.ResourceViewProviderFactory
-import com.arbr.object_model.core.types.TypedResourceViewProvider
-import com.arbr.object_model.core.types.naming.NamedResourceKey
-import com.arbr.object_model.core.types.suites.ResourceAssociatedObjectCollectionBuilder
-import com.arbr.og.object_model.common.requirements.RequirementsProvider
+import com.arbr.platform.object_graph.types.ResourceViewProviderFactory
+import com.arbr.platform.object_graph.types.TypedResourceViewProvider
+import com.arbr.platform.object_graph.types.naming.NamedResourceKey
+import com.arbr.platform.object_graph.types.suites.ResourceAssociatedObjectCollectionBuilder
+import com.arbr.platform.object_graph.common.requirements.RequirementsProvider
 
 class ProposedValueStreamAcceptedViewProvider<RK : NamedResourceKey>(
     requirementsProvider: RequirementsProvider,

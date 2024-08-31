@@ -1,6 +1,6 @@
 package com.arbr.platform.autoconfigure.process
 
-import com.arbr.engine.services.workflow.state.WorkflowCancellationService
+import com.arbr.platform.object_graph.generics.WorkflowCancellationService
 import org.slf4j.LoggerFactory
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean

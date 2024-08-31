@@ -1,4 +1,4 @@
-package com.arbr.og.object_model.common.model.collections
+package com.arbr.platform.object_graph.common.model.collections
 
 import com.arbr.content_formats.json_schematized.JsonSchema
 import com.arbr.platform.ml.linear.typed.base.GroundField
@@ -8,9 +8,9 @@ import com.arbr.platform.ml.linear.typed.shape.Shape
 import com.arbr.platform.ml.linear.typed.tensor.base.Tensor
 import com.arbr.platform.object_graph.common.ObjectListTensorFactory
 import com.arbr.platform.object_graph.common.ObjectModel
-import com.arbr.og.object_model.common.values.SourcedValueGeneratorInfo
-import com.arbr.og.object_model.common.values.SourcedValueKind
-import com.arbr.og.object_model.common.values.collections.SourcedStruct1
+import com.arbr.platform.object_graph.common.values.SourcedValueGeneratorInfo
+import com.arbr.platform.object_graph.common.values.SourcedValueKind
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct1
 import com.arbr.platform.object_graph.util.JsonSchemaUtils
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonInclude

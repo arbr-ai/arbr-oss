@@ -1,9 +1,9 @@
-package com.arbr.object_model.core.types.naming
+package com.arbr.platform.object_graph.types.naming
 
-import com.arbr.og.object_model.common.model.AttachedPropertyIdentifierBase
-import com.arbr.og.object_model.common.model.PropertyDetachedIdentifierBase
-import com.arbr.og.object_model.common.model.PropertyIdentifier
-import com.arbr.og.object_model.common.model.PropertyKeyRelationship
+import com.arbr.platform.object_graph.common.model.AttachedPropertyIdentifierBase
+import com.arbr.platform.object_graph.common.model.PropertyDetachedIdentifierBase
+import com.arbr.platform.object_graph.common.model.PropertyIdentifier
+import com.arbr.platform.object_graph.common.model.PropertyKeyRelationship
 
 @Suppress("MemberVisibilityCanBePrivate")
 abstract class NamedProperty<

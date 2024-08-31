@@ -3,9 +3,9 @@ package com.arbr.relational_prompting.services.ai_application.application
 import com.arbr.content_formats.mapper.Mappers
 import com.arbr.content_formats.tokens.TokenizationUtils
 import com.arbr.db.public.tables.pojos.EmbeddedResourcePair
-import com.arbr.og.object_model.common.values.SourcedValueGeneratorInboundEdge
-import com.arbr.og.object_model.common.values.SourcedValueGeneratorInfo
-import com.arbr.og.object_model.common.values.collections.SourcedStruct
+import com.arbr.platform.object_graph.common.values.SourcedValueGeneratorInboundEdge
+import com.arbr.platform.object_graph.common.values.SourcedValueGeneratorInfo
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct
 import com.arbr.engine.services.completions.base.ChatCompletionProvider
 import com.arbr.relational_prompting.generics.application_cache.ApplicationCompletionCache
 import com.arbr.relational_prompting.generics.examples.ApplicationExampleProvider

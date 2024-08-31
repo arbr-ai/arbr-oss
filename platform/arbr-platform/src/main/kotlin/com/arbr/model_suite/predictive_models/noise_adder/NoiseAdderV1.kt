@@ -1,10 +1,10 @@
 package com.arbr.model_suite.predictive_models.noise_adder
 
 import com.arbr.content_formats.format.*
-import com.arbr.data_structures_common.partial_order.LinearOrderList
-import com.arbr.data_structures_common.partial_order.PartialOrderFlatteningScheme
+import com.arbr.platform.data_structures_common.partial_order.LinearOrderList
+import com.arbr.platform.data_structures_common.partial_order.PartialOrderFlatteningScheme
 import com.arbr.model_suite.predictive_models.document_diff_alignment.DocumentDiffAlignmentHelperImpl
-import com.arbr.ml.optimization.base.ParameterValueProvider
+import com.arbr.platform.ml.optimization.base.ParameterValueProvider
 import org.slf4j.LoggerFactory
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono

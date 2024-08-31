@@ -1,4 +1,4 @@
-package com.arbr.og_engine.artifact
+package com.arbr.platform.object_graph.artifact
 
 /**
  * Representation of an output of the build process. For example a Pull Request.

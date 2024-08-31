@@ -1,6 +1,6 @@
 package com.arbr.platform.object_graph.impl
 
-import com.arbr.object_model.core.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
 import reactor.core.publisher.Mono
 
 interface MutableParentKeyedObject<ForeignKey: NamedForeignKey> {

@@ -3,10 +3,10 @@ package com.arbr.platform.autoconfigure.process
 import com.arbr.engine.services.user.WorkflowResourceRepository
 import com.arbr.engine.services.user.WorkflowStatusRepository
 import com.arbr.engine.services.workflow.model.WorkflowState
-import com.arbr.og_engine.artifact.processor.base.CombinedArtifactProcessor
-import com.arbr.og_engine.artifact.processor.base.DomainArtifactProcessor
-import com.arbr.og_engine.artifact.processor.base.WorkflowStateArtifactProcessorFactory
-import com.arbr.og_engine.artifact.processor.impl.*
+import com.arbr.platform.object_graph.artifact.processor.base.CombinedArtifactProcessor
+import com.arbr.platform.object_graph.artifact.processor.base.DomainArtifactProcessor
+import com.arbr.platform.object_graph.artifact.processor.base.WorkflowStateArtifactProcessorFactory
+import com.arbr.platform.object_graph.artifact.processor.impl.*
 import org.springframework.boot.autoconfigure.AutoConfiguration
 import org.springframework.boot.autoconfigure.AutoConfigureAfter
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean

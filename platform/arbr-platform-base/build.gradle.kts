@@ -45,6 +45,9 @@ val jooqVersion = project.properties["jooqVersion"] ?: "3.18.5"
 dependencies {
     antlr("org.antlr:antlr4:4.13.1")
 
+    implementation("com.arbr:arbr-platform-alignable:1.0")
+    implementation("com.arbr:arbr-platform-object-graph:1.0")
+
     // Logback + SLF4J
     compileOnly("ch.qos.logback:logback-classic:1.4.14")
     compileOnly("ch.qos.logback:logback-core:1.4.14")
@@ -84,6 +87,9 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
     implementation("com.google.code.gson:gson:2.10.1")
+
+    // https://mvnrepository.com/artifact/software.amazon.awssdk/s3
+    implementation("software.amazon.awssdk:s3:2.27.15")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     testImplementation("io.projectreactor:reactor-test:3.6.4")

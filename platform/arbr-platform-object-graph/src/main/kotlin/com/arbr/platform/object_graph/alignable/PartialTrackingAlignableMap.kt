@@ -1,6 +1,6 @@
 package com.arbr.platform.object_graph.alignable
 
-import com.arbr.object_model.core.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
 import com.arbr.platform.alignable.alignable.AlignableProxy
 import com.arbr.platform.alignable.alignable.collections.MapAlignmentOperation
 import com.arbr.platform.data_structures_common.immutable.ImmutableLinkedMap

@@ -3,10 +3,10 @@ package com.arbr.core_web_dev.service.segmenter
 import com.arbr.engine.util.immutableLinkedMapOfPartials
 import com.arbr.model_suite.predictive_models.linear_tree_indent.SegmentIndexReprTree
 import com.arbr.model_suite.predictive_models.linear_tree_indent.SegmenterService
-import com.arbr.object_model.core.partial.PartialFileSegment
-import com.arbr.object_model.core.resource.ArbrFileSegment
-import com.arbr.object_model.core.resource.field.*
-import com.arbr.object_model.core.types.ArbrForeignKey
+import com.arbr.platform.object_graph.core.partial.PartialFileSegment
+import com.arbr.platform.object_graph.core.resource.ArbrFileSegment
+import com.arbr.platform.object_graph.core.resource.field.*
+import com.arbr.platform.object_graph.types.ArbrForeignKey
 import com.arbr.platform.object_graph.impl.PartialObjectGraph
 import com.arbr.platform.object_graph.impl.PartialRef
 import com.arbr.platform.alignable.alignable.graph.HomogenousRootedListDAG

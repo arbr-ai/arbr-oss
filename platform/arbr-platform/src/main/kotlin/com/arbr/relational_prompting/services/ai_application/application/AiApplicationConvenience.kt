@@ -1,7 +1,7 @@
 package com.arbr.relational_prompting.services.ai_application.application
 
-import com.arbr.og.object_model.common.values.SourcedValue
-import com.arbr.og.object_model.common.values.collections.*
+import com.arbr.platform.object_graph.common.values.SourcedValue
+import com.arbr.platform.object_graph.common.values.collections.*
 import reactor.core.publisher.FluxSink
 import reactor.core.publisher.Mono
 

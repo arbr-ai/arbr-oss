@@ -1,6 +1,6 @@
 package com.arbr.platform.object_graph.core
 
-import com.arbr.object_model.core.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
 import com.arbr.platform.object_graph.common.ObjectModelResourceParser
 import com.arbr.platform.object_graph.alignable.PartialNodeAlignableValue
 import com.arbr.platform.object_graph.impl.ObjectModelResource

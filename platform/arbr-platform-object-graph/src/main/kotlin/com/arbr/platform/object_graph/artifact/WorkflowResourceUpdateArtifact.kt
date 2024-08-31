@@ -1,6 +1,4 @@
-package com.arbr.og_engine.artifact
-
-import com.arbr.platform.object_graph.artifact.WorkflowResourceType
+package com.arbr.platform.object_graph.artifact
 
 /**
  * An update on the properties an individual resource

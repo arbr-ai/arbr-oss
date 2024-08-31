@@ -2,7 +2,7 @@ package com.arbr.alignable.alignable.v2.dag//package com.arbr.alignable.alignabl
 //
 //import com.arbr.platform.alignable.alignable.alignment.Alignment
 //import com.arbr.platform.alignable.alignable.collections.SequenceAlignmentOperation
-//import com.arbr.data_structures_common.partial_order.*
+//import com.arbr.platform.data_structures_common.partial_order.*
 //import org.junit.jupiter.api.Test
 //import java.util.*
 //import kotlin.math.max

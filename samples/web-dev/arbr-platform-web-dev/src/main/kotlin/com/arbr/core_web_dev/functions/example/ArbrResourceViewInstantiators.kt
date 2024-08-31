@@ -1,11 +1,11 @@
 package com.arbr.core_web_dev.functions.example
 
-import com.arbr.object_model.core.types.*
-import com.arbr.object_model.core.view.*
-import com.arbr.og.object_model.common.functions.platform.ResourceViewDomainInstantiators
-import com.arbr.og.object_model.common.functions.platform.ResourceViewInstantiator
-import com.arbr.og.object_model.common.functions.platform.ResourceViewInstantiators
-import com.arbr.og.object_model.common.model.view.ProposedValueStreamViewProvider
+import com.arbr.platform.object_graph.types.*
+import com.arbr.platform.object_graph.core.view.*
+import com.arbr.platform.object_graph.common.functions.platform.ResourceViewDomainInstantiators
+import com.arbr.platform.object_graph.common.functions.platform.ResourceViewInstantiator
+import com.arbr.platform.object_graph.common.functions.platform.ResourceViewInstantiators
+import com.arbr.platform.object_graph.common.model.view.ProposedValueStreamViewProvider
 import java.util.*
 
 class ArbrResourceViewInstantiators(

@@ -5,9 +5,9 @@ import com.arbr.api.workflow.input.WorkflowInputModel
 import com.arbr.engine.services.workflow.input.WorkflowInputDetailsProvider
 import com.arbr.engine.services.workflow.input.WorkflowInputTransformer
 import com.arbr.engine.services.workflow.setup.WorkflowSetterUpper
-import com.arbr.og_engine.artifact.Artifact
-import com.arbr.og_engine.core.WorkflowResourceModel
-import com.arbr.og_engine.file_system.VolumeState
+import com.arbr.platform.object_graph.artifact.Artifact
+import com.arbr.platform.object_graph.core.WorkflowResourceModel
+import com.arbr.platform.object_graph.file_system.VolumeState
 import com.fasterxml.jackson.databind.ObjectMapper
 import reactor.core.publisher.FluxSink
 import reactor.core.publisher.Mono

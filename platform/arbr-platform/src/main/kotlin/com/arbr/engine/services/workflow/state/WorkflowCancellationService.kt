@@ -1,5 +1,6 @@
 package com.arbr.engine.services.workflow.state
 
+import com.arbr.platform.object_graph.impl.ObjectModelResource
 import reactor.core.publisher.Mono
 
 /**

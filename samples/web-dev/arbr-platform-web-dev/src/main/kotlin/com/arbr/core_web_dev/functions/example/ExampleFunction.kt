@@ -1,10 +1,10 @@
 package com.arbr.core_web_dev.functions.example
 
 import com.arbr.core_web_dev.functions.into
-import com.arbr.object_model.core.resource.ArbrTask
-import com.arbr.object_model.core.view.ArbrFileView
-import com.arbr.object_model.core.view.ArbrTaskView
-import com.arbr.og.object_model.common.functions.api.ResourceFunction
+import com.arbr.platform.object_graph.core.resource.ArbrTask
+import com.arbr.platform.object_graph.core.view.ArbrFileView
+import com.arbr.platform.object_graph.core.view.ArbrTaskView
+import com.arbr.platform.object_graph.common.functions.api.ResourceFunction
 
 object ExampleFunction : ResourceFunction({
     val fileTarget by actingOnResource(ArbrFileView::class.java) {

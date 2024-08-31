@@ -1,7 +1,8 @@
-package com.arbr.og.object_model.common.model
+package com.arbr.platform.object_graph.common.model
 
-import com.arbr.object_model.core.types.naming.NamedPropertyKey
-import com.arbr.object_model.core.types.naming.NamedResourceKey
+import com.arbr.platform.object_graph.common.model.PropertyKeyRelationship
+import com.arbr.platform.object_graph.types.naming.NamedPropertyKey
+import com.arbr.platform.object_graph.types.naming.NamedResourceKey
 
 /**
  * Property "slot" identifier, independent of the particular resource

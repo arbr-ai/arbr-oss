@@ -1,8 +1,8 @@
-package com.arbr.og.object_model.common.properties
+package com.arbr.platform.object_graph.common.properties
 
-import com.arbr.object_model.core.types.ResourceStreamProviderFactory
-import com.arbr.object_model.core.types.ResourceViewProviderFactory
-import com.arbr.og.object_model.common.model.PropertyIdentifier
+import com.arbr.platform.object_graph.types.ResourceStreamProviderFactory
+import com.arbr.platform.object_graph.types.ResourceViewProviderFactory
+import com.arbr.platform.object_graph.common.model.PropertyIdentifier
 import java.util.concurrent.ConcurrentHashMap
 
 class DefaultMapReadWriteDependencyTracingProvider private constructor(

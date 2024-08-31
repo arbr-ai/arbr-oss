@@ -1,6 +1,6 @@
-package com.arbr.og.object_model.common.model
+package com.arbr.platform.object_graph.common.model
 
-import com.arbr.object_model.core.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
 import com.arbr.platform.object_graph.impl.ObjectModelResource
 import com.arbr.platform.object_graph.impl.ObjectRef
 import reactor.core.publisher.Flux

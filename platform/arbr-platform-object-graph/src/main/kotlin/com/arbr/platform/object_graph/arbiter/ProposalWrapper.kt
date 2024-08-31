@@ -1,9 +1,9 @@
 package com.arbr.platform.object_graph.arbiter
 
 import com.arbr.platform.object_graph.common.ObjectModel
-import com.arbr.og.object_model.common.model.PropertyIdentifier
-import com.arbr.og.object_model.common.model.Proposal
-import com.arbr.og.object_model.common.model.ProposedValue
+import com.arbr.platform.object_graph.common.model.PropertyIdentifier
+import com.arbr.platform.object_graph.common.model.Proposal
+import com.arbr.platform.object_graph.common.model.ProposedValue
 import com.arbr.platform.object_graph.impl.ObjectModelResource
 import com.arbr.platform.object_graph.core.WorkflowSingleResourceProcessor
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper

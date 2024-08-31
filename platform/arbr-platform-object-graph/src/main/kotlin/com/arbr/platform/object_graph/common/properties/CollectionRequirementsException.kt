@@ -1,3 +1,3 @@
-package com.arbr.og.object_model.common.properties
+package com.arbr.platform.object_graph.common.properties
 
 class CollectionRequirementsException: Exception("Collection violated size requirements")

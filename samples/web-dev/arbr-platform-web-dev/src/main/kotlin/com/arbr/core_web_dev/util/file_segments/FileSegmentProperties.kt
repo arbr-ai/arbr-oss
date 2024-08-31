@@ -1,6 +1,6 @@
 package com.arbr.core_web_dev.util.file_segments
 
-import com.arbr.object_model.core.resource.field.*
+import com.arbr.platform.object_graph.core.resource.field.*
 
 /**
  * Breakup of a file segment partial into components to divorce nodes from children

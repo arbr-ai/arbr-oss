@@ -1,6 +1,6 @@
-package com.arbr.og.util
+package com.arbr.platform.object_graph.util
 
-import com.arbr.og.object_model.common.model.ProposedValueWriteStream
+import com.arbr.platform.object_graph.common.model.ProposedValueWriteStream
 import reactor.core.publisher.Mono
 
 fun <S: Any> ProposedValueWriteStream<S>.set(s: S) {

@@ -1,4 +1,4 @@
-package com.arbr.ml.search
+package com.arbr.platform.ml.search
 
 interface AStarGraph<T> {
     val start: T

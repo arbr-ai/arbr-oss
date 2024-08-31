@@ -1,7 +1,7 @@
 package com.arbr.engine.services.workflow.input
 
 import com.arbr.api.workflow.input.WorkflowInputModel
-import com.arbr.og_engine.artifact.Artifact
+import com.arbr.platform.object_graph.artifact.Artifact
 import reactor.core.publisher.FluxSink
 import reactor.core.publisher.Mono
 

@@ -1,7 +1,7 @@
 package com.arbr.platform.object_graph.store
 
-import com.arbr.object_model.core.types.naming.NamedForeignKey
-import com.arbr.og.object_model.common.model.ProposedForeignKeyFluxDelegator
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.common.model.ProposedForeignKeyFluxDelegator
 import com.arbr.platform.object_graph.common.ForeignKeyChildSingleParentUpdate
 import com.arbr.platform.object_graph.impl.ObjectModelResource
 import reactor.core.publisher.Flux

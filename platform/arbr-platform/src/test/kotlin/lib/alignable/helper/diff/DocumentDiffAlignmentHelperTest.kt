@@ -5,9 +5,9 @@ package com.arbr.alignable.helper.diff
 //import com.fasterxml.jackson.databind.annotation.JsonNaming
 //import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 //import com.arbr.platform.alignable.alignable.diff.DiffOperationKind
-//import com.arbr.data_structures_common.partial_order.PartialOrderAlignmentKind
+//import com.arbr.platform.data_structures_common.partial_order.PartialOrderAlignmentKind
 //import com.arbr.platform.alignable.alignable.struct.Struct3
-//import com.arbr.alignable.util.GitUtils
+//import com.arbr.platform.alignable.util.GitUtils
 //import com.arbr.model_trainer.model.GitHub
 //import org.apache.commons.io.IOUtils
 //import org.junit.jupiter.api.Test

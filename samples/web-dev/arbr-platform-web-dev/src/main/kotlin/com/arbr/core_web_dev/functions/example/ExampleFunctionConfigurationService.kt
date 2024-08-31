@@ -1,14 +1,14 @@
 package com.arbr.core_web_dev.functions.example
 
-import com.arbr.object_model.core.types.*
+import com.arbr.platform.object_graph.types.*
 import com.arbr.object_model.functions.core.ExampleCommitCompletionFunction
-import com.arbr.og.object_model.common.functions.api.ResourceFunction
-import com.arbr.og.object_model.common.functions.config.ResourceFunctionConfigurationService
-import com.arbr.og.object_model.common.functions.platform.ResourceViewDomainInstantiators
-import com.arbr.og.object_model.common.functions.platform.ResourceViewInstantiators
-import com.arbr.og.object_model.common.functions.spec.base.ResourceViewDomainInstantiatorsFactory
-import com.arbr.og.object_model.common.functions.spec.base.ResourceViewInstantiatorsFactory
-import com.arbr.og.object_model.common.model.view.ProposedValueStreamViewProvider
+import com.arbr.platform.object_graph.common.functions.api.ResourceFunction
+import com.arbr.platform.object_graph.common.functions.config.ResourceFunctionConfigurationService
+import com.arbr.platform.object_graph.common.functions.platform.ResourceViewDomainInstantiators
+import com.arbr.platform.object_graph.common.functions.platform.ResourceViewInstantiators
+import com.arbr.platform.object_graph.common.functions.spec.base.ResourceViewDomainInstantiatorsFactory
+import com.arbr.platform.object_graph.common.functions.spec.base.ResourceViewInstantiatorsFactory
+import com.arbr.platform.object_graph.common.model.view.ProposedValueStreamViewProvider
 
 class ExampleFunctionConfigurationService : ResourceFunctionConfigurationService {
     override fun getResourceFunctions(): List<ResourceFunction> {

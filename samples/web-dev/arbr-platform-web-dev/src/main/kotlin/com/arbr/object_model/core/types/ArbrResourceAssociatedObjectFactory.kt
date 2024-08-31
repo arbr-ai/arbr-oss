@@ -1,7 +1,7 @@
-package com.arbr.object_model.core.types
+package com.arbr.platform.object_graph.types
 
-import com.arbr.object_model.core.types.suites.ResourceAssociatedObjectCollection
-import com.arbr.object_model.core.types.suites.ResourceAssociatedObjectCollectionBuilder
+import com.arbr.platform.object_graph.types.suites.ResourceAssociatedObjectCollection
+import com.arbr.platform.object_graph.types.suites.ResourceAssociatedObjectCollectionBuilder
 
 class ArbrResourceAssociatedObjectFactory {
 

@@ -1,8 +1,8 @@
 package com.arbr.alignable.alignable.partial_order
 
-import com.arbr.data_structures_common.partial_order.KeyedPartialOrderSet
-import com.arbr.data_structures_common.partial_order.KeyedValue
-import com.arbr.data_structures_common.partial_order.Orders
+import com.arbr.platform.data_structures_common.partial_order.KeyedPartialOrderSet
+import com.arbr.platform.data_structures_common.partial_order.KeyedValue
+import com.arbr.platform.data_structures_common.partial_order.Orders
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonInclude

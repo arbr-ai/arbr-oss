@@ -1,4 +1,4 @@
-package com.arbr.og.object_model.common.functions.spec.base
+package com.arbr.platform.object_graph.common.functions.spec.base
 
 data class GraphObjectEmbeddingSearchConfig(
     var model: String,

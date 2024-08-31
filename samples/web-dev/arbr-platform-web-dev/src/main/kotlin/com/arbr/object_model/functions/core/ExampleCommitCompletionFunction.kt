@@ -1,12 +1,12 @@
 package com.arbr.object_model.functions.core
 
-import com.arbr.object_model.core.view.ArbrFileOpView
-import com.arbr.object_model.core.view.ArbrFileView
-import com.arbr.og.object_model.common.functions.api.ResourceFunction
-import com.arbr.og.object_model.common.functions.spec.base.HeterogeneousGraphObjectQuerySpec
-import com.arbr.og.object_model.common.functions.spec.base.inputting
-import com.arbr.og.object_model.common.functions.spec.base.returning
-import com.arbr.og.object_model.common.values.SourcedValue
+import com.arbr.platform.object_graph.core.view.ArbrFileOpView
+import com.arbr.platform.object_graph.core.view.ArbrFileView
+import com.arbr.platform.object_graph.common.functions.api.ResourceFunction
+import com.arbr.platform.object_graph.common.functions.spec.base.HeterogeneousGraphObjectQuerySpec
+import com.arbr.platform.object_graph.common.functions.spec.base.inputting
+import com.arbr.platform.object_graph.common.functions.spec.base.returning
+import com.arbr.platform.object_graph.common.values.SourcedValue
 
 class ExampleCommitCompletionFunction : ResourceFunction({
     val fileOpTarget by actingOnResource(ArbrFileOpView::class.java) {

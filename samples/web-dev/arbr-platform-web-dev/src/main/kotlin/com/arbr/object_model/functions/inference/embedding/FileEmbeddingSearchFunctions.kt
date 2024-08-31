@@ -1,11 +1,11 @@
 package com.arbr.object_model.functions.inference.embedding
 
-import com.arbr.object_model.core.resource.field.ArbrFileContentValue
-import com.arbr.object_model.core.resource.field.ArbrFileFilePathValue
-import com.arbr.object_model.core.resource.field.ArbrFileSummaryValue
-import com.arbr.og.object_model.common.model.collections.NestedObjectListType2
-import com.arbr.og.object_model.common.values.SourcedValue
-import com.arbr.og_engine.file_system.VolumeState
+import com.arbr.platform.object_graph.core.resource.field.ArbrFileContentValue
+import com.arbr.platform.object_graph.core.resource.field.ArbrFileFilePathValue
+import com.arbr.platform.object_graph.core.resource.field.ArbrFileSummaryValue
+import com.arbr.platform.object_graph.common.model.collections.NestedObjectListType2
+import com.arbr.platform.object_graph.common.values.SourcedValue
+import com.arbr.platform.object_graph.file_system.VolumeState
 import com.arbr.platform.ml.linear.typed.shape.Dim
 import reactor.core.publisher.Mono
 

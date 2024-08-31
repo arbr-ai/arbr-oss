@@ -1,4 +1,4 @@
-package com.arbr.og.util
+package com.arbr.platform.object_graph.util
 
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test

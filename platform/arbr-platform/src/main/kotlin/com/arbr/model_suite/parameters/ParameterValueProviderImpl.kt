@@ -5,9 +5,9 @@ import com.arbr.util_common.collections.mapToArray
 import com.arbr.platform.ml.linear.typed.base.ColumnVector
 import com.arbr.platform.ml.linear.typed.impl.TypedColumnVector
 import com.arbr.platform.ml.linear.typed.shape.Dim
-import com.arbr.ml.optimization.base.NamedMetricKind
-import com.arbr.ml.optimization.base.ParameterValueProvider
-import com.arbr.ml.optimization.model.BindingParameter
+import com.arbr.platform.ml.optimization.base.NamedMetricKind
+import com.arbr.platform.ml.optimization.base.ParameterValueProvider
+import com.arbr.platform.ml.optimization.model.BindingParameter
 
 class ParameterValueProviderImpl private constructor(
     private val parameterMap: MutableMap<String, Double>, // All n^2 params

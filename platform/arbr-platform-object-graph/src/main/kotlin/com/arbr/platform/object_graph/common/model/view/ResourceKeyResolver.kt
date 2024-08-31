@@ -1,7 +1,7 @@
-package com.arbr.og.object_model.common.model.view
+package com.arbr.platform.object_graph.common.model.view
 
-import com.arbr.object_model.core.types.naming.NamedResource
-import com.arbr.object_model.core.types.naming.NamedResourceKey
+import com.arbr.platform.object_graph.types.naming.NamedResource
+import com.arbr.platform.object_graph.types.naming.NamedResourceKey
 
 interface ResourceKeyResolver<RK: NamedResourceKey> {
 

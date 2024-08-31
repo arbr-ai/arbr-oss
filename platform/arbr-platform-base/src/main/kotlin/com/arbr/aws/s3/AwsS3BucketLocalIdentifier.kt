@@ -1,6 +1,6 @@
 package com.arbr.aws.s3
 
-import org.springframework.core.env.MissingRequiredPropertiesException
+//import org.springframework.core.env.MissingRequiredPropertiesException
 
 sealed class AwsS3BucketLocalIdentifier : EnvironmentSourcedValue<String> {
     /**
@@ -20,9 +20,10 @@ sealed class AwsS3BucketLocalIdentifier : EnvironmentSourcedValue<String> {
         constructor(propertyName: String) : this(
             propertyName,
             EnvironmentSourcedValue.fromProperty(propertyName) {
-                throw MissingRequiredPropertiesException().also { ex ->
-                    ex.missingRequiredProperties.add(propertyName)
-                }
+                throw Exception(propertyName)
+//                throw MissingRequiredPropertiesException().also { ex ->
+//                    ex.missingRequiredProperties.add(propertyName)
+//                }
             }
         )
 

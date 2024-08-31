@@ -4,8 +4,8 @@ import com.arbr.content_formats.format.*
 import com.arbr.content_formats.format.tokenizer.TokenizationSerializer
 import com.arbr.engine.services.differential_content.formatter.Formatters
 import com.arbr.model_loader.indents.IndentAlignmentService
-import com.arbr.ml.optimization.base.NamedMetricKind
-import com.arbr.ml.optimization.model.BindingParameter
+import com.arbr.platform.ml.optimization.base.NamedMetricKind
+import com.arbr.platform.ml.optimization.model.BindingParameter
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito
 import org.springframework.test.util.ReflectionTestUtils

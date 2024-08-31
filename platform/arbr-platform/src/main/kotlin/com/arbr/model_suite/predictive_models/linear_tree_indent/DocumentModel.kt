@@ -1,8 +1,8 @@
 package com.arbr.model_suite.predictive_models.linear_tree_indent
 
-import com.arbr.data_structures_common.partial_order.KeyedPartialOrderSet
-import com.arbr.data_structures_common.partial_order.MaskedMap
-import com.arbr.data_structures_common.partial_order.Orders
+import com.arbr.platform.data_structures_common.partial_order.KeyedPartialOrderSet
+import com.arbr.platform.data_structures_common.partial_order.MaskedMap
+import com.arbr.platform.data_structures_common.partial_order.Orders
 import com.arbr.platform.ml.linear.typed.base.ColumnVector
 import com.arbr.platform.ml.linear.typed.impl.TypedColumnVector
 import com.arbr.platform.ml.linear.typed.impl.TypedMatrices

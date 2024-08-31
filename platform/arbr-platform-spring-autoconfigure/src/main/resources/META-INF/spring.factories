@@ -13,4 +13,5 @@ com.arbr.platform.autoconfigure.process.WorkflowInitializationServiceAutoConfigu
 com.arbr.platform.autoconfigure.process.WorkflowCancellationServiceAutoConfiguration,\
 com.arbr.platform.autoconfigure.process.WorkflowExecutorServiceConfig,\
 com.arbr.platform.autoconfigure.process.WorkflowStateServiceAutoConfiguration,\
+com.arbr.platform.autoconfigure.process.ObjectModelParserAutoConfiguration,\
 com.arbr.platform.autoconfigure.relational_prompting.RelationalPromptingAutoConfiguration

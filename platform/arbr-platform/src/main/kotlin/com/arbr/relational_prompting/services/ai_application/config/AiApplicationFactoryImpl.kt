@@ -1,12 +1,12 @@
 package com.arbr.relational_prompting.services.ai_application.config
 
-import com.arbr.og.object_model.common.values.collections.SourcedStruct
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct
 import com.arbr.engine.services.completions.base.ChatCompletionProvider
 import com.arbr.relational_prompting.generics.application_cache.ApplicationCompletionCache
 import com.arbr.relational_prompting.generics.examples.ApplicationExampleProvider
 import com.arbr.relational_prompting.services.ai_application.application.AiApplication
 
-internal class AiApplicationFactoryImpl(
+class AiApplicationFactoryImpl(
     private val applicationExampleProvider: ApplicationExampleProvider,
     private val applicationCompletionCache: ApplicationCompletionCache,
     private val chatCompletionProvider: ChatCompletionProvider,

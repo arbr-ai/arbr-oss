@@ -1,6 +1,6 @@
 package com.arbr.types.homotopy
 
-import com.arbr.object_model.core.model.ArbrRootModel
+import com.arbr.platform.object_graph.core.model.ArbrRootModel
 import com.arbr.types.homotopy.config.DefaultHomotopyIntrospectionConfigService
 import org.junit.jupiter.api.Test
 import kotlin.reflect.full.starProjectedType

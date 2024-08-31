@@ -4,14 +4,14 @@ import com.arbr.content_formats.jsonb.serializeToJsonb
 import com.arbr.db.public.tables.records.ApplicationCompletionRecord
 import com.arbr.engine.services.db.client.ApplicationCompletionStore
 import com.arbr.engine.services.workflow.state.WorkflowExecutorService
-import com.arbr.og.object_model.common.values.SourcedValue
+import com.arbr.platform.object_graph.common.values.SourcedValue
 import com.arbr.relational_prompting.generics.application_cache.ApplicationCompletionCache
 import com.arbr.relational_prompting.generics.examples.ApplicationExampleProvider
 import com.arbr.relational_prompting.layers.object_translation.TemplateComponentSchema
 import com.arbr.relational_prompting.services.ai_application.application.AiApplication
 import com.arbr.relational_prompting.services.ai_application.model.TypedApplicationCompletion
 import com.arbr.relational_prompting.services.embedding.model.VectorResourceKeyValuePair
-import com.arbr.og.object_model.common.values.collections.SourcedStruct
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonTypeRef
 import org.jooq.JSONB

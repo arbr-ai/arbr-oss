@@ -1,4 +1,4 @@
-package com.arbr.ml.search
+package com.arbr.platform.ml.search
 
 class ContractionIdentity<E: Any>: Contraction<E> {
     override fun getCode(encoder: ContractionEncoder<E>): Int {

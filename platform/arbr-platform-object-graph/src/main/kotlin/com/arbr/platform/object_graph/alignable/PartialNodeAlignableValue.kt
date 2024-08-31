@@ -1,6 +1,6 @@
 package com.arbr.platform.object_graph.alignable
 
-import com.arbr.object_model.core.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
 import com.arbr.platform.alignable.alignable.AtomicAlignable
 import com.arbr.platform.alignable.alignable.IdentifiableAlignable
 import com.arbr.platform.alignable.alignable.SwapAlignable

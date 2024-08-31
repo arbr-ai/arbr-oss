@@ -1,4 +1,4 @@
-package com.arbr.og.object_model.common
+package com.arbr.platform.object_graph.common
 
 import com.arbr.platform.ml.linear.typed.shape.Dim
 

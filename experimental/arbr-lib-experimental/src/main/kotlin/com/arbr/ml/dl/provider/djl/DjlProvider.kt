@@ -1,7 +1,7 @@
-package com.arbr.ml.dl.provider.djl
+package com.arbr.platform.ml.dl.provider.djl
 
-import com.arbr.ml.dl.base.DlModel
-import com.arbr.ml.dl.base.DlProvider
+import com.arbr.platform.ml.dl.base.DlModel
+import com.arbr.platform.ml.dl.base.DlProvider
 import com.arbr.platform.ml.linear.typed.base.*
 import com.arbr.platform.ml.linear.typed.shape.Shape
 import com.arbr.platform.ml.linear.typed.tensor.base.Tensor

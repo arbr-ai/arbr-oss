@@ -1,6 +1,6 @@
-package com.arbr.og.object_model.common.properties
+package com.arbr.platform.object_graph.common.properties
 
-import com.arbr.og.object_model.common.model.CompoundPropertyIdentifier
+import com.arbr.platform.object_graph.common.model.CompoundPropertyIdentifier
 
 class ConcreteCollectionRequirementsProvider(
     private val backingCollectionSize: Int,

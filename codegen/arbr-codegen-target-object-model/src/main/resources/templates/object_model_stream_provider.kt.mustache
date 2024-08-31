@@ -5,15 +5,15 @@ import {{packageDomain}}.core.resource.*
 import {{packageDomain}}.core.resource.field.*
 import {{packageDomain}}.core.view.*
 import {{packageDomain}}.core.partial.*
-import {{packageDomain}}.core.types.{{titleName}}
-import {{packageDomain}}.core.types.{{titleName}}ForeignKey
-import {{packageDomain}}.core.types.ResourceStreamProvider
+import {{packageDomain}}.types.{{titleName}}
+import {{packageDomain}}.types.{{titleName}}ForeignKey
+import {{packageDomain}}.types.ResourceStreamProvider
 import com.arbr.platform.object_graph.impl.ObjectRef
-import com.arbr.og.object_model.common.model.ProposedValueStream
-import com.arbr.og.object_model.common.model.ProposedForeignKeyCollectionStream
-import com.arbr.og.object_model.common.model.collections.OneToManyResourceMap
+import com.arbr.platform.object_graph.common.model.ProposedValueStream
+import com.arbr.platform.object_graph.common.model.ProposedForeignKeyCollectionStream
+import com.arbr.platform.object_graph.common.model.collections.OneToManyResourceMap
 import com.arbr.platform.object_graph.impl.ObjectModelResource
-import com.arbr.og.store.DefaultKVStore
+import com.arbr.platform.object_graph.store.DefaultKVStore
 import com.arbr.platform.object_graph.store.KVStore
 
 {{#table}}

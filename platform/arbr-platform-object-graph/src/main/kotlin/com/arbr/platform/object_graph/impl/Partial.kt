@@ -1,6 +1,6 @@
 package com.arbr.platform.object_graph.impl
 
-import com.arbr.object_model.core.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
 
 interface Partial<T: ObjectModelResource<T, P, ForeignKey>, P: Partial<T, P, ForeignKey>, ForeignKey: NamedForeignKey>:
     PartialNode<P, ForeignKey> {

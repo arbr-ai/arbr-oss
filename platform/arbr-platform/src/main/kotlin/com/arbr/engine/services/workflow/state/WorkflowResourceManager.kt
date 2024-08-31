@@ -1,6 +1,6 @@
 package com.arbr.engine.services.workflow.state
 
-import com.arbr.og_engine.core.WorkflowResourceModel
+import com.arbr.platform.object_graph.core.WorkflowResourceModel
 import com.arbr.util_common.collections.splitOn
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.stereotype.Component
@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono
 import java.util.concurrent.ConcurrentHashMap
 
 @Component
-@ComponentScan("com.arbr.og_engine")
+@ComponentScan("com.arbr.platform.object_graph")
 class WorkflowResourceManager(
     private val workflowInitializationService: WorkflowInitializationService,
     private val workflowCancellationService: WorkflowCancellationService,

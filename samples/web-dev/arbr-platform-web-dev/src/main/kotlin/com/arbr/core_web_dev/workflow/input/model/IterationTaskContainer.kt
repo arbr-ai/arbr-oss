@@ -1,11 +1,11 @@
 package com.arbr.core_web_dev.workflow.input.model
 
 import com.arbr.core_web_dev.workflow.input.base.TaskInfoBearer
-import com.arbr.object_model.core.resource.field.ArbrProjectDescriptionValue
-import com.arbr.object_model.core.resource.field.ArbrProjectFullNameValue
-import com.arbr.object_model.core.resource.field.ArbrProjectPlatformValue
-import com.arbr.object_model.core.resource.field.ArbrTaskBranchNameValue
-import com.arbr.object_model.core.resource.field.ArbrTaskTaskQueryValue
+import com.arbr.platform.object_graph.core.resource.field.ArbrProjectDescriptionValue
+import com.arbr.platform.object_graph.core.resource.field.ArbrProjectFullNameValue
+import com.arbr.platform.object_graph.core.resource.field.ArbrProjectPlatformValue
+import com.arbr.platform.object_graph.core.resource.field.ArbrTaskBranchNameValue
+import com.arbr.platform.object_graph.core.resource.field.ArbrTaskTaskQueryValue
 
 data class IterationTaskContainer(
     val projectName: ArbrProjectFullNameValue,

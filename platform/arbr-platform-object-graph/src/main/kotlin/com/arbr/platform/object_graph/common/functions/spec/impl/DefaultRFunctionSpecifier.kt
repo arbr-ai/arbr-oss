@@ -1,7 +1,7 @@
-package com.arbr.og.object_model.common.functions.spec.impl
+package com.arbr.platform.object_graph.common.functions.spec.impl
 
-import com.arbr.object_model.core.types.ResourceView
-import com.arbr.og.object_model.common.functions.spec.base.BaseRFunctionSpecifier
+import com.arbr.platform.object_graph.types.ResourceView
+import com.arbr.platform.object_graph.common.functions.spec.base.BaseRFunctionSpecifier
 
 class DefaultRFunctionSpecifier<RV: ResourceView<*>>(
     resourceViewClass: Class<RV>,

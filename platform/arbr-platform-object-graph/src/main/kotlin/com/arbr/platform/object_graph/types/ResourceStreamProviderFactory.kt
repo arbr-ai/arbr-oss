@@ -1,4 +1,4 @@
-package com.arbr.object_model.core.types
+package com.arbr.platform.object_graph.types
 
 interface ResourceStreamProviderFactory {
 

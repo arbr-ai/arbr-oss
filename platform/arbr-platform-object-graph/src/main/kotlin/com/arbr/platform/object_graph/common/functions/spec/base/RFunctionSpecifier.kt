@@ -1,8 +1,8 @@
-package com.arbr.og.object_model.common.functions.spec.base
+package com.arbr.platform.object_graph.common.functions.spec.base
 
-import com.arbr.object_model.core.types.ResourceView
-import com.arbr.og.object_model.common.properties.FieldValueViewContainer
-import com.arbr.og.object_model.common.functions.platform.ResourceFunctionContext
+import com.arbr.platform.object_graph.types.ResourceView
+import com.arbr.platform.object_graph.common.properties.FieldValueViewContainer
+import com.arbr.platform.object_graph.common.functions.platform.ResourceFunctionContext
 
 
 interface RFunctionSpecifier<RV : ResourceView<*>> {

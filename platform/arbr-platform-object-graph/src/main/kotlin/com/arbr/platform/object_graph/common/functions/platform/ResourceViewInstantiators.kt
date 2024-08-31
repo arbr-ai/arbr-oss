@@ -1,7 +1,7 @@
-package com.arbr.og.object_model.common.functions.platform
+package com.arbr.platform.object_graph.common.functions.platform
 
-import com.arbr.object_model.core.types.ResourceView
-import com.arbr.object_model.core.types.naming.NamedResourceKey
+import com.arbr.platform.object_graph.types.ResourceView
+import com.arbr.platform.object_graph.types.naming.NamedResourceKey
 
 interface ResourceViewInstantiators {
 

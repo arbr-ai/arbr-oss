@@ -1,4 +1,4 @@
-package com.arbr.ml.search
+package com.arbr.platform.ml.search
 
 import org.slf4j.LoggerFactory
 import reactor.core.publisher.Flux

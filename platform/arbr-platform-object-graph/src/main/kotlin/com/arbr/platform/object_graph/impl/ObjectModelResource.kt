@@ -1,10 +1,10 @@
 package com.arbr.platform.object_graph.impl
 
 import com.arbr.platform.data_structures_common.immutable.ImmutableLinkedMap
-import com.arbr.object_model.core.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
 import com.arbr.platform.object_graph.common.ObjectModel
-import com.arbr.og.object_model.common.model.ProposedForeignKeyCollectionStream
-import com.arbr.og.object_model.common.model.ProposedValueStream
+import com.arbr.platform.object_graph.common.model.ProposedForeignKeyCollectionStream
+import com.arbr.platform.object_graph.common.model.ProposedValueStream
 import com.fasterxml.jackson.annotation.JsonIgnore
 
 interface ObjectModelResource<

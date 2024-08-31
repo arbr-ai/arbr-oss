@@ -1,6 +1,6 @@
-package com.arbr.object_model.core.types
+package com.arbr.platform.object_graph.types
 
-import com.arbr.object_model.core.types.naming.NamedResource
+import com.arbr.platform.object_graph.types.GeneralResource
 
 /**
  * Read-only view

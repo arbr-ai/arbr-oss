@@ -1,7 +1,7 @@
 package com.arbr.engine.services.differential_content.formatter
 
 import com.arbr.content_formats.format.tokenizer.TokenizationSerializer
-import com.arbr.data_structures_common.partial_order.PartialOrder
+import com.arbr.platform.data_structures_common.partial_order.PartialOrder
 import com.arbr.model_loader.indents.TokenFormatterCompiler
 
 object Formatters {

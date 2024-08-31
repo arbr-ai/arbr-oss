@@ -1,4 +1,4 @@
-package com.arbr.ml.linear.typed.impl
+package com.arbr.platform.ml.linear.typed.impl
 
 import com.arbr.platform.ml.linear.typed.impl.TypedColumnVector
 import com.arbr.platform.ml.linear.typed.shape.Dim

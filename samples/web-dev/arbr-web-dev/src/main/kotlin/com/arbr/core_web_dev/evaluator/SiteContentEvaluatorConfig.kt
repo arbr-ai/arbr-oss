@@ -2,7 +2,7 @@ package com.arbr.core_web_dev.evaluator
 
 import com.arbr.object_model.functions.internal.code_eval.BuildFeedback
 import com.arbr.object_model.functions.internal.code_eval.SiteContentBasicBuildProposal
-import com.arbr.og_engine.file_system.HeadlessDocumentResult
+import com.arbr.platform.object_graph.file_system.HeadlessDocumentResult
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean

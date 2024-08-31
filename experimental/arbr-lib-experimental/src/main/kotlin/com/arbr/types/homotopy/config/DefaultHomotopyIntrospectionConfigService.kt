@@ -7,7 +7,7 @@ import com.arbr.types.homotopy.spec.HomotopySpec
 class DefaultHomotopyIntrospectionConfigService: HomotopyIntrospectionConfigService {
     private val allowedResourcePackages: Collection<String> = setOf(
         "com.arbr",
-        "com.arbr.ml",
+        "com.arbr.platform.ml",
         "java.lang",
         "java.util",
         "kotlin",

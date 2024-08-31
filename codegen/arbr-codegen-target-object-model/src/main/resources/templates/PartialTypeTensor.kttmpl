@@ -1,7 +1,7 @@
 {%root%}
 package {%root.packageDomain%}.core.partial_type_tensor
 
-import com.arbr.og.object_model.common.*
+import com.arbr.platform.object_graph.common.*
 import {%root.packageDomain%}.core.partial.*
 import {%root.packageDomain%}.core.resource.*
 import {%root.packageDomain%}.core.resource.field.*

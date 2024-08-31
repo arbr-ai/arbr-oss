@@ -1,7 +1,7 @@
 package com.arbr.platform.object_graph.core
 
-import com.arbr.object_model.core.types.naming.NamedForeignKey
-import com.arbr.og.object_model.common.model.PropertyIdentifier
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.common.model.PropertyIdentifier
 import com.arbr.platform.object_graph.impl.ObjectModelResource
 import com.arbr.platform.object_graph.impl.Partial
 import com.arbr.platform.object_graph.concurrency.AtomicStack

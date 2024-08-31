@@ -1,7 +1,7 @@
-package com.arbr.og.object_model.common.model.collections
+package com.arbr.platform.object_graph.common.model.collections
 
-import com.arbr.object_model.core.types.naming.NamedForeignKey
-import com.arbr.og.object_model.common.model.ProposedForeignKeyCollectionStream
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.common.model.ProposedForeignKeyCollectionStream
 import com.arbr.platform.object_graph.impl.ObjectModelResource
 import com.arbr.platform.object_graph.impl.Partial
 import com.fasterxml.jackson.annotation.JsonIgnore

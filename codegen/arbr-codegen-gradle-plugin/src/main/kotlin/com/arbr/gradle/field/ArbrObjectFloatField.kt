@@ -18,6 +18,6 @@ abstract class ArbrObjectFloatField @Inject constructor(
     }
 
     companion object {
-        const val DEFAULT_CODEC_CLASS = "com.arbr.og.encoder.ObjectFloatFieldCodec"
+        const val DEFAULT_CODEC_CLASS = "com.arbr.platform.object_graph.encoder.ObjectFloatFieldCodec"
     }
 }

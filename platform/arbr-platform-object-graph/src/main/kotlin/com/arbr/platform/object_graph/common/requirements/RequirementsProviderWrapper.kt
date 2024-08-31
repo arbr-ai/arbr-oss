@@ -1,9 +1,9 @@
-package com.arbr.og.object_model.common.requirements
+package com.arbr.platform.object_graph.common.requirements
 
-import com.arbr.object_model.core.types.naming.NamedForeignKey
-import com.arbr.og.object_model.common.model.ProposedForeignKeyCollectionStream
-import com.arbr.og.object_model.common.model.ProposedValueReadStream
-import com.arbr.og.object_model.common.model.collections.OneToManyResourceMap
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.common.model.ProposedForeignKeyCollectionStream
+import com.arbr.platform.object_graph.common.model.ProposedValueReadStream
+import com.arbr.platform.object_graph.common.model.collections.OneToManyResourceMap
 import com.arbr.platform.data_structures_common.immutable.ImmutableLinkedMap
 import com.arbr.platform.object_graph.core.RequiredResourceMissingException
 import com.arbr.platform.object_graph.impl.ObjectModelResource

@@ -5,7 +5,7 @@ import com.arbr.content_formats.format.DiffLiteralSourceDocument
 import com.arbr.content_formats.format.DiffLiteralSourceDocumentTokenizer
 import com.arbr.content_formats.format.DiffParsedPatchSection
 import com.arbr.content_formats.format.tokenizer.TokenFormatter
-import com.arbr.data_structures_common.partial_order.LinearOrderList
+import com.arbr.platform.data_structures_common.partial_order.LinearOrderList
 import com.arbr.model_loader.model.DiffPatchDatasetKind
 import com.arbr.model_loader.model.DiffPatchTestCase
 import com.arbr.model_loader.model.GitHubPublicNoisedPatchInfo

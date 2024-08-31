@@ -4,7 +4,7 @@ import com.arbr.content_formats.format.DiffLiteralSourceDocument
 import com.arbr.content_formats.format.DiffOperation
 import com.arbr.content_formats.format.DiffOperationKind
 import com.arbr.content_formats.format.tokenizer.TokenFormatter
-import com.arbr.data_structures_common.partial_order.PartialOrder
+import com.arbr.platform.data_structures_common.partial_order.PartialOrder
 import com.arbr.model_suite.predictive_models.linear_tree_indent.LinearTreeIndentPredictor
 import com.arbr.model_suite.predictive_models.linear_tree_indent.SegmenterService
 import com.arbr.platform.ml.linear.typed.shape.Dim

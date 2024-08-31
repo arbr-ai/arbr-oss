@@ -1,6 +1,6 @@
-package com.arbr.og.object_model.common.functions.spec.impl
+package com.arbr.platform.object_graph.common.functions.spec.impl
 
-import com.arbr.og.object_model.common.functions.config.ResourceFunctionConfigurationService
+import com.arbr.platform.object_graph.common.functions.config.ResourceFunctionConfigurationService
 import org.slf4j.LoggerFactory
 import java.util.*
 

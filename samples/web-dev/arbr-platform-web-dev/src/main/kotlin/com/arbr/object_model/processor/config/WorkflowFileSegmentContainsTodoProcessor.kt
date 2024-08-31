@@ -1,15 +1,15 @@
 package com.arbr.object_model.processor.config
 
-import com.arbr.object_model.core.partial.PartialFileSegment
-import com.arbr.object_model.core.resource.ArbrFileSegment
-import com.arbr.object_model.core.types.ArbrForeignKey
-import com.arbr.og.object_model.common.model.ProposedValueReadStream
+import com.arbr.platform.object_graph.core.partial.PartialFileSegment
+import com.arbr.platform.object_graph.core.resource.ArbrFileSegment
+import com.arbr.platform.object_graph.types.ArbrForeignKey
+import com.arbr.platform.object_graph.common.model.ProposedValueReadStream
 import com.arbr.platform.object_graph.impl.PartialObjectGraph
-import com.arbr.og_engine.artifact.Artifact
-import com.arbr.og_engine.core.ArbrResourceFunction
-import com.arbr.og_engine.core.ObjectModelParser
-import com.arbr.og_engine.core.OperationCompleteException
-import com.arbr.og_engine.file_system.VolumeState
+import com.arbr.platform.object_graph.artifact.Artifact
+import com.arbr.platform.object_graph.core.ArbrResourceFunction
+import com.arbr.platform.object_graph.core.ObjectModelParser
+import com.arbr.platform.object_graph.core.OperationCompleteException
+import com.arbr.platform.object_graph.file_system.VolumeState
 import com.arbr.prompt_library.PromptLibrary
 import com.arbr.util_common.typing.cls
 import org.slf4j.LoggerFactory

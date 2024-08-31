@@ -1,7 +1,7 @@
 package com.arbr.relational_prompting.generics.examples
 
 import com.arbr.relational_prompting.layers.object_translation.TemplateComponentSchema
-import com.arbr.og.object_model.common.values.collections.SourcedStruct
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct
 import com.arbr.relational_prompting.services.embedding.model.TemplateElementLiteral
 import com.arbr.relational_prompting.services.embedding.model.VectorResourceKeyValuePair
 import com.arbr.db.public.tables.pojos.EmbeddedResourcePair

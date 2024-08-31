@@ -1,4 +1,4 @@
-// Generated from /home/bill/arbr/arbr-oss/platform/arbr-platform-base/src/main/antlr/antlr4/ANTLRv4Parser.g4 by ANTLR 4.13.1
+// Generated from /Users/bill/main/code/arbr-oss/platform/arbr-platform-base/src/main/antlr/antlr4/ANTLRv4Parser.g4 by ANTLR 4.13.1
 package com.topdown.parsers.lang.antlr4.base;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;

@@ -12,9 +12,9 @@ package com.arbr.relational_prompting.services.ai_application.config//package co
 //import com.arbr.relational_prompting.layers.object_translation.TemplateValueElement
 //import com.arbr.relational_prompting.layers.prompt_composition.PropertyListSerializer
 //import com.arbr.relational_prompting.layers.prompt_composition.YamlPropertyListSerializer
-//import com.arbr.og.object_model.impl.DdlGithubSchema
-//import com.arbr.og.object_model.impl.NestedObjectListType2
-//import com.arbr.og.object_model.impl.NestedObjectListType3
+//import com.arbr.platform.object_graph.impl.DdlGithubSchema
+//import com.arbr.platform.object_graph.impl.NestedObjectListType2
+//import com.arbr.platform.object_graph.impl.NestedObjectListType3
 //import com.arbr.relational_prompting.services.ai_application.application.AiApplication
 //import com.arbr.relational_prompting.services.ai_application.application.ApplicationArtifact
 //import com.arbr.relational_prompting.services.ai_application.model.*

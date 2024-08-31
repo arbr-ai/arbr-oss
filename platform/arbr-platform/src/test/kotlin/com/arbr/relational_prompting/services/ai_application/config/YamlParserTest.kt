@@ -9,12 +9,12 @@ package com.arbr.relational_prompting.services.ai_application.config
 //import com.arbr.relational_prompting.generics.model.OpenAiChatCompletionModel
 //import com.arbr.relational_prompting.layers.object_translation.*
 //import com.arbr.relational_prompting.layers.prompt_composition.PropertyListSerializer
-//import com.arbr.og.object_model.impl.DdlGithubSchema
-//import com.arbr.og.object_model.impl.NestedObjectListType2
-//import com.arbr.og.object_model.impl.NestedObjectListType3
+//import com.arbr.platform.object_graph.impl.DdlGithubSchema
+//import com.arbr.platform.object_graph.impl.NestedObjectListType2
+//import com.arbr.platform.object_graph.impl.NestedObjectListType3
 //import com.arbr.relational_prompting.services.ai_application.application.invoke
-//import com.arbr.og.object_model.common.values.collections.SourcedStruct
-//import com.arbr.og.object_model.common.values.collections.SourcedStruct2
+//import com.arbr.platform.object_graph.common.values.collections.SourcedStruct
+//import com.arbr.platform.object_graph.common.values.collections.SourcedStruct2
 //import com.arbr.relational_prompting.services.ai_application.model.SourcedValueGeneratorInfo
 //import com.arbr.relational_prompting.services.ai_application.model.TypedApplicationCompletion
 //import com.arbr.relational_prompting.services.embedding.model.VectorResourceKeyValuePair

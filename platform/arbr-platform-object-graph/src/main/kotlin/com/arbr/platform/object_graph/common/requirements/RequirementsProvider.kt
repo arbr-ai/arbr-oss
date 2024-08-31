@@ -1,10 +1,10 @@
-package com.arbr.og.object_model.common.requirements
+package com.arbr.platform.object_graph.common.requirements
 
 import com.arbr.platform.data_structures_common.immutable.ImmutableLinkedMap
-import com.arbr.object_model.core.types.naming.NamedForeignKey
-import com.arbr.og.object_model.common.model.ProposedForeignKeyCollectionStream
-import com.arbr.og.object_model.common.model.ProposedValueReadStream
-import com.arbr.og.object_model.common.properties.NonNullRequirementsProvider
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.common.model.ProposedForeignKeyCollectionStream
+import com.arbr.platform.object_graph.common.model.ProposedValueReadStream
+import com.arbr.platform.object_graph.common.properties.NonNullRequirementsProvider
 import com.arbr.platform.object_graph.core.PropertyValueLocker
 import com.arbr.platform.object_graph.impl.ObjectModelResource
 import com.arbr.platform.object_graph.impl.ObjectRef

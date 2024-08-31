@@ -1,6 +1,6 @@
-package com.arbr.og.object_model.common.functions.spec.impl
+package com.arbr.platform.object_graph.common.functions.spec.impl
 
-import com.arbr.og.object_model.common.properties.DependencyTracingProvider
+import com.arbr.platform.object_graph.common.properties.DependencyTracingProvider
 
 interface DependencyTracingProviderFactory {
 

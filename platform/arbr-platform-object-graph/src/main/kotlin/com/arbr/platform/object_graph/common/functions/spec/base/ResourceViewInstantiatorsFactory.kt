@@ -1,11 +1,11 @@
-package com.arbr.og.object_model.common.functions.spec.base
+package com.arbr.platform.object_graph.common.functions.spec.base
 
-import com.arbr.object_model.core.types.ResourceStreamProviderFactory
-import com.arbr.object_model.core.types.ResourceViewProviderFactory
-import com.arbr.object_model.core.types.naming.NamedResourceKey
-import com.arbr.og.object_model.common.functions.platform.ResourceViewDomainInstantiators
-import com.arbr.og.object_model.common.functions.platform.ResourceViewInstantiators
-import com.arbr.og.object_model.common.model.view.ProposedValueStreamViewProvider
+import com.arbr.platform.object_graph.types.ResourceStreamProviderFactory
+import com.arbr.platform.object_graph.types.ResourceViewProviderFactory
+import com.arbr.platform.object_graph.types.naming.NamedResourceKey
+import com.arbr.platform.object_graph.common.functions.platform.ResourceViewDomainInstantiators
+import com.arbr.platform.object_graph.common.functions.platform.ResourceViewInstantiators
+import com.arbr.platform.object_graph.common.model.view.ProposedValueStreamViewProvider
 
 interface ResourceViewInstantiatorsFactory {
 

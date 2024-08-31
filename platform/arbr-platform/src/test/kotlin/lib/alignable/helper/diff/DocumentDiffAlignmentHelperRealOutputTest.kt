@@ -1,7 +1,7 @@
 package com.arbr.alignable.helper.diff
 
 //import com.arbr.platform.alignable.alignable.diff.AlignableDiffOperationAlignmentConfig
-//import com.arbr.data_structures_common.partial_order.PartialOrderAlignmentConfiguration
+//import com.arbr.platform.data_structures_common.partial_order.PartialOrderAlignmentConfiguration
 //import org.junit.jupiter.api.Assertions
 //import org.junit.jupiter.api.Test
 //import java.util.*

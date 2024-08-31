@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming
-import com.arbr.ml.math.model.RationalValue
-import com.arbr.ml.optimization.model.BindingParameter
+import com.arbr.platform.ml.model.RationalValue
+import com.arbr.platform.ml.optimization.model.BindingParameter
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)

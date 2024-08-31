@@ -4,15 +4,15 @@ package {%root.packageDomain%}.engine.arbiter.base
 import {%root.packageDomain%}.core.partial.*
 import {%root.packageDomain%}.core.resource.*
 import {%root.packageDomain%}.core.resource.field.*
-import com.arbr.og_engine.file_system.VolumeState
-import com.arbr.og_engine.core.WorkflowResourceModel
-import com.arbr.og_engine.core.WorkflowSingleResourceProcessor
-import com.arbr.og_engine.arbiter.WorkflowResourceArbiter
+import com.arbr.platform.object_graph.file_system.VolumeState
+import com.arbr.platform.object_graph.core.WorkflowResourceModel
+import com.arbr.platform.object_graph.core.WorkflowSingleResourceProcessor
+import com.arbr.platform.object_graph.arbiter.WorkflowResourceArbiter
 import com.arbr.util_common.reactor.nonBlocking
 import com.arbr.platform.object_graph.impl.ObjectRef
 import com.arbr.platform.object_graph.impl.Partial
-import com.arbr.og.object_model.common.model.Proposal
-import com.arbr.og.object_model.common.values.SourcedValue
+import com.arbr.platform.object_graph.common.model.Proposal
+import com.arbr.platform.object_graph.common.values.SourcedValue
 import {%root.packageDomain%}.core.partial.PartialRoot
 import {%root.packageDomain%}.core.resource.ArbrRoot
 import org.springframework.stereotype.Component
@@ -24,7 +24,7 @@ import kotlin.jvm.optionals.getOrNull
 {%_root%}
 
 {%schema%}
-import {%root.packageDomain%}.core.types.{%schema.titleName%}ForeignKey
+import {%root.packageDomain%}.types.{%schema.titleName%}ForeignKey
 {%schema.table:#table%}
 {%_schema%}
 

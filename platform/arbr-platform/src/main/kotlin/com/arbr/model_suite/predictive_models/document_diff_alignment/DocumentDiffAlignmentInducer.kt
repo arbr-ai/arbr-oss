@@ -7,7 +7,7 @@ import com.arbr.platform.alignable.alignable.diff.AlignableDiffOperation
 import com.arbr.platform.alignable.alignable.diff.Chain
 import com.arbr.platform.alignable.alignable.diff.DiffOperationLineAlignmentOperation
 import com.arbr.platform.alignable.alignable.v2.dag.*
-import com.arbr.ml.optimization.base.ParameterValueProvider
+import com.arbr.platform.ml.optimization.base.ParameterValueProvider
 import java.util.*
 import kotlin.jvm.optionals.getOrNull
 

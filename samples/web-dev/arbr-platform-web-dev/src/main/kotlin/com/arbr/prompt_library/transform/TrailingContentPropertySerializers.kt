@@ -1,7 +1,7 @@
 package com.arbr.prompt_library.transform
 
-import com.arbr.object_model.core.resource.ArbrFile
-import com.arbr.og.object_model.common.model.collections.NestedObjectListType2
+import com.arbr.platform.object_graph.core.resource.ArbrFile
+import com.arbr.platform.object_graph.common.model.collections.NestedObjectListType2
 import com.arbr.prompt_library.util.collateBy
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonTypeRef

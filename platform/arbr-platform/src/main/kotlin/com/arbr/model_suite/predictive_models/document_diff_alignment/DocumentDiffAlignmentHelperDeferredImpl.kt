@@ -3,7 +3,7 @@ package com.arbr.model_suite.predictive_models.document_diff_alignment
 import com.arbr.content_formats.format.DiffLiteralPatch
 import com.arbr.content_formats.format.DiffLiteralSourceDocument
 import com.arbr.platform.alignable.alignable.diff.DiffableDocumentState
-import com.arbr.ml.optimization.base.ParameterValueProvider
+import com.arbr.platform.ml.optimization.base.ParameterValueProvider
 import reactor.core.publisher.Mono
 import java.time.Duration
 import java.util.*

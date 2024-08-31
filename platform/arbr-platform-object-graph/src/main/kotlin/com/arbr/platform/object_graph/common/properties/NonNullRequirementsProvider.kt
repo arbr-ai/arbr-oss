@@ -1,7 +1,7 @@
-package com.arbr.og.object_model.common.properties
+package com.arbr.platform.object_graph.common.properties
 
 import com.arbr.platform.object_graph.common.ObjectModel
-import com.arbr.og.object_model.common.values.SourcedValue
+import com.arbr.platform.object_graph.common.values.SourcedValue
 
 interface NonNullRequirementsProvider {
     fun <ValueType : Any, T : ObjectModel.ObjectValue<ValueType?, *, *, T>> getNonNullValue(

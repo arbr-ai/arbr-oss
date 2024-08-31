@@ -1,7 +1,7 @@
 package com.arbr.alignable.alignable.v2.dag
 
 import com.arbr.content_formats.format.*
-import com.arbr.data_structures_common.partial_order.LinearOrderList
+import com.arbr.platform.data_structures_common.partial_order.LinearOrderList
 import com.arbr.model_loader.loader.CleanDiffDatasetLoader
 import com.arbr.model_loader.loader.HardcodedDiffDatasetLoader
 import com.arbr.model_loader.loader.NoisyRecordLoader
@@ -11,13 +11,13 @@ import com.arbr.model_suite.predictive_models.document_diff_alignment.DocumentDi
 import com.arbr.model_suite.predictive_models.document_diff_alignment.DocumentDiffAlignmentInducer
 import com.arbr.platform.alignable.alignable.*
 import com.arbr.platform.alignable.alignable.diff.AlignableDiffOperation
-import com.arbr.ml.optimization.base.AsyncBoundaryEvaluator
-import com.arbr.ml.optimization.base.NamedMetricKind
-import com.arbr.ml.optimization.base.ParameterSetListener
-import com.arbr.ml.optimization.base.ParameterValueProvider
-import com.arbr.ml.optimization.grid.InitialPassingValueFinder
-import com.arbr.ml.optimization.model.AsyncBoundaryEvaluation
-import com.arbr.ml.optimization.model.BindingParameter
+import com.arbr.platform.ml.optimization.base.AsyncBoundaryEvaluator
+import com.arbr.platform.ml.optimization.base.NamedMetricKind
+import com.arbr.platform.ml.optimization.base.ParameterSetListener
+import com.arbr.platform.ml.optimization.base.ParameterValueProvider
+import com.arbr.platform.ml.optimization.grid.InitialPassingValueFinder
+import com.arbr.platform.ml.optimization.model.AsyncBoundaryEvaluation
+import com.arbr.platform.ml.optimization.model.BindingParameter
 import org.apache.commons.text.similarity.LevenshteinDistance
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test

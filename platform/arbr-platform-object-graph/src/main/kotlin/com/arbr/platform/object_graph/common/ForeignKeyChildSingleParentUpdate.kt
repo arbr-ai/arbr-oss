@@ -1,6 +1,6 @@
 package com.arbr.platform.object_graph.common
 
-import com.arbr.object_model.core.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
 
 data class ForeignKeyChildSingleParentUpdate<ForeignKey: NamedForeignKey, T>(
     val foreignKey: ForeignKey,

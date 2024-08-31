@@ -1,4 +1,4 @@
-package com.arbr.ml.search
+package com.arbr.platform.ml.search
 
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.*

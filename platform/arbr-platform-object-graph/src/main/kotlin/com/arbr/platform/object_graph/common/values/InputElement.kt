@@ -1,6 +1,6 @@
-package com.arbr.og.object_model.common.values
+package com.arbr.platform.object_graph.common.values
 
-import com.arbr.og.object_model.common.values.collections.SourcedStruct
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct
 
 interface InputElement<S: SourcedStruct> {
     val sourcedStruct: S

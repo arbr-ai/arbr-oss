@@ -1,4 +1,4 @@
-package com.arbr.ml.search
+package com.arbr.platform.ml.search
 
 data class TokenizationLayer(
     val aggregate: TokenContraction,

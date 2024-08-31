@@ -1,6 +1,6 @@
 package com.arbr.platform.object_graph.store
 
-import com.arbr.object_model.core.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
 import com.arbr.platform.object_graph.impl.ObjectModelResource
 
 interface KVStoreBackingObjectStoreLoader {

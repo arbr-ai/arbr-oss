@@ -1,4 +1,4 @@
-package com.arbr.ml.linear.typed.tensor.base
+package com.arbr.platform.ml.linear.typed.tensor.base
 
 import com.arbr.platform.ml.linear.typed.tensor.base.TensorTypeTree
 import org.junit.jupiter.api.Assertions

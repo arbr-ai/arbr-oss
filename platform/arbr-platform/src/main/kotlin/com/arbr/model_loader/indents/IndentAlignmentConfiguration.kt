@@ -1,7 +1,7 @@
 package com.arbr.model_loader.indents
 
-import com.arbr.ml.optimization.base.NamedMetricKind
-import com.arbr.ml.optimization.model.BindingParameter
+import com.arbr.platform.ml.optimization.base.NamedMetricKind
+import com.arbr.platform.ml.optimization.model.BindingParameter
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 

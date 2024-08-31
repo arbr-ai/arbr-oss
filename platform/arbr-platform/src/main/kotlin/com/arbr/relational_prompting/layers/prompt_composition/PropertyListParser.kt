@@ -1,7 +1,7 @@
 package com.arbr.relational_prompting.layers.prompt_composition
 
-import com.arbr.og.object_model.common.values.collections.SourcedStruct
-import com.arbr.og.object_model.common.values.SourcedValueGeneratorInfo
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct
+import com.arbr.platform.object_graph.common.values.SourcedValueGeneratorInfo
 import com.arbr.relational_prompting.layers.object_translation.PropertySchema
 
 interface PropertyListParser<R : SourcedStruct> {

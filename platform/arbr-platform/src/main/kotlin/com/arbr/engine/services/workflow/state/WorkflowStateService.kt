@@ -3,8 +3,8 @@ package com.arbr.engine.services.workflow.state
 import com.arbr.engine.services.kafka.producer.WorkflowPartialViewModelMessageProducer
 import com.arbr.engine.services.user.WorkflowStatusRepository
 import com.arbr.engine.services.workflow.model.WorkflowState
-import com.arbr.og_engine.artifact.Artifact
-import com.arbr.og_engine.artifact.processor.base.WorkflowStateArtifactProcessorFactory
+import com.arbr.platform.object_graph.artifact.Artifact
+import com.arbr.platform.object_graph.artifact.processor.base.WorkflowStateArtifactProcessorFactory
 import com.arbr.util_common.reactor.nonBlocking
 import org.springframework.scheduling.annotation.Scheduled
 import reactor.core.publisher.Flux

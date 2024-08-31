@@ -1,4 +1,4 @@
-package com.arbr.og.object_model.common.model
+package com.arbr.platform.object_graph.common.model
 
 /**
  * Identifier of a particular "frozen" property value, i.e. a stream element.

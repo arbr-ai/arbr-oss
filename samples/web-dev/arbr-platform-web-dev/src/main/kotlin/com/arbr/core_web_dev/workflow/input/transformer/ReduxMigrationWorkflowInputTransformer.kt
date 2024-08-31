@@ -3,9 +3,9 @@ package com.arbr.core_web_dev.workflow.input.transformer
 import com.arbr.core_web_dev.workflow.input.model.IterationTaskContainer
 import com.arbr.core_web_dev.workflow.input.model.WorkflowInputModelBase
 import com.arbr.engine.services.workflow.input.WorkflowInputTransformer
-import com.arbr.object_model.core.resource.ArbrProject
-import com.arbr.object_model.core.resource.ArbrTask
-import com.arbr.og_engine.artifact.Artifact
+import com.arbr.platform.object_graph.core.resource.ArbrProject
+import com.arbr.platform.object_graph.core.resource.ArbrTask
+import com.arbr.platform.object_graph.artifact.Artifact
 import org.springframework.stereotype.Component
 import reactor.core.publisher.FluxSink
 import reactor.core.publisher.Mono

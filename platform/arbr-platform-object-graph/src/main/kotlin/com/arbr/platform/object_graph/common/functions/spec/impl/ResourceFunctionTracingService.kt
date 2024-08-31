@@ -1,4 +1,4 @@
-package com.arbr.og.object_model.common.functions.spec.impl
+package com.arbr.platform.object_graph.common.functions.spec.impl
 
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono

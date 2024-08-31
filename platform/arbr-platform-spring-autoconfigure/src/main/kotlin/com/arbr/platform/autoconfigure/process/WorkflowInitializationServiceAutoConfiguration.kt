@@ -1,9 +1,9 @@
 package com.arbr.platform.autoconfigure.process
 
 import com.arbr.engine.services.workflow.state.WorkflowInitializationService
-import com.arbr.og_engine.artifact.Artifact
-import com.arbr.og_engine.core.WorkflowResourceModel
-import com.arbr.og_engine.file_system.VolumeState
+import com.arbr.platform.object_graph.artifact.Artifact
+import com.arbr.platform.object_graph.core.WorkflowResourceModel
+import com.arbr.platform.object_graph.file_system.VolumeState
 import org.slf4j.LoggerFactory
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean

@@ -1,6 +1,6 @@
 package com.arbr.content_formats.format.tokenizer
 
-import com.arbr.data_structures_common.partial_order.PartialOrder
+import com.arbr.platform.data_structures_common.partial_order.PartialOrder
 
 fun interface TokenizationSerializer<DocumentType, TokenType> {
 

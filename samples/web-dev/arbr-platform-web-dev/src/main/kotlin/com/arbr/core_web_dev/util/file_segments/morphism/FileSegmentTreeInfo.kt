@@ -1,6 +1,6 @@
 package com.arbr.core_web_dev.util.file_segments.morphism
 
-import com.arbr.object_model.core.resource.field.*
+import com.arbr.platform.object_graph.core.resource.field.*
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming

@@ -1,4 +1,4 @@
-package com.arbr.ml.linear.typed.value
+package com.arbr.platform.ml.linear.typed.value
 
 import com.arbr.platform.ml.linear.typed.impl.TypedRowVector
 import com.arbr.platform.ml.linear.typed.shape.Dim

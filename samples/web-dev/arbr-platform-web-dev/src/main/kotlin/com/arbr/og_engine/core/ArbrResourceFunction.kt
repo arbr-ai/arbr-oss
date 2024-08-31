@@ -1,8 +1,8 @@
-package com.arbr.og_engine.core
+package com.arbr.platform.object_graph.core
 
-import com.arbr.object_model.core.types.ArbrForeignKey
-import com.arbr.og.object_model.common.requirements.DefaultRequirementsProvider
-import com.arbr.og.object_model.common.requirements.RequirementsProvider
+import com.arbr.platform.object_graph.types.ArbrForeignKey
+import com.arbr.platform.object_graph.common.requirements.DefaultRequirementsProvider
+import com.arbr.platform.object_graph.common.requirements.RequirementsProvider
 import com.arbr.platform.object_graph.impl.ObjectModelResource
 import com.arbr.platform.object_graph.impl.Partial
 

@@ -1,12 +1,12 @@
 package com.arbr.object_model.functions.external.github
 
+import com.arbr.api.github.core.GitHubCommitInfo
 import com.arbr.api.github.core.GitHubPullRequestInfo
 import com.arbr.api.workflow.event.event_data.CommitEventData
 import com.arbr.api.workflow.event.event_data.common.DiffStat
-import com.arbr.engine.services.workflow.model.CommitInfo
-import com.arbr.object_model.core.resource.field.ArbrCommitCommitMessageValue
-import com.arbr.object_model.core.resource.field.ArbrCommitDiffSummaryValue
-import com.arbr.og_engine.file_system.VolumeState
+import com.arbr.platform.object_graph.core.resource.field.ArbrCommitCommitMessageValue
+import com.arbr.platform.object_graph.core.resource.field.ArbrCommitDiffSummaryValue
+import com.arbr.platform.object_graph.file_system.VolumeState
 import reactor.core.publisher.Mono
 
 /**
@@ -21,7 +21,7 @@ interface GitHubProjectFunctions {
     fun commit(
         volumeState: VolumeState,
         commitMessage: String,
-    ): Mono<CommitInfo>
+    ): Mono<GitHubCommitInfo>
 
     /**
      * Get the raw numstat text of a commit with the given hash.

@@ -1,6 +1,6 @@
 package com.arbr.core_web_dev.util.file_segments
 
-import com.arbr.object_model.core.partial.PartialFileSegmentOp
+import com.arbr.platform.object_graph.core.partial.PartialFileSegmentOp
 import com.arbr.platform.data_structures_common.immutable.ImmutableLinkedMap
 
 /**

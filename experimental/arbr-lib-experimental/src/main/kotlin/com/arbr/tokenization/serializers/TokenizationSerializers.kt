@@ -2,8 +2,8 @@ package com.arbr.tokenization.serializers
 
 import com.arbr.content_formats.format.Either
 import com.arbr.content_formats.format.tokenizer.TokenizationSerializer
-import com.arbr.data_structures_common.immutable.ImmutableLinkedSet
-import com.arbr.data_structures_common.partial_order.*
+import com.arbr.platform.data_structures_common.immutable.ImmutableLinkedSet
+import com.arbr.platform.data_structures_common.partial_order.*
 import java.util.*
 
 object TokenizationSerializers {

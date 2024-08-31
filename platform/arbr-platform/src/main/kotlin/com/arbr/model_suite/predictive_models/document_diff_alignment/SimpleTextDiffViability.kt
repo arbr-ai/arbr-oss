@@ -3,7 +3,7 @@ package com.arbr.model_suite.predictive_models.document_diff_alignment
 import com.arbr.content_formats.format.DiffOperationKind
 import com.arbr.platform.alignable.alignable.diff.AlignableDiffOperation
 import com.arbr.platform.alignable.alignable.diff.Chain
-import com.arbr.alignable.language.Viability
+import com.arbr.platform.alignable.language.Viability
 
 class SimpleTextDiffViability : Viability<Chain<AlignableDiffOperation>, AlignableDiffOperation> {
     override val initialState: Chain<AlignableDiffOperation> = Chain(

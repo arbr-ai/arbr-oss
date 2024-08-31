@@ -5,11 +5,11 @@ package com.arbr.platform.object_graph.common
 import com.arbr.content_formats.json_schematized.JsonSchema
 import com.arbr.content_formats.mapper.Mappers
 import com.arbr.platform.ml.linear.typed.shape.Shape
-import com.arbr.og.object_model.common.properties.DependencyTracingValueProvider
-import com.arbr.og.object_model.common.values.SourcedValue
-import com.arbr.og.object_model.common.values.SourcedValueGeneratorInfo
-import com.arbr.og.object_model.common.values.SourcedValueImpl
-import com.arbr.og.object_model.common.values.SourcedValueKind
+import com.arbr.platform.object_graph.common.properties.DependencyTracingValueProvider
+import com.arbr.platform.object_graph.common.values.SourcedValue
+import com.arbr.platform.object_graph.common.values.SourcedValueGeneratorInfo
+import com.arbr.platform.object_graph.common.values.SourcedValueImpl
+import com.arbr.platform.object_graph.common.values.SourcedValueKind
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.ObjectMapper
@@ -149,8 +149,8 @@ interface ObjectModel {
         @Deprecated(
             "Remove", ReplaceWith(
                 "ObjectValueEquatable(this)",
-                "com.arbr.og.object_model.common.ObjectValueEquatable",
-                "com.arbr.og.object_model.common.ObjectModel.ObjectValue"
+                "com.arbr.platform.object_graph.common.ObjectValueEquatable",
+                "com.arbr.platform.object_graph.common.ObjectModel.ObjectValue"
             )
         )
         fun simpleEquatableValue(): com.arbr.platform.object_graph.common.ObjectValueEquatable<ValueType> =

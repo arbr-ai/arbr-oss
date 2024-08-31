@@ -1,16 +1,16 @@
 package com.arbr.object_model.processor.config
 
-import com.arbr.object_model.core.partial.PartialFile
-import com.arbr.object_model.core.partial.PartialFileOp
-import com.arbr.object_model.core.resource.ArbrFile
-import com.arbr.object_model.core.resource.ArbrFileOp
-import com.arbr.object_model.core.types.ArbrForeignKey
+import com.arbr.platform.object_graph.core.partial.PartialFile
+import com.arbr.platform.object_graph.core.partial.PartialFileOp
+import com.arbr.platform.object_graph.core.resource.ArbrFile
+import com.arbr.platform.object_graph.core.resource.ArbrFileOp
+import com.arbr.platform.object_graph.types.ArbrForeignKey
 import com.arbr.platform.object_graph.impl.PartialObjectGraph
 import com.arbr.platform.object_graph.impl.PartialRef
-import com.arbr.og_engine.artifact.Artifact
-import com.arbr.og_engine.core.ArbrResourceFunction
-import com.arbr.og_engine.core.ObjectModelParser
-import com.arbr.og_engine.file_system.VolumeState
+import com.arbr.platform.object_graph.artifact.Artifact
+import com.arbr.platform.object_graph.core.ArbrResourceFunction
+import com.arbr.platform.object_graph.core.ObjectModelParser
+import com.arbr.platform.object_graph.file_system.VolumeState
 import org.slf4j.LoggerFactory
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.stereotype.Component

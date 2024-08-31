@@ -2,12 +2,12 @@ package com.arbr.model_suite.predictive_models.document_diff_alignment
 
 import com.arbr.content_formats.format.DiffLiteralSourceDocument
 import com.arbr.content_formats.format.DiffLiteralSourceDocumentTokenizer
-import com.arbr.data_structures_common.partial_order.LinearOrderList
+import com.arbr.platform.data_structures_common.partial_order.LinearOrderList
 import com.arbr.platform.alignable.alignable.diff.AlignableDiffOperation
 import com.arbr.platform.alignable.alignable.diff.DiffableDocumentState
-import com.arbr.ml.optimization.base.NamedMetricKind
-import com.arbr.ml.optimization.base.ParameterValueProvider
-import com.arbr.ml.optimization.model.BindingParameter
+import com.arbr.platform.ml.optimization.base.NamedMetricKind
+import com.arbr.platform.ml.optimization.base.ParameterValueProvider
+import com.arbr.platform.ml.optimization.model.BindingParameter
 import reactor.core.publisher.Mono
 import kotlin.jvm.optionals.getOrNull
 

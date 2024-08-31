@@ -31,6 +31,7 @@ fun RepositoryHandler.configuredMavenLocal() = mavenLocal {
 repositories {
     configuredMavenLocal()
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
@@ -39,6 +40,8 @@ dependencies {
 
     implementation("com.arbr:arbr-platform-base:1.0")
     implementation("com.arbr:arbr-platform:1.0")
+    implementation("com.arbr:arbr-platform-object-graph:1.0")
+    implementation("com.arbr:arbr-platform-alignable:1.0")
 
     implementation("org.springframework:spring-beans:6.1.5")
     implementation("org.springframework:spring-context:6.1.5")

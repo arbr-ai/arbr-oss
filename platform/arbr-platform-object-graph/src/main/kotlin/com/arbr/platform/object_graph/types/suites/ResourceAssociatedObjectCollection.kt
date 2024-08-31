@@ -1,4 +1,4 @@
-package com.arbr.object_model.core.types.suites
+package com.arbr.platform.object_graph.types.suites
 
 class ResourceAssociatedObjectCollection<E : EnumLike, T: Any>(
     private val enumValues: Array<E>,

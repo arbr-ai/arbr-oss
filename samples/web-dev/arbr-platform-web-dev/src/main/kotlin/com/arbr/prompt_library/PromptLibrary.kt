@@ -1,6 +1,6 @@
 package com.arbr.prompt_library
 
-import com.arbr.og.object_model.common.values.collections.SourcedStruct
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct
 import com.arbr.prompt_library.PromptLibrary.Companion.DelegateProvider
 import com.arbr.relational_prompting.services.ai_application.application.AiApplication
 import com.arbr.relational_prompting.services.ai_application.config.AiApplicationConfig

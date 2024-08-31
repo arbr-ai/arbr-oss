@@ -1,18 +1,18 @@
-package com.arbr.og.object_model.common.properties
+package com.arbr.platform.object_graph.common.properties
 
-import com.arbr.object_model.core.types.ResourceStream
-import com.arbr.object_model.core.types.ResourceStreamProviderFactory
-import com.arbr.object_model.core.types.ResourceView
-import com.arbr.object_model.core.types.ResourceViewProviderFactory
-import com.arbr.object_model.core.types.TypedResourceViewProvider
-import com.arbr.object_model.core.types.naming.NamedResource
-import com.arbr.object_model.core.types.naming.NamedResourceKey
+import com.arbr.platform.object_graph.types.ResourceStream
+import com.arbr.platform.object_graph.types.ResourceStreamProviderFactory
+import com.arbr.platform.object_graph.types.ResourceView
+import com.arbr.platform.object_graph.types.ResourceViewProviderFactory
+import com.arbr.platform.object_graph.types.TypedResourceViewProvider
+import com.arbr.platform.object_graph.types.naming.NamedResource
+import com.arbr.platform.object_graph.types.naming.NamedResourceKey
 import com.arbr.platform.object_graph.common.ObjectModel
-import com.arbr.og.object_model.common.model.PropertyIdentifier
-import com.arbr.og.object_model.common.model.view.ProposedValueStreamViewProvider
-import com.arbr.og.object_model.common.values.SourcedValue
-import com.arbr.og.object_model.common.values.SourcedValueGeneratorInfo
-import com.arbr.og.object_model.common.values.SourcedValueKind
+import com.arbr.platform.object_graph.common.model.PropertyIdentifier
+import com.arbr.platform.object_graph.common.model.view.ProposedValueStreamViewProvider
+import com.arbr.platform.object_graph.common.values.SourcedValue
+import com.arbr.platform.object_graph.common.values.SourcedValueGeneratorInfo
+import com.arbr.platform.object_graph.common.values.SourcedValueKind
 import java.util.*
 
 class ValuelessDependencyTracingValueProvider<ValueType>(

@@ -1,6 +1,6 @@
 package com.arbr.engine.services.workflow.state
 
-import com.arbr.og_engine.core.WorkflowResourceModel
+import com.arbr.platform.object_graph.core.WorkflowResourceModel
 import reactor.core.publisher.Mono
 import java.util.concurrent.ConcurrentHashMap
 

@@ -1,7 +1,7 @@
 package com.arbr.model_loader.indents
 
 import com.arbr.content_formats.format.tokenizer.TokenFormatter
-import com.arbr.data_structures_common.partial_order.PartialOrder
+import com.arbr.platform.data_structures_common.partial_order.PartialOrder
 
 fun interface TokenFormatterCompiler<DocumentType, TokenType> {
 

@@ -1,4 +1,4 @@
-package com.arbr.og.object_model.common.values
+package com.arbr.platform.object_graph.common.values
 
 /**
  * Kind of sourced value.

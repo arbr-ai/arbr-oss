@@ -2,12 +2,12 @@ package com.arbr.core_web_dev.service.embedding_search
 
 //import com.arbr.content_formats.tokens.TokenizationUtils
 //import com.arbr.engine.services.embedding.client.SimpleEmbeddingSearchClient
-//import com.arbr.object_model.core.resource.field.ArbrFileContentValue
-//import com.arbr.object_model.core.resource.field.ArbrFileFilePathValue
-//import com.arbr.object_model.core.resource.field.ArbrFileSummaryValue
-//import com.arbr.og.object_model.common.model.collections.NestedObjectListType2
-//import com.arbr.og.object_model.common.values.SourcedValue
-//import com.arbr.og_engine.file_system.VolumeState
+//import com.arbr.platform.object_graph.core.resource.field.ArbrFileContentValue
+//import com.arbr.platform.object_graph.core.resource.field.ArbrFileFilePathValue
+//import com.arbr.platform.object_graph.core.resource.field.ArbrFileSummaryValue
+//import com.arbr.platform.object_graph.common.model.collections.NestedObjectListType2
+//import com.arbr.platform.object_graph.common.values.SourcedValue
+//import com.arbr.platform.object_graph.file_system.VolumeState
 //import com.arbr.platform.ml.linear.typed.shape.Dim
 //import org.springframework.stereotype.Component
 //import reactor.core.publisher.Flux
@@ -48,7 +48,7 @@ package com.arbr.core_web_dev.service.embedding_search
 //    }
 //
 //    fun <T : Any> filterRelevantItemsToTargetTokenCount(
-//        volumeState: com.arbr.og_engine.file_system.VolumeState,
+//        volumeState: com.arbr.platform.object_graph.file_system.VolumeState,
 //        sourcedQuery: SourcedValue<String>,
 //        items: List<T>,
 //        targetTokenCount: Int,

@@ -1,7 +1,7 @@
 package com.arbr.core_web_dev.config
 //
-//import com.arbr.engine.services.workflow.state.WorkflowResourceLifecycleService
-//import com.arbr.object_model.core.resource.ArbrRoot
+//import com.arbr.platform.object_graph.generics.WorkflowResourceLifecycleService
+//import com.arbr.platform.object_graph.core.resource.ArbrRoot
 //import com.arbr.platform.object_graph.impl.ObjectModelResource
 //import org.springframework.context.annotation.Bean
 //import org.springframework.context.annotation.Configuration

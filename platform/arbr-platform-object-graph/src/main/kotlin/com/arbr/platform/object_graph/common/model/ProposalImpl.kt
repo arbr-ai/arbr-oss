@@ -1,6 +1,5 @@
-package com.arbr.og.object_model.common.model
+package com.arbr.platform.object_graph.common.model
 
-import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicInteger
 
 class ProposalImpl<S: Any>(

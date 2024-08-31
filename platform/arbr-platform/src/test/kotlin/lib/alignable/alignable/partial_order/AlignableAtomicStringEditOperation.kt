@@ -3,8 +3,8 @@ import com.arbr.platform.alignable.alignable.AtomicAlignable
 import com.arbr.platform.alignable.alignable.alignment.Alignment
 import com.arbr.platform.alignable.alignable.alignment.MetricAlignment
 import com.arbr.platform.alignable.alignable.edit_operation.AlignableEditOperation
-import com.arbr.ml.optimization.base.ParameterValue
-import com.arbr.ml.optimization.base.ParameterValueProvider
+import com.arbr.platform.ml.optimization.base.ParameterValue
+import com.arbr.platform.ml.optimization.base.ParameterValueProvider
 
 @Suppress("DataClassPrivateConstructor")
 data class AlignableAtomicStringEditOperation private constructor(

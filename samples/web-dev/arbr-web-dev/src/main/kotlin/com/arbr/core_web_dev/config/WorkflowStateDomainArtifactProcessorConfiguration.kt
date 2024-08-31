@@ -1,9 +1,9 @@
 package com.arbr.core_web_dev.config
 
 import com.arbr.engine.services.workflow.model.WorkflowState
-import com.arbr.og_engine.artifact.*
-import com.arbr.og_engine.artifact.processor.base.BaseDomainArtifactProcessor
-import com.arbr.og_engine.artifact.processor.base.DomainArtifactProcessor
+import com.arbr.platform.object_graph.artifact.*
+import com.arbr.platform.object_graph.artifact.processor.base.BaseDomainArtifactProcessor
+import com.arbr.platform.object_graph.artifact.processor.base.DomainArtifactProcessor
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import reactor.core.publisher.Mono

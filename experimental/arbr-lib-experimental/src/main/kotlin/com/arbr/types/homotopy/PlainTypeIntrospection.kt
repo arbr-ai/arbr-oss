@@ -3,7 +3,7 @@ package com.arbr.types.homotopy
 import com.arbr.types.homotopy.config.HomotopyIntrospectionConfig
 import com.arbr.types.homotopy.htype.HType
 import com.arbr.types.homotopy.keys.PropertyKeys
-import com.arbr.util_common.LexIntSequence
+import com.arbr.platform.object_graph.util.LexIntSequence
 import org.slf4j.LoggerFactory
 import kotlin.reflect.KType
 import kotlin.reflect.KTypeProjection

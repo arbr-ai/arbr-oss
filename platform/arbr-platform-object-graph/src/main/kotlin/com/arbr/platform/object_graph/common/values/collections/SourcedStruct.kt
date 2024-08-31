@@ -1,6 +1,6 @@
-package com.arbr.og.object_model.common.values.collections
+package com.arbr.platform.object_graph.common.values.collections
 
-import com.arbr.og.object_model.common.values.SourcedValue
+import com.arbr.platform.object_graph.common.values.SourcedValue
 import com.fasterxml.jackson.annotation.JsonIgnore
 
 sealed class SourcedStruct : Iterable<SourcedValue<*>> {

@@ -6,8 +6,8 @@ import com.arbr.engine.services.differential_content.formatter.JsonLenientPostPr
 import com.arbr.model_loader.indents.IndentAlignmentService
 import com.arbr.model_loader.loader.ParameterLoaderFactory
 import com.arbr.test_util.CodeEditDiffAlignmentTestCase
-import com.arbr.ml.optimization.base.NamedMetricKind
-import com.arbr.ml.optimization.model.BindingParameter
+import com.arbr.platform.ml.optimization.base.NamedMetricKind
+import com.arbr.platform.ml.optimization.model.BindingParameter
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito

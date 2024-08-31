@@ -1,9 +1,9 @@
 package com.arbr.core_web_dev.util.file_segments
 
-import com.arbr.object_model.core.partial.PartialFile
-import com.arbr.object_model.core.partial.PartialFileSegment
+import com.arbr.platform.object_graph.core.partial.PartialFile
+import com.arbr.platform.object_graph.core.partial.PartialFileSegment
 import com.arbr.engine.util.immutableLinkedMapOfPartials
-import com.arbr.object_model.core.types.ArbrForeignKey
+import com.arbr.platform.object_graph.types.ArbrForeignKey
 import com.arbr.platform.object_graph.impl.PartialObjectGraph
 import com.arbr.util_common.invariants.Invariants
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper

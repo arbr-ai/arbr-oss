@@ -1,11 +1,11 @@
-package com.arbr.og.object_model.common.properties
+package com.arbr.platform.object_graph.common.properties
 
 import com.arbr.content_formats.json_schematized.JsonSchema
-import com.arbr.og.object_model.common.model.CompoundPropertyIdentifier
-import com.arbr.og.object_model.common.values.SourcedValue
-import com.arbr.og.object_model.common.values.SourcedValueGeneratorInfo
-import com.arbr.og.object_model.common.values.SourcedValueImpl
-import com.arbr.og.object_model.common.values.SourcedValueKind
+import com.arbr.platform.object_graph.common.model.CompoundPropertyIdentifier
+import com.arbr.platform.object_graph.common.values.SourcedValue
+import com.arbr.platform.object_graph.common.values.SourcedValueGeneratorInfo
+import com.arbr.platform.object_graph.common.values.SourcedValueImpl
+import com.arbr.platform.object_graph.common.values.SourcedValueKind
 
 interface FieldValueViewContainer<E : UB, UB, C : FieldValueViewContainer<out UB, UB, C>> {
     val collectionRequirementsProvider: CollectionRequirementsProvider

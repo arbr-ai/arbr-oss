@@ -2,7 +2,7 @@ package com.arbr.alignable.alignable.v2.dag//package com.arbr.alignable.alignabl
 //
 //import com.arbr.platform.alignable.alignable.alignment.Alignment
 //import com.arbr.platform.alignable.alignable.edit_operation.AlignableEditOperation
-//import com.arbr.data_structures_common.partial_order.KeyedValue
+//import com.arbr.platform.data_structures_common.partial_order.KeyedValue
 //
 //data class TokenWindowTestEdit(
 //    override val key: String,

@@ -1,6 +1,6 @@
-package com.arbr.og_engine.concurrency
+package com.arbr.platform.object_graph.concurrency
 
-import com.arbr.og_engine.core.ResourceOperationState
+import com.arbr.platform.object_graph.core.ResourceOperationState
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 

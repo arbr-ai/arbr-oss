@@ -1,6 +1,6 @@
 package com.arbr.content_formats.format.tokenizer
 
-import com.arbr.data_structures_common.partial_order.LinearOrderList
+import com.arbr.platform.data_structures_common.partial_order.LinearOrderList
 
 class LineTokenizer : IndexedTextTokenizer {
 

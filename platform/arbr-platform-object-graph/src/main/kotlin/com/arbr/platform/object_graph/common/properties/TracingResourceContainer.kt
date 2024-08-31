@@ -1,6 +1,6 @@
-package com.arbr.og.object_model.common.properties
+package com.arbr.platform.object_graph.common.properties
 
-import com.arbr.og.object_model.common.model.CompoundPropertyIdentifier
+import com.arbr.platform.object_graph.common.model.CompoundPropertyIdentifier
 
 /**
  * Queryable collection of OMRs, given special treatment because this is the format taken by child collection properties

@@ -1,17 +1,17 @@
 package com.arbr.object_model.processor.config
 
-import com.arbr.object_model.core.partial.PartialCommitEval
-import com.arbr.object_model.core.partial.PartialProject
-import com.arbr.object_model.core.resource.ArbrCommitEval
-import com.arbr.object_model.core.resource.ArbrProject
-import com.arbr.object_model.core.types.ArbrForeignKey
+import com.arbr.platform.object_graph.core.partial.PartialCommitEval
+import com.arbr.platform.object_graph.core.partial.PartialProject
+import com.arbr.platform.object_graph.core.resource.ArbrCommitEval
+import com.arbr.platform.object_graph.core.resource.ArbrProject
+import com.arbr.platform.object_graph.types.ArbrForeignKey
 import com.arbr.object_model.functions.internal.code_eval.WebDevBuildEvalFunctions
 import com.arbr.object_model.functions.internal.code_eval.WebDevSiteContentEvalFunctions
 import com.arbr.platform.object_graph.impl.PartialObjectGraph
-import com.arbr.og_engine.artifact.Artifact
-import com.arbr.og_engine.core.ArbrResourceFunction
-import com.arbr.og_engine.core.ObjectModelParser
-import com.arbr.og_engine.file_system.VolumeState
+import com.arbr.platform.object_graph.artifact.Artifact
+import com.arbr.platform.object_graph.core.ArbrResourceFunction
+import com.arbr.platform.object_graph.core.ObjectModelParser
+import com.arbr.platform.object_graph.file_system.VolumeState
 import com.arbr.util_common.typing.cls
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value

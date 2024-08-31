@@ -1,6 +1,6 @@
 package com.arbr.relational_prompting.services.ai_application.model
 
-import com.arbr.og.object_model.common.values.collections.SourcedStruct
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct
 import com.arbr.relational_prompting.generics.model.ChatMessage
 
 data class TypedApplicationCompletion<InputModel : SourcedStruct, OutputModel : SourcedStruct>(

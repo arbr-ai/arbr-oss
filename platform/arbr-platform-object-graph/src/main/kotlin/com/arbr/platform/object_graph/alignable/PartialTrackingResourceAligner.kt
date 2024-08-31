@@ -1,7 +1,7 @@
 package com.arbr.platform.object_graph.alignable
 
 import com.arbr.platform.data_structures_common.immutable.ImmutableLinkedMap
-import com.arbr.object_model.core.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
 import com.arbr.platform.alignable.alignable.AlignableProxy
 import com.arbr.platform.alignable.alignable.SwapAlignable
 import com.arbr.platform.alignable.alignable.collections.AlignableMap
@@ -370,6 +370,6 @@ data class PartialTrackingResourceAligner<T : ObjectModelResource<T, P, ForeignK
     companion object {
         private val logger = LoggerFactory.getLogger(PartialTrackingResourceAligner::class.java)
         private val updateLogger =
-            LoggerFactory.getLogger("com.arbr.og.alignable.PartialTrackingResourceAlignerUpdateLogger")
+            LoggerFactory.getLogger("com.arbr.platform.object_graph.alignable.PartialTrackingResourceAlignerUpdateLogger")
     }
 }

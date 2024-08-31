@@ -1,4 +1,4 @@
-package com.arbr.og.object_model.common.properties
+package com.arbr.platform.object_graph.common.properties
 
 fun <V> writableDelegate(
     get: () -> V,

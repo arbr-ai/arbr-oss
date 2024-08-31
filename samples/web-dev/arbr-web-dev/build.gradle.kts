@@ -37,7 +37,9 @@ val jooqVersion = project.properties["jooqVersion"] ?: "3.18.5"
 
 dependencies {
     implementation("com.arbr:arbr-platform-base:1.0")
+    implementation("com.arbr:arbr-platform-alignable:1.0")
     implementation("com.arbr:arbr-platform:1.0")
+    implementation("com.arbr:arbr-platform-object-graph:1.0")
     implementation("com.arbr:arbr-platform-web-dev:1.0")
     implementation("com.arbr:arbr-platform-spring-autoconfigure:1.0")
     implementation("com.arbr:arbr-api-base:1.0")

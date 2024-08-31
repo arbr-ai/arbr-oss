@@ -4,8 +4,8 @@ import com.arbr.content_formats.format.tokenizer.LineTokenizer
 import com.arbr.content_formats.format.tokenizer.PatternSplitTextTokenizer
 import com.arbr.content_formats.format.tokenizer.TokenizationSerializer
 import com.arbr.content_formats.format.tokenizer.Tokenizers
-import com.arbr.data_structures_common.partial_order.PartialOrderFlatteningScheme
-import com.arbr.data_structures_common.partial_order.emptyPoset
+import com.arbr.platform.data_structures_common.partial_order.PartialOrderFlatteningScheme
+import com.arbr.platform.data_structures_common.partial_order.emptyPoset
 import org.junit.jupiter.api.Test
 
 class TokenizationSerializersTest {

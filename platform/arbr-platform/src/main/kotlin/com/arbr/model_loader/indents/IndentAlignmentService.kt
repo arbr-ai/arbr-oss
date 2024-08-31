@@ -11,7 +11,7 @@ import com.arbr.model_loader.model.LanguageVocabularyWords
 import com.arbr.model_suite.predictive_models.linear_tree_indent.SegmentContentType
 import com.arbr.model_suite.predictive_models.linear_tree_indent.SegmenterService
 import jakarta.annotation.PostConstruct
-import com.arbr.ml.optimization.model.BindingParameter
+import com.arbr.platform.ml.optimization.model.BindingParameter
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.scheduling.annotation.Scheduled

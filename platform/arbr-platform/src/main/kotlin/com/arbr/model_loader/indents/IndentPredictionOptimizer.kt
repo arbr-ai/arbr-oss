@@ -9,9 +9,9 @@ import com.arbr.util_common.invariants.Invariants
 import com.arbr.util_common.reactor.single
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.arbr.platform.ml.linear.typed.shape.Dim
-import com.arbr.ml.optimization.base.*
-import com.arbr.ml.optimization.gradient.GradientDescentOptimizer
-import com.arbr.ml.optimization.model.*
+import com.arbr.platform.ml.optimization.base.*
+import com.arbr.platform.ml.optimization.gradient.GradientDescentOptimizer
+import com.arbr.platform.ml.optimization.model.*
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import reactor.core.publisher.Flux
@@ -254,7 +254,7 @@ class IndentPredictionOptimizer(
 
             // 0.96
             // App.jsx, CarouselPage1.jsx, EmbeddedVideo.jsx, Footer.jsx, NotificationBell.jsx, RegistrationCodeEntry.jsx, RequireAuth.jsx, Toast.jsx, index.jsx, navLinks.jsx
-            val parameterSetListener = com.arbr.ml.optimization.base.ParameterSetListener { parameterSet ->
+            val parameterSetListener = com.arbr.platform.ml.optimization.base.ParameterSetListener { parameterSet ->
                 val includedFileNames = parameterSet
                     .parameters
                     .entries
@@ -276,7 +276,7 @@ class IndentPredictionOptimizer(
             }
 
             val scoreThreshold = 0.8
-            val convexEval = com.arbr.ml.optimization.base.AsyncBoundaryEvaluator { parameterMaps, _ ->
+            val convexEval = com.arbr.platform.ml.optimization.base.AsyncBoundaryEvaluator { parameterMaps, _ ->
                 val parameterLists = parameterMaps
                     .map { parameterMap ->
                         params.map { parameterMap[it.metricKind]!! }

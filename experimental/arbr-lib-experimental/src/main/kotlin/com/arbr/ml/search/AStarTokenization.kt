@@ -1,4 +1,4 @@
-package com.arbr.ml.search
+package com.arbr.platform.ml.search
 
 import com.arbr.platform.ml.linear.typed.shape.Dim
 import com.arbr.platform.ml.linear.typed.base.Matrix

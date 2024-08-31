@@ -1,4 +1,4 @@
-package com.arbr.og_engine.artifact
+package com.arbr.platform.object_graph.artifact
 
 import com.arbr.api.workflow.event.event_data.common.DiffStat
 

@@ -1,6 +1,6 @@
-package com.arbr.og.object_model.common.functions.spec.base
+package com.arbr.platform.object_graph.common.functions.spec.base
 
-import com.arbr.object_model.core.types.ResourceView
+import com.arbr.platform.object_graph.types.ResourceView
 
 class RValueFunctionDelegateProvider<RV : ResourceView<*>, T>(
     private val provideByName: (name: String) -> RValueFunction<RV, T>,

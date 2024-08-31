@@ -1,11 +1,8 @@
 package com.arbr.aws.s3
 
-import org.springframework.core.env.Environment
-import org.springframework.core.env.getProperty
-
 fun interface EnvironmentSourcedValue<T> {
 
-    fun getValueFromEnvironment(env: Environment): T
+    fun getValueFromEnvironment(env: EnvironmentProperties): T
 
     companion object {
         inline fun <reified T> fromProperty(
@@ -13,7 +10,7 @@ fun interface EnvironmentSourcedValue<T> {
             crossinline onMissing: () -> Nothing
         ): EnvironmentSourcedValue<T> {
             return EnvironmentSourcedValue { env ->
-                env.getProperty<T>(propertyName) ?: onMissing()
+                env.getProperty(propertyName, T::class.java) ?: onMissing()
             }
         }
 
@@ -22,7 +19,7 @@ fun interface EnvironmentSourcedValue<T> {
             defaultValue: T,
         ): EnvironmentSourcedValue<T> {
             return EnvironmentSourcedValue { env ->
-                env.getProperty<T>(propertyName) ?: defaultValue
+                env.getProperty(propertyName, T::class.java) ?: defaultValue
             }
         }
 

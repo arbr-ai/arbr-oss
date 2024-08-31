@@ -1,4 +1,4 @@
-package com.arbr.ml.search
+package com.arbr.platform.ml.search
 
 import com.arbr.util_common.invariants.Invariants
 import org.junit.jupiter.api.Assertions

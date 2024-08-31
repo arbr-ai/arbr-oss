@@ -1,6 +1,4 @@
-package com.arbr.og_engine.artifact
-
-import com.arbr.platform.object_graph.artifact.WorkflowResourceType
+package com.arbr.platform.object_graph.artifact
 
 data class WorkflowResourceCreationArtifact(
     val objectModelUuid: String,

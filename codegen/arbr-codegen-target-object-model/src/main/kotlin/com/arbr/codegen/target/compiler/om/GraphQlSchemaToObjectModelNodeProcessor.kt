@@ -77,9 +77,10 @@ class GraphQlSchemaToObjectModelNodeProcessor(
     }
 
     companion object {
+        // com.arbr.platform.object_graph
         private const val DEFAULT_DOMAIN = "arbr"
         private const val DEFAULT_PACKAGE_GROUP = "com.arbr"
-        private const val DEFAULT_PACKAGE_QUALIFIER = "object_model"
+        private const val DEFAULT_PACKAGE_QUALIFIER = "platform.object_graph"
 
         private val logger = LoggerFactory.getLogger(GraphQlSchemaToObjectModelCompiler::class.java)
 

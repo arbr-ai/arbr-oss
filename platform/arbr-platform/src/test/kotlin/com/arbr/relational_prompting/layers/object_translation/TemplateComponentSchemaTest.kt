@@ -2,15 +2,15 @@ package com.arbr.relational_prompting.layers.object_translation//package com.arb
 //
 //import com.arbr.content_formats.json_schematized.JsonSchema
 //import com.arbr.relational_prompting.object_model.common._UserAccountSchema
-////import com.arbr.og.object_model.impl.DdlGithubSchema
-//import com.arbr.og.object_model.impl.NestedObjectListType1
-//import com.arbr.og.object_model.impl.NestedObjectListType2
-//import com.arbr.og.object_model.common.values.collections.SourcedStruct1
-//import com.arbr.og.object_model.common.values.collections.SourcedStruct2
+////import com.arbr.platform.object_graph.impl.DdlGithubSchema
+//import com.arbr.platform.object_graph.impl.NestedObjectListType1
+//import com.arbr.platform.object_graph.impl.NestedObjectListType2
+//import com.arbr.platform.object_graph.common.values.collections.SourcedStruct1
+//import com.arbr.platform.object_graph.common.values.collections.SourcedStruct2
 //import com.arbr.relational_prompting.services.ai_application.model.SourcedValueGeneratorInfo
 //import com.arbr.relational_prompting.generics.model.ChatMessage
-//import com.arbr.og.object_model.impl.DdlGithubSchema
-//import com.arbr.og.object_model.impl.NestedObjectListType6
+//import com.arbr.platform.object_graph.impl.DdlGithubSchema
+//import com.arbr.platform.object_graph.impl.NestedObjectListType6
 //import org.junit.jupiter.api.Assertions
 //import org.junit.jupiter.api.Test
 //

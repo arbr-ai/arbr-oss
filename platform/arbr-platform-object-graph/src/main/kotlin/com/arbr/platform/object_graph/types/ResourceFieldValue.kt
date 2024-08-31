@@ -1,6 +1,6 @@
-package com.arbr.object_model.core.types
+package com.arbr.platform.object_graph.types
 
-import com.arbr.object_model.core.types.naming.NamedProperty
+import com.arbr.platform.object_graph.types.naming.NamedProperty
 
 interface ResourceFieldValue<
         R : GeneralResource,

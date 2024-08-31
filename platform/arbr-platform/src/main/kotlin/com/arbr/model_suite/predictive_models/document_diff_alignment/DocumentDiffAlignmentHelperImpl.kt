@@ -1,15 +1,15 @@
 package com.arbr.model_suite.predictive_models.document_diff_alignment
 
 import com.arbr.content_formats.format.*
-import com.arbr.data_structures_common.partial_order.LinearOrderList
-import com.arbr.data_structures_common.partial_order.PartialOrderFlatteningScheme
+import com.arbr.platform.data_structures_common.partial_order.LinearOrderList
+import com.arbr.platform.data_structures_common.partial_order.PartialOrderFlatteningScheme
 import com.arbr.platform.alignable.alignable.diff.AlignableDiffOperation
 import com.arbr.platform.alignable.alignable.diff.DiffableDocumentState
 import com.arbr.platform.alignable.alignable.v2.dag.AdjacencyMatrixDAGAlignmentHelper
 import com.arbr.platform.alignable.alignable.v2.dag.AdjacencyMatrixDAGValued
-import com.arbr.alignable.util.Either
-import com.arbr.alignable.util.OperationLimitException
-import com.arbr.ml.optimization.base.ParameterValueProvider
+import com.arbr.platform.alignable.util.Either
+import com.arbr.platform.alignable.util.OperationLimitException
+import com.arbr.platform.ml.optimization.base.ParameterValueProvider
 import org.slf4j.LoggerFactory
 import reactor.core.publisher.Mono
 import reactor.core.scheduler.Schedulers

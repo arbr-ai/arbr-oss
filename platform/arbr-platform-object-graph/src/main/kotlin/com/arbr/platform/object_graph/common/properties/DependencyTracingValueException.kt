@@ -1,7 +1,7 @@
-package com.arbr.og.object_model.common.properties
+package com.arbr.platform.object_graph.common.properties
 
 import com.arbr.platform.object_graph.common.ObjectModel
-import com.arbr.og.object_model.common.model.PropertyIdentifier
+import com.arbr.platform.object_graph.common.model.PropertyIdentifier
 
 /**
  * Exception for dependency tracing phases when the innermost value of a property is requested unexpectedly.

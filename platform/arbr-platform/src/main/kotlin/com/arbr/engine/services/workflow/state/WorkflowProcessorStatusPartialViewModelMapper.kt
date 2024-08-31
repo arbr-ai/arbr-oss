@@ -1,9 +1,9 @@
 package com.arbr.engine.services.workflow.state
 
-import com.arbr.api.workflow.core.WorkflowProcessorStatus
 import com.arbr.api.workflow.view_model.WorkflowViewModelActiveTask
 import com.arbr.api.workflow.view_model.WorkflowViewModelStatus
-import com.arbr.og_engine.core.WorkflowResourceUnaryFunction
+import com.arbr.platform.object_graph.artifact.WorkflowProcessorStatus
+import com.arbr.platform.object_graph.core.WorkflowResourceUnaryFunction
 
 /**
  * Was this ever actually used?

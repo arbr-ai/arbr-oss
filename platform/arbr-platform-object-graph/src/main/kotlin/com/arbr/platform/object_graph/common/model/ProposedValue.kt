@@ -1,4 +1,4 @@
-package com.arbr.og.object_model.common.model
+package com.arbr.platform.object_graph.common.model
 
 /**
  * An immutable view into a proposed value stream.

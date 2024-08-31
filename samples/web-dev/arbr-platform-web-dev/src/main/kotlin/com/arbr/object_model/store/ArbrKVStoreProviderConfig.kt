@@ -1,8 +1,8 @@
 package com.arbr.object_model.store
 
-import com.arbr.object_model.core.types.ArbrForeignKey
-import com.arbr.og.store.ResourceKVStoreProvider
-import com.arbr.og.store.ResourceKVStoreProviderImpl
+import com.arbr.platform.object_graph.types.ArbrForeignKey
+import com.arbr.platform.object_graph.store.ResourceKVStoreProvider
+import com.arbr.platform.object_graph.store.ResourceKVStoreProviderImpl
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 

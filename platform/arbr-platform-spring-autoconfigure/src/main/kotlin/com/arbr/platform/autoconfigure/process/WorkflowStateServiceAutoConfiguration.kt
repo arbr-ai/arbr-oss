@@ -8,7 +8,7 @@ import com.arbr.engine.services.workflow.state.WorkflowStateService
 import com.arbr.engine.services.workflow.state.WorkflowStateServiceFactory
 import com.arbr.engine.services.workflow.state.WorkflowViewModelManagerFactory
 import com.arbr.kafka.topic.base.ApiKafkaProducerNode
-import com.arbr.og_engine.artifact.processor.base.WorkflowStateArtifactProcessorFactory
+import com.arbr.platform.object_graph.artifact.processor.base.WorkflowStateArtifactProcessorFactory
 import org.springframework.boot.autoconfigure.AutoConfiguration
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean

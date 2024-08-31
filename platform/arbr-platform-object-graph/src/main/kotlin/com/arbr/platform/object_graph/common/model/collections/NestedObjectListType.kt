@@ -1,10 +1,10 @@
-package com.arbr.og.object_model.common.model.collections
+package com.arbr.platform.object_graph.common.model.collections
 
 import com.arbr.platform.ml.linear.typed.shape.Shape
 import com.arbr.platform.object_graph.common.ObjectModel
-import com.arbr.og.object_model.common.properties.DependencyTracingValueProvider
-import com.arbr.og.object_model.common.values.SourcedValueGeneratorInfo
-import com.arbr.og.object_model.common.values.SourcedValueKind
+import com.arbr.platform.object_graph.common.properties.DependencyTracingValueProvider
+import com.arbr.platform.object_graph.common.values.SourcedValueGeneratorInfo
+import com.arbr.platform.object_graph.common.values.SourcedValueKind
 
 interface NestedObjectListType<
         LV,

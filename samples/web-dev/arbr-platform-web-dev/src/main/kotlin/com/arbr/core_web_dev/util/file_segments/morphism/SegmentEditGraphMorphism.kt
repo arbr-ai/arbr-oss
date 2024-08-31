@@ -1,13 +1,13 @@
 package com.arbr.core_web_dev.util.file_segments.morphism
 
 import com.arbr.core_web_dev.util.file_segments.*
-import com.arbr.data_structures_common.immutable.immutableLinkedMapOf
+import com.arbr.platform.data_structures_common.immutable.immutableLinkedMapOf
 import com.arbr.engine.util.immutableLinkedMapOfPartials
-import com.arbr.object_model.core.partial.PartialFile
-import com.arbr.object_model.core.partial.PartialFileSegmentOp
-import com.arbr.object_model.core.resource.ArbrFileSegment
-import com.arbr.object_model.core.resource.field.*
-import com.arbr.object_model.core.types.ArbrForeignKey
+import com.arbr.platform.object_graph.core.partial.PartialFile
+import com.arbr.platform.object_graph.core.partial.PartialFileSegmentOp
+import com.arbr.platform.object_graph.core.resource.ArbrFileSegment
+import com.arbr.platform.object_graph.core.resource.field.*
+import com.arbr.platform.object_graph.types.ArbrForeignKey
 import com.arbr.object_model.functions.internal.tree_parse.TreeParseFunctions
 import com.arbr.platform.object_graph.impl.PartialObjectGraph
 import com.arbr.platform.object_graph.impl.PartialRef
@@ -18,7 +18,7 @@ import com.arbr.platform.alignable.alignable.collections.AlignableList
 import com.arbr.platform.alignable.alignable.graph.AlignableHomogenousRootedListDAG
 import com.arbr.platform.alignable.alignable.graph.HomogenousRootedListDAGAlignmentOperation
 import com.arbr.platform.alignable.alignable.struct.DoubleNullable
-import com.arbr.alignable.morphism.DifferentialListGraphMorphism
+import com.arbr.platform.alignable.morphism.DifferentialListGraphMorphism
 import org.slf4j.LoggerFactory
 import reactor.core.publisher.Mono
 import java.util.*

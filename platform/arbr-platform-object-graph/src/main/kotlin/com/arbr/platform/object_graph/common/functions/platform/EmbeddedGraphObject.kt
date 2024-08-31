@@ -1,6 +1,6 @@
-package com.arbr.og.object_model.common.functions.platform
+package com.arbr.platform.object_graph.common.functions.platform
 
-import com.arbr.og.object_model.common.functions.spec.base.FunctionInputElement
+import com.arbr.platform.object_graph.common.functions.spec.base.FunctionInputElement
 import com.arbr.platform.ml.linear.typed.base.ColumnVector
 import com.arbr.platform.ml.linear.typed.shape.Dim
 

@@ -8,7 +8,7 @@ import com.arbr.engine.services.workflow.setup.WorkflowCredentialsProvider
 import com.arbr.engine.services.workflow.state.WorkflowExecutorService
 import com.arbr.engine.services.workflow.state.WorkflowFinishingResourceManager
 import com.arbr.engine.services.workflow.state.WorkflowStateService
-import com.arbr.og_engine.artifact.StatusArtifact
+import com.arbr.platform.object_graph.artifact.StatusArtifact
 import org.slf4j.LoggerFactory
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono

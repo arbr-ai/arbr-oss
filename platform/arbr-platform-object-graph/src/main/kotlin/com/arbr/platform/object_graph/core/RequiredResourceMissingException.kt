@@ -1,8 +1,8 @@
 package com.arbr.platform.object_graph.core
 
-import com.arbr.og.object_model.common.model.ProposedValue
-import com.arbr.og.object_model.common.model.ProposedValueReadStream
-import com.arbr.og.object_model.common.model.PropertyIdentifier
+import com.arbr.platform.object_graph.common.model.ProposedValue
+import com.arbr.platform.object_graph.common.model.ProposedValueReadStream
+import com.arbr.platform.object_graph.common.model.PropertyIdentifier
 import com.arbr.platform.object_graph.concurrency.LockLevel
 import java.time.Instant
 

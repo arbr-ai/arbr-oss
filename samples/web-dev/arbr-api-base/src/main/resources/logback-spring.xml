@@ -139,13 +139,13 @@
     </springProfile>
 
     <springProfile name="file_logging">
-        <logger name="com.arbr.og_engine.arbiter.WorkflowResourceArbiter" level="INFO"
+        <logger name="com.arbr.platform.object_graph.arbiter.WorkflowResourceArbiter" level="INFO"
                 additivity="false">
             <appender-ref ref="PROPOSALS_FILE"/>
         </logger>
     </springProfile>
     <springProfile name="!file_logging">
-        <logger name="com.arbr.og_engine.arbiter.WorkflowResourceArbiter" level="INFO"
+        <logger name="com.arbr.platform.object_graph.arbiter.WorkflowResourceArbiter" level="INFO"
                 additivity="false">
             <appender-ref ref="NOP"/>
         </logger>

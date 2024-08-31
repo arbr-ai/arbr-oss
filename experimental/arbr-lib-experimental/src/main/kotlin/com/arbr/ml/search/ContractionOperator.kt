@@ -1,4 +1,4 @@
-package com.arbr.ml.search
+package com.arbr.platform.ml.search
 
 class ContractionOperator<E: Any>(
     val left: Contraction<E>,

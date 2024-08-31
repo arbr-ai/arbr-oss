@@ -1,6 +1,4 @@
-package com.arbr.og_engine.artifact
-
-import com.arbr.platform.object_graph.artifact.WorkflowStatus
+package com.arbr.platform.object_graph.artifact
 
 /**
  * Artifact signaling a status change.

@@ -2,7 +2,7 @@ package com.arbr.api_server_base.service.file_system.model
 
 import com.arbr.api_server_base.service.git.client.GitWebClient
 import com.arbr.engine.util.FileContentUtils
-import com.arbr.og_engine.file_system.*
+import com.arbr.platform.object_graph.file_system.*
 import org.slf4j.LoggerFactory
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
@@ -60,14 +60,6 @@ class GitRemoteVolumeState(
 
     override fun getProjectFullName(): String {
         return projectFullName
-    }
-
-    override fun getFileTreeRepresentation(): Mono<String> {
-        return listFileRelPathsGit()
-            .collectList()
-            .map {
-                it.sorted().joinToString("\n")
-            }
     }
 
     private fun readFileContents(fileRelPath: String): Mono<VolumeFile> =

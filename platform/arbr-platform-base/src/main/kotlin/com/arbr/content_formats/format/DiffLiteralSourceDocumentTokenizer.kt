@@ -2,7 +2,7 @@ package com.arbr.content_formats.format
 
 import com.arbr.content_formats.format.tokenizer.LineTokenizer
 import com.arbr.content_formats.format.tokenizer.Tokenizer
-import com.arbr.data_structures_common.partial_order.LinearOrderList
+import com.arbr.platform.data_structures_common.partial_order.LinearOrderList
 
 class DiffLiteralSourceDocumentTokenizer :
     Tokenizer<DiffLiteralSourceDocument, LinearOrderList<DiffOperation>, DiffOperation> {

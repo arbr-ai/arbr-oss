@@ -1,11 +1,11 @@
 package com.arbr.core_web_dev.workflow.input.model
 
 import com.arbr.core_web_dev.workflow.input.base.TaskInfoBearer
-import com.arbr.object_model.core.resource.ArbrProject
-import com.arbr.object_model.core.resource.ArbrTask
-import com.arbr.og.object_model.common.values.SourcedValue
-import com.arbr.og.object_model.common.values.SourcedValueGeneratorInfo
-import com.arbr.og.object_model.common.values.SourcedValueKind
+import com.arbr.platform.object_graph.core.resource.ArbrProject
+import com.arbr.platform.object_graph.core.resource.ArbrTask
+import com.arbr.platform.object_graph.common.values.SourcedValue
+import com.arbr.platform.object_graph.common.values.SourcedValueGeneratorInfo
+import com.arbr.platform.object_graph.common.values.SourcedValueKind
 import com.fasterxml.jackson.annotation.JsonIgnore
 
 data class ProjectStarter(

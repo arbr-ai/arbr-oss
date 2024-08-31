@@ -1,7 +1,7 @@
-package com.arbr.og.object_model.common.functions.spec.base
+package com.arbr.platform.object_graph.common.functions.spec.base
 
-import com.arbr.og.object_model.common.properties.FieldValueViewContainer
-import com.arbr.og.object_model.common.values.SourcedValue
+import com.arbr.platform.object_graph.common.properties.FieldValueViewContainer
+import com.arbr.platform.object_graph.common.values.SourcedValue
 
 interface ResourceHelperFunctionInputSpecContext {
     fun <S : SourcedValue<*>> element(input: S): FunctionInputSingleton<S>

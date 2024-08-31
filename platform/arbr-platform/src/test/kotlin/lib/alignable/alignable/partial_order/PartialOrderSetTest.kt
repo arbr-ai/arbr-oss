@@ -1,8 +1,8 @@
 package com.arbr.alignable.alignable.partial_order
 
-import com.arbr.data_structures_common.immutable.ImmutableLinkedSet
-import com.arbr.data_structures_common.partial_order.ConcretePartialOrderSet
-import com.arbr.data_structures_common.partial_order.posetOf
+import com.arbr.platform.data_structures_common.immutable.ImmutableLinkedSet
+import com.arbr.platform.data_structures_common.partial_order.ConcretePartialOrderSet
+import com.arbr.platform.data_structures_common.partial_order.posetOf
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test

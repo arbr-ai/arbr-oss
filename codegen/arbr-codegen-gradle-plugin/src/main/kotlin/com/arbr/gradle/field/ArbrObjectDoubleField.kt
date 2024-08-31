@@ -18,6 +18,6 @@ abstract class ArbrObjectDoubleField @Inject constructor(
     }
 
     companion object {
-        const val DEFAULT_CODEC_CLASS = "com.arbr.og.encoder.ObjectDoubleFieldCodec"
+        const val DEFAULT_CODEC_CLASS = "com.arbr.platform.object_graph.encoder.ObjectDoubleFieldCodec"
     }
 }

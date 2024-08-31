@@ -1,8 +1,8 @@
 package com.arbr.relational_prompting.layers.prompt_composition
 
-import com.arbr.og.object_model.common.values.collections.SourcedStruct
-import com.arbr.og.object_model.common.values.SourcedValueGeneratorInfo
-import com.arbr.og.object_model.common.values.SourcedValueKind
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct
+import com.arbr.platform.object_graph.common.values.SourcedValueGeneratorInfo
+import com.arbr.platform.object_graph.common.values.SourcedValueKind
 import com.arbr.relational_prompting.layers.object_translation.PropertySchema
 import com.arbr.relational_prompting.services.ai_application.config.OutputFormatException
 import com.arbr.relational_prompting.services.ai_application.config.OutputSchemaExceptionWithKnownViolations

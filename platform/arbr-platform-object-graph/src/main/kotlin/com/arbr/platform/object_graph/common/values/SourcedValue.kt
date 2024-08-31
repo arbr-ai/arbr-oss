@@ -1,7 +1,7 @@
-package com.arbr.og.object_model.common.values
+package com.arbr.platform.object_graph.common.values
 
 import com.arbr.content_formats.json_schematized.JsonSchema
-import com.arbr.og.object_model.common.values.collections.SourcedStruct1
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct1
 
 interface SourcedValue<T> : InputElement<SourcedStruct1<SourcedValue<T>>> {
     val id: String

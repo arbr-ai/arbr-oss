@@ -2,7 +2,7 @@ package com.arbr.relational_prompting.layers.object_translation
 
 import com.arbr.content_formats.json_schematized.JsonSchema
 import com.arbr.platform.object_graph.common.ObjectModel
-import com.arbr.og.object_model.common.model.*
+import com.arbr.platform.object_graph.common.model.*
 import com.arbr.content_formats.mapper.Mappers
 import com.arbr.relational_prompting.generics.model.ChatMessage
 import com.arbr.relational_prompting.layers.prompt_composition.PropertyListParser
@@ -11,10 +11,10 @@ import com.arbr.relational_prompting.layers.prompt_composition.YamlPropertyListP
 import com.arbr.relational_prompting.layers.prompt_composition.YamlPropertyListSerializer
 import com.arbr.relational_prompting.services.ai_application.config.*
 import com.arbr.content_formats.json_schematized.JsonSchemaValidation
-import com.arbr.og.object_model.common.values.SourcedValue
-import com.arbr.og.object_model.common.values.SourcedValueGeneratorInfo
-import com.arbr.og.object_model.common.values.SourcedValueImpl
-import com.arbr.og.object_model.common.values.collections.*
+import com.arbr.platform.object_graph.common.values.SourcedValue
+import com.arbr.platform.object_graph.common.values.SourcedValueGeneratorInfo
+import com.arbr.platform.object_graph.common.values.SourcedValueImpl
+import com.arbr.platform.object_graph.common.values.collections.*
 import org.slf4j.LoggerFactory
 
 inline fun <reified R : SourcedStruct, B : TemplateComponentSchema.BuilderBase<R, B>> schema(f: TemplateComponentSchema.Builder0.() -> B): TemplateComponentSchema<R> =

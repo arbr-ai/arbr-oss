@@ -4,7 +4,7 @@ import com.arbr.model_loader.loader.ParameterLoaderFactory
 import com.arbr.model_suite.parameters.ParameterValueProviderImpl
 import com.arbr.model_suite.predictive_models.document_diff_alignment.DocumentDiffAlignmentHelper
 import com.arbr.model_suite.predictive_models.document_diff_alignment.DocumentDiffAlignmentHelperDeferredImpl
-import com.arbr.ml.optimization.base.ParameterValueProvider
+import com.arbr.platform.ml.optimization.base.ParameterValueProvider
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

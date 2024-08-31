@@ -1,12 +1,12 @@
 package com.arbr.prompt_library.util
 
-import com.arbr.object_model.core.resource.*
-import com.arbr.object_model.core.resource.field.*
-import com.arbr.og.object_model.common.model.collections.*
-import com.arbr.og.object_model.common.values.collections.SourcedStruct1
-import com.arbr.og.object_model.common.values.collections.SourcedStruct2
-import com.arbr.og.object_model.common.values.collections.SourcedStruct7
-import com.arbr.og.object_model.common.values.collections.SourcedStruct8
+import com.arbr.platform.object_graph.core.resource.*
+import com.arbr.platform.object_graph.core.resource.field.*
+import com.arbr.platform.object_graph.common.model.collections.*
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct1
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct2
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct7
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct8
 import com.arbr.platform.ml.linear.typed.shape.Dim
 import com.arbr.platform.ml.linear.typed.shape.Shape
 

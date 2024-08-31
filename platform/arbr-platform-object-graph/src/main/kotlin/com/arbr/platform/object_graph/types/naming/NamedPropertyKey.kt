@@ -1,6 +1,6 @@
-package com.arbr.object_model.core.types.naming
+package com.arbr.platform.object_graph.types.naming
 
-import com.arbr.object_model.core.types.suites.EnumLike
+import com.arbr.platform.object_graph.types.suites.EnumLike
 
 interface NamedPropertyKey: EnumLike {
     override val name: String

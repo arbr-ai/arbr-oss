@@ -1,6 +1,6 @@
 package com.arbr.core_web_dev.config
 //
-//import com.arbr.engine.services.workflow.state.WorkflowCancellationService
+//import com.arbr.platform.object_graph.generics.WorkflowCancellationService
 //import org.springframework.context.annotation.Bean
 //import org.springframework.context.annotation.ComponentScan
 //import org.springframework.context.annotation.Configuration

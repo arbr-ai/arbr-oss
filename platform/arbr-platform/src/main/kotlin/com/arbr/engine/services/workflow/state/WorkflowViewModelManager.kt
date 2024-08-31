@@ -1,13 +1,13 @@
 package com.arbr.engine.services.workflow.state
 
-import com.arbr.api.workflow.core.WorkflowProcessorStatus
+import com.arbr.platform.object_graph.artifact.WorkflowProcessorStatus
 import com.arbr.api.workflow.resource.WorkflowResourceType
 import com.arbr.api.workflow.view_model.*
 import com.arbr.api.workflow.view_model.update.ViewModelValueUpdate
 import com.arbr.api.workflow.view_model.update.ViewModelValueUpdateOperation
 import com.arbr.api.workflow.view_model.update.ViewModelValueUpdateOperation.*
 import com.arbr.engine.util.FluxIngestor
-import com.arbr.og_engine.artifact.Artifact
+import com.arbr.platform.object_graph.artifact.Artifact
 import org.slf4j.LoggerFactory
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono

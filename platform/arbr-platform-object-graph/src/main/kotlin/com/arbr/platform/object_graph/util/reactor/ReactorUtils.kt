@@ -1,4 +1,4 @@
-package com.arbr.util_common.reactor
+package com.arbr.platform.object_graph.util.reactor
 
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono

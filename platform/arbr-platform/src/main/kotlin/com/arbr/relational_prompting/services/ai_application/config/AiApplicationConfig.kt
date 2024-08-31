@@ -7,7 +7,7 @@ import com.arbr.relational_prompting.layers.prompt_composition.ChatMessagePrePro
 import com.arbr.relational_prompting.layers.prompt_composition.OutputSchemaRepairFormatter
 import com.arbr.relational_prompting.layers.prompt_composition.PromptComposer
 import com.arbr.relational_prompting.services.ai_application.application.PromptShortener
-import com.arbr.og.object_model.common.values.collections.SourcedStruct
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct
 
 data class AiApplicationConfig<InputModel : SourcedStruct, OutputModel : SourcedStruct>(
     val inputSchema: TemplateComponentSchema<InputModel>,

@@ -1,4 +1,4 @@
-package com.arbr.og.util
+package com.arbr.platform.object_graph.util
 
 import com.arbr.platform.object_graph.impl.ObjectModelResource
 import com.arbr.platform.object_graph.impl.Partial

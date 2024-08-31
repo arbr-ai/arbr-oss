@@ -1,10 +1,10 @@
 package com.arbr.prompt_library.transform
 
-import com.arbr.object_model.core.resource.ArbrFile
-import com.arbr.object_model.core.resource.ArbrFileSegmentOpDependency
-import com.arbr.object_model.core.resource.field.*
-import com.arbr.og.object_model.common.values.collections.SourcedStruct1
-import com.arbr.og.object_model.common.values.SourcedValueGeneratorInfo
+import com.arbr.platform.object_graph.core.resource.ArbrFile
+import com.arbr.platform.object_graph.core.resource.ArbrFileSegmentOpDependency
+import com.arbr.platform.object_graph.core.resource.field.*
+import com.arbr.platform.object_graph.common.values.collections.SourcedStruct1
+import com.arbr.platform.object_graph.common.values.SourcedValueGeneratorInfo
 import com.arbr.prompt_library.util.FileSegmentOpDependencies
 import com.arbr.prompt_library.util.FileSegmentOpDependencyEdges
 import com.arbr.prompt_library.util.FileSegmentOpDependencyEdgesContainer

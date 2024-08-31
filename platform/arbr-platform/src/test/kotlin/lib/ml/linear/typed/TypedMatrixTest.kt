@@ -1,4 +1,4 @@
-package com.arbr.ml.linear.typed
+package com.arbr.platform.ml.linear.typed
 
 import com.arbr.platform.ml.linear.typed.impl.TypedMatrices
 import com.arbr.platform.ml.linear.typed.shape.Dim

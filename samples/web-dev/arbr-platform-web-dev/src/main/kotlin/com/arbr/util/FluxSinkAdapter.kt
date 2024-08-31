@@ -1,7 +1,7 @@
 package com.arbr.util
 
 import com.arbr.content_formats.mapper.Mappers
-import com.arbr.og_engine.artifact.Artifact
+import com.arbr.platform.object_graph.artifact.Artifact
 import com.arbr.relational_prompting.services.ai_application.application.ApplicationArtifact
 import com.fasterxml.jackson.module.kotlin.jacksonTypeRef
 import reactor.core.Disposable
@@ -61,7 +61,7 @@ fun <T : Any, U : Any> FluxSink<T>.adapt(f: (U) -> T): FluxSink<U> = let { outer
  * TODO: Just make the relational prompting ApplicationArtifact an Artifact
  */
 fun FluxSink<Artifact>.adapt(): FluxSink<ApplicationArtifact> = adapt { applicationArtifact ->
-    com.arbr.og_engine.artifact.ApplicationCompletionArtifact(
+    com.arbr.platform.object_graph.artifact.ApplicationCompletionArtifact(
         applicationArtifact.applicationId,
         Mappers.mapper.convertValue(applicationArtifact.examples, jacksonTypeRef()),
         applicationArtifact.input,

@@ -1,14 +1,14 @@
 {%root%}
 package {%root.packageDomain%}.engine.delegator
 
-import com.arbr.og_engine.file_system.VolumeState
-import com.arbr.og_engine.core.WorkflowResourceModel
-import com.arbr.og_engine.core.WorkflowResourceDelegator
+import com.arbr.platform.object_graph.file_system.VolumeState
+import com.arbr.platform.object_graph.core.WorkflowResourceModel
+import com.arbr.platform.object_graph.core.WorkflowResourceDelegator
 import com.arbr.api.workflow.resource.WorkflowResourceType
-import com.arbr.og_engine.artifact.WorkflowResourceCreationArtifact
-import com.arbr.og_engine.artifact.WorkflowResourceUpdateArtifact
-import com.arbr.og.object_model.common.model.collections.OneToManyResourceMap
-import com.arbr.og.object_model.common.model.ProposedValueStream
+import com.arbr.platform.object_graph.artifact.WorkflowResourceCreationArtifact
+import com.arbr.platform.object_graph.artifact.WorkflowResourceUpdateArtifact
+import com.arbr.platform.object_graph.common.model.collections.OneToManyResourceMap
+import com.arbr.platform.object_graph.common.model.ProposedValueStream
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import reactor.core.publisher.Flux
@@ -17,7 +17,7 @@ import reactor.core.publisher.Mono
 import java.util.concurrent.ConcurrentHashMap
 import com.arbr.util_common.reactor.fireAndForget
 import com.arbr.platform.object_graph.impl.Partial
-import com.arbr.og_engine.artifact.Artifact
+import com.arbr.platform.object_graph.artifact.Artifact
 import {%root.packageDomain%}.core.WorkflowResourceTypes
 {%root.schema:#schemai%}
 
@@ -31,7 +31,7 @@ import {%root.packageDomain%}.core.WorkflowResourceTypes
 {%tablei%}
 import {%root.packageDomain%}.core.partial.Partial{%table.titleName%}
 import {%root.packageDomain%}.core.resource.{%schema.titleName%}{%table.titleName%}
-import {%root.packageDomain%}.core.types.{%schema.titleName%}ForeignKey
+import {%root.packageDomain%}.types.{%schema.titleName%}ForeignKey
 import {%root.packageDomain%}.processor.base.Workflow{%table.titleName%}Processor
 
 {%_tablei%}

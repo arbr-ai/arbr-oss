@@ -1,7 +1,7 @@
 package com.arbr.object_model.store
 
-import com.arbr.object_model.core.types.ArbrForeignKey
-import com.arbr.og.store.DefaultKVStore
+import com.arbr.platform.object_graph.types.ArbrForeignKey
+import com.arbr.platform.object_graph.store.DefaultKVStore
 import com.arbr.platform.object_graph.store.KVStore
 import com.arbr.platform.object_graph.impl.ObjectModelResource
 

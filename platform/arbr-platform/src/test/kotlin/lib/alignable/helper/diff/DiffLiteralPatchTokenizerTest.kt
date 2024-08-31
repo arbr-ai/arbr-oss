@@ -1,7 +1,7 @@
 package com.arbr.alignable.helper.diff
 
 import com.arbr.content_formats.format.*
-import com.arbr.data_structures_common.partial_order.singletonPoset
+import com.arbr.platform.data_structures_common.partial_order.singletonPoset
 import org.apache.commons.text.similarity.LevenshteinDistance
 import org.junit.jupiter.api.Test
 import java.io.File

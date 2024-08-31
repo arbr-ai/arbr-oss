@@ -1,14 +1,14 @@
-package com.arbr.og.object_model.common.model.view
+package com.arbr.platform.object_graph.common.model.view
 
-import com.arbr.object_model.core.types.ResourceView
-import com.arbr.object_model.core.types.naming.NamedForeignKey
-import com.arbr.object_model.core.types.naming.NamedResource
-import com.arbr.object_model.core.types.naming.NamedResourceKey
+import com.arbr.platform.object_graph.types.ResourceView
+import com.arbr.platform.object_graph.types.naming.NamedForeignKey
+import com.arbr.platform.object_graph.types.naming.NamedResource
+import com.arbr.platform.object_graph.types.naming.NamedResourceKey
 import com.arbr.platform.object_graph.common.ObjectModel
-import com.arbr.og.object_model.common.model.ProposedForeignKeyCollectionStream
-import com.arbr.og.object_model.common.model.ProposedValueStream
-import com.arbr.og.object_model.common.properties.FieldValueViewContainer
-import com.arbr.og.object_model.common.properties.GenericWritableDelegate
+import com.arbr.platform.object_graph.common.model.ProposedForeignKeyCollectionStream
+import com.arbr.platform.object_graph.common.model.ProposedValueStream
+import com.arbr.platform.object_graph.common.properties.FieldValueViewContainer
+import com.arbr.platform.object_graph.common.properties.GenericWritableDelegate
 import com.arbr.platform.object_graph.impl.ObjectModelResource
 import com.arbr.platform.object_graph.impl.ObjectRef
 import com.arbr.platform.object_graph.impl.Partial

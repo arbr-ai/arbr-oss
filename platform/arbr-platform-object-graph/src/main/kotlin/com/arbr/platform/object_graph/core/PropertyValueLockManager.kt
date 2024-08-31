@@ -1,6 +1,6 @@
 package com.arbr.platform.object_graph.core
 
-import com.arbr.og.object_model.common.model.PropertyIdentifier
+import com.arbr.platform.object_graph.common.model.PropertyIdentifier
 import com.arbr.platform.object_graph.concurrency.LockLevel
 import com.arbr.platform.object_graph.concurrency.PropertyValueLock
 import com.arbr.platform.object_graph.util.LexIntSequence
