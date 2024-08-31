@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.autoconfigure.r2dbc.R2dbcAutoConfiguration
 import org.springframework.boot.runApplication
+import org.springframework.scheduling.annotation.EnableScheduling
 
 @SpringBootApplication(
     exclude = [
@@ -26,6 +27,7 @@ import org.springframework.boot.runApplication
         "com.arbr.platform.object_graph.core",
     ]
 )
+@EnableScheduling
 class WebDevMain
 
 fun main(args: Array<String>) {
