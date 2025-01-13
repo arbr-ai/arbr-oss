@@ -1,0 +1,12 @@
+# jdk defaults
+build --java_language_version=arbrjdk_21
+build --tool_java_language_version=arbrjdk_21
+build --java_runtime_version=arbrjdk_21
+build --tool_java_runtime_version=arbrjdk_21
+
+run --java_language_version=arbrjdk_21
+run --tool_java_language_version=arbrjdk_21
+run --java_runtime_version=arbrjdk_21
+run --tool_java_runtime_version=arbrjdk_21
+
+common --action_env=JAVA_HOME

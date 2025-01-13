@@ -1,0 +1,125 @@
+alias(
+    name = "arbrjdk_settings_alias",
+    actual = select({
+        ":arbrjdk_name_setting": ":arbrjdk_name_setting",
+        ":arbrjdk_version_setting": ":arbrjdk_version_setting",
+        "//conditions:default": ":arbrjdk_name_version_setting",
+    }),
+    visibility = ["//visibility:private"],
+)
+
+config_setting(
+    name = "arbrjdk_name_setting",
+    values = {"java_runtime_version": "arbrjdk"},
+    visibility = ["//visibility:private"],
+)
+
+config_setting(
+    name = "arbrjdk_version_setting",
+    values = {"java_runtime_version": "21"},
+    visibility = ["//visibility:private"],
+)
+
+config_setting(
+    name = "arbrjdk_name_version_setting",
+    values = {"java_runtime_version": "arbrjdk_21"},
+    visibility = ["//visibility:private"],
+)
+
+toolchain(
+    name = "arbrjdk_bootstrap_runtime_toolchain_definition",
+    target_settings = [":arbrjdk_settings_alias"],
+    toolchain = "@@rules_java~~toolchains~local_jdk//:jdk",
+    toolchain_type = "@rules_java//toolchains:bootstrap_runtime_toolchain_type",
+)
+
+toolchain(
+    name = "arbrjdk_runtime_toolchain_definition",
+    target_settings = [":arbrjdk_settings_alias"],
+    toolchain = "@@rules_java~~toolchains~local_jdk//:jdk",
+    toolchain_type = "@bazel_tools//tools/jdk:runtime_toolchain_type",
+)
+
+# Core Java 21 toolchain using mostly vendored-in tool builds. Built on top of the "local" JDK (from JAVA_HOME) such as
+# the one provided by Nix
+# Note: retains external rule for `platformclasspath` because it has many transitive
+# dependencies but causes no problems with the build
+java_toolchain(
+    name = "arbrjdk_toolchain_java21",
+    bootclasspath = ["@rules_java//toolchains:platformclasspath"],
+    forcibly_disable_header_compilation = False,
+    genclass = ["//java-toolchain/tools:GenClass"],
+    header_compiler = ["//java-toolchain/tools:TurbineDirect"],
+    header_compiler_direct = ["//java-toolchain/toolchains:turbine_direct"],
+    ijar = ["//java-toolchain/toolchains:ijar"],
+    jacocorunner = "//java-toolchain/tools:jacoco_coverage_runner_filegroup",
+    java_runtime = "@@rules_java~~toolchains~local_jdk//:jdk",
+    javabuilder = ["//java-toolchain/tools:JavaBuilder"],
+    javac_supports_workers = True,
+    jvm_opts = [
+        "--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
+        "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",
+        "--add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED",
+        "--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED",
+        "--add-exports=jdk.compiler/com.sun.tools.javac.resources=ALL-UNNAMED",
+        "--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+        "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",
+        "--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
+        "--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED",
+        "--add-opens=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED",
+        "--add-opens=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED",
+        "--add-opens=java.base/java.nio=ALL-UNNAMED",
+        "--add-opens=java.base/java.lang=ALL-UNNAMED",
+        "-Dsun.io.useCanonCaches=false",
+        "-XX:-CompactStrings",
+        "-Xlog:disable",
+        "-Xlog:all=warning:stderr:uptime,level,tags",
+    ],
+    misc = [
+        "-XDskipDuplicateBridges=true",
+        "-XDcompilePolicy=simple",
+        "--should-stop=ifError=FLOW",
+        "-g",
+        "-parameters",
+        "-Xep:ReturnValueIgnored:OFF",
+        "-Xep:IgnoredPureGetter:OFF",
+        "-Xep:EmptyTopLevelDeclaration:OFF",
+        "-Xep:LenientFormatStringValidation:OFF",
+        "-Xep:ReturnMissingNullable:OFF",
+        "-Xep:UseCorrectAssertInTests:OFF",
+    ],
+    oneversion = "//java-toolchain/toolchains:one_version",
+    reduced_classpath_incompatible_processors = ["dagger.hilt.processor.internal.root.RootProcessor"],
+    singlejar = ["//java-toolchain/toolchains:singlejar"],
+    source_version = "21",
+    target_version = "21",
+    turbine_jvm_opts = ["-XX:+UseParallelGC"],
+)
+
+toolchain(
+    name = "arbrjdk_toolchain_java21_default_definition",
+    target_compatible_with = [],
+    target_settings = [":arbrjdk_toolchain_java21_default_version_setting"],
+    toolchain = ":arbrjdk_toolchain_java21",
+    toolchain_type = "@bazel_tools//tools/jdk:toolchain_type",
+)
+
+config_setting(
+    name = "arbrjdk_toolchain_java21_default_version_setting",
+    values = {"java_language_version": ""},
+    visibility = ["//visibility:private"],
+)
+
+toolchain(
+    name = "arbrjdk_toolchain_java21_definition",
+    target_compatible_with = [],
+    target_settings = [":arbrjdk_toolchain_java21_name_version_setting"],
+    toolchain = ":arbrjdk_toolchain_java21",
+    toolchain_type = "@bazel_tools//tools/jdk:toolchain_type",
+)
+
+config_setting(
+    name = "arbrjdk_toolchain_java21_name_version_setting",
+    values = {"java_language_version": "arbrjdk_21"},
+    visibility = ["//visibility:private"],
+)

@@ -1,0 +1,82 @@
+# From https://github.com/bazelbuild/rules_java/blob/master/toolchains/BUILD
+
+load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
+load("@rules_cc//cc:cc_library.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+alias(
+    name = "ijar",
+    actual = ":ijar_prebuilt_binary_or_cc_binary",
+)
+
+alias(
+    name = "ijar_prebuilt_binary_or_cc_binary",
+    actual = ":ijar_prebuilt_binary",
+)
+
+# Note: cheating here and in other rules by allowing built targets even when targeting prebuilt
+alias(
+    name = "ijar_prebuilt_binary",
+    actual = select({
+        "@bazel_tools//src/conditions:darwin_arm64": "//java-toolchain/tools_darwin_arm64:ijar_prebuilt_binary",
+        "//conditions:default": "//java-toolchain/tools:ijar_cc_binary",
+    }),
+)
+
+alias(
+    name = "singlejar",
+    actual = ":singlejar_prebuilt_or_cc_binary",
+)
+
+alias(
+    name = "singlejar_prebuilt_or_cc_binary",
+    actual = ":prebuilt_singlejar",
+)
+
+alias(
+    name = "prebuilt_singlejar",
+    actual = select({
+        "@bazel_tools//src/conditions:darwin_arm64": "//java-toolchain/tools_darwin_arm64:prebuilt_singlejar",
+        "//conditions:default": "//java-toolchain/tools:singlejar_cc_bin",
+    }),
+)
+
+alias(
+    name = "one_version",
+    actual = ":one_version_prebuilt_or_cc_binary",
+)
+
+alias(
+    name = "one_version_prebuilt_or_cc_binary",
+    actual = ":prebuilt_one_version",
+)
+
+alias(
+    name = "prebuilt_one_version",
+    actual = select({
+        "@bazel_tools//src/conditions:darwin_arm64": "//java-toolchain/tools_darwin_arm64:prebuilt_one_version",
+        "//conditions:default": "//java-toolchain/tools:one_version_cc_bin",
+    }),
+)
+
+alias(
+    name = "turbine_direct",
+    actual = ":turbine_direct_graal_or_java",
+)
+
+alias(
+    name = "turbine_direct_graal_or_java",
+    actual = select({
+        "@bazel_tools//src/conditions:darwin_arm64": "//java-toolchain/tools_darwin_arm64:turbine_direct_graal",
+        "//conditions:default": "//java-toolchain/tools:TurbineDirect",
+    }),
+)
+
+alias(
+    name = "turbine_direct_graal",
+    actual = select({
+        "@bazel_tools//src/conditions:darwin_arm64": "//java-toolchain/tools_darwin_arm64:turbine_direct_graal",
+        "//conditions:default": "//java-toolchain/tools:TurbineDirect",
+    }),
+)

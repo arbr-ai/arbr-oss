@@ -135,6 +135,7 @@ internal class LangToGraphQlSchemaConverter(
             ),
             RegexNamedReplacementRule(
                 Regex("(?<outerType>[^<>]+)<(?<innerType>[^<>]+)>"),
+                listOf("outerType", "innerType"),
             ) { _, namedMatches ->
                 val outerType = namedMatches["outerType"]!!.value
                 val innerTypeString = namedMatches["innerType"]!!.value
@@ -221,6 +222,7 @@ internal class LangToGraphQlSchemaConverter(
             // Needs to balance brackets - glob to end of string and find first nontrivial zero
             RegexNamedReplacementRule(
                 Regex("(?<pre>.*)List(?<inner>\\[.*$)"),
+                listOf("pre", "inner"),
             ) { _, m ->
                 val pre = m["pre"]!!.value
                 val inner = m["inner"]!!.value
@@ -228,6 +230,7 @@ internal class LangToGraphQlSchemaConverter(
             },
             RegexNamedReplacementRule(
                 Regex("(?<pre>.*)Type(?<inner>\\[.*$)"),
+                listOf("pre", "inner"),
             ) { _, m ->
                 val pre = m["pre"]!!.value
                 val inner = m["inner"]!!.value

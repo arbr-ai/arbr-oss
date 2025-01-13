@@ -238,7 +238,6 @@ class SchemaMergeNodeProcessor(
             is GraphQlLanguageNodeListType -> typeNames(type.type!!)
             is GraphQlLanguageNodeNonNullType -> typeNames(type.type!!)
             is GraphQlLanguageNodeTypeName -> listOf(type.name!!)
-            else -> throw IllegalStateException()
         }
     }
 
@@ -294,7 +293,6 @@ class SchemaMergeNodeProcessor(
             is GraphQlLanguageNodeListType -> "[${getConvertedType(type.type!!)}]"
             is GraphQlLanguageNodeNonNullType -> "${getConvertedType(type.type!!)}!"
             is GraphQlLanguageNodeTypeName -> type.name!!
-            else -> throw Exception(type.toString())
         }
     }
 

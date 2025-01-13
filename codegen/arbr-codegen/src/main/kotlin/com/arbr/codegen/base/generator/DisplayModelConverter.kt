@@ -219,22 +219,20 @@ class DisplayModelConverter(
                             titleName = childTableNameSuite.titleCase
                         }
 
-                        val schemaTitleName = childSchemaNameSuite.titleCase
                         val childTableTitleName = childTableNameSuite.titleCase
                         val fieldTitleName = referringFieldNameSuite.titleCase
 
                         val schemaConstantName = childSchemaNameSuite.screamingSnakeCase
-                        val tableConstantName = childTableNameSuite.screamingSnakeCase
                         val fieldConstantName = referringFieldNameSuite.screamingSnakeCase
 
                         DisplayForeignRecordModel(
                             (table.fields.size + j).toString(),
-                            schemaTitleName,
+                            childSchemaNameSuite.titleCase,
                             childTableTitleName,
                             fieldTitleName,
 
                             schemaConstantName,
-                            tableConstantName,
+                            childTableNameSuite.screamingSnakeCase,
                             fieldConstantName,
 
                             j.toString(),
@@ -292,7 +290,7 @@ class DisplayModelConverter(
     ): DisplayRootModel {
         val newSchema = displayRootModel.schema.map { displaySchemaModel ->
             displaySchemaModel.copy(
-                table = displaySchemaModel.table.filter { displayTableModel ->
+                table = displaySchemaModel.table.filter { _ ->
 //                    displayTableModel.propertyName != ROOT_TABLE_NAME
                     true
                 }

@@ -19,3 +19,9 @@ http_archive(
 load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 
 bazel_skylib_workspace()
+
+http_archive(
+    name = "com_google_absl",
+    strip_prefix = "abseil-cpp-3358286120d143e6a622652675b8b1b78447293c",
+    urls = ["https://github.com/abseil/abseil-cpp/archive/3358286120d143e6a622652675b8b1b78447293c.zip"],
+)

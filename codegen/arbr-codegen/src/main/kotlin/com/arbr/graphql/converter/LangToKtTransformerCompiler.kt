@@ -107,7 +107,7 @@ internal class LangToKtTransformerCompiler(
                     orderedCandidates.first()
                 }
             }
-            .mapValues { (canonicalName, mappedNodeClassModel) ->
+            .mapValues { (_, mappedNodeClassModel) ->
                 val methodHeader = getConversionMethodHeader(mappedNodeClassModel)
 
                 CNode<DType.GqlSchema.GqlType.Type, Expr.Fn<GqlExpr.Value, KtExpr.Value>>(
@@ -137,7 +137,7 @@ internal class LangToKtTransformerCompiler(
 
                 orderedCandidates[1]
             }
-            .mapValues { (canonicalName, mappedNodeClassModel) ->
+            .mapValues { (_, mappedNodeClassModel) ->
                 val methodHeader = getConversionMethodHeader(mappedNodeClassModel)
 
                 CNode<DType.GqlSchema.GqlType.Type, Expr.Fn<GqlExpr.Value, KtExpr.Value>>(

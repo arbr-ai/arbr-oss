@@ -1,103 +1,91 @@
-"""LMAI"""
-
 module(
-    name = "lmai",
-    version = "0.0.1-07232024",
+    name = "arbr",
+    version = "0.0.1-01122025",
 )
 
 #
-# `bazel` central registry
+# bazel central registry deps
 #
 
 bazel_dep(name = "rules_java", version = "8.5.1")
 bazel_dep(name = "bazel_skylib", version = "1.7.1")
 bazel_dep(name = "rules_jvm_external", version = "6.4")
 bazel_dep(name = "rules_kotlin", version = "1.9.6")
+bazel_dep(name = "platforms", version = "0.0.10")
+bazel_dep(name = "rules_cc", version = "0.0.15")
+bazel_dep(name = "abseil-cpp", version = "20240722.0.bcr.2")
 
-# To regenerate maven_install.json:
-#   `REPIN=1 bazel run @maven//:pin`
-# To see dependency syntax:
-#   `bazel query @maven//:all --output=build > lmai/jvm/maven_all.txt`
+#   `REPIN=1 bazel run @maven//:pin && bazel query @maven//:all --output=build > maven_all.txt`
 #
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
     artifacts = [
-        "ai.djl.huggingface:tokenizers:0.31.0",
-        "ai.djl.sentencepiece:sentencepiece:0.31.0",
+
+        #        "commons-io:commons-io:2.15.1",
+        #        "io.micrometer:micrometer-core:1.13.4",
+        #        "io.micrometer:micrometer-observation:1.13.4",
+        #        "io.micrometer:micrometer-registry-prometheus:1.13.4",
+        #        "io.netty:netty-transport:4.1.114.Final",
+        #        "io.netty:netty-transport-classes-epoll:4.1.114.Final",
+        #        "io.netty:netty-transport-classes-kqueue:4.1.114.Final",
+        #        "io.netty:netty-transport-native-epoll:4.1.114.Final",
+        #        "io.netty:netty-transport-native-kqueue:4.1.114.Final",
+        #        "io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations:2.9.0",
+        #        "io.opentelemetry.instrumentation:opentelemetry-logback-appender-1.0:2.9.0-alpha",
+        #        "io.opentelemetry.javaagent:opentelemetry-javaagent:2.9.0",
+        #        "io.opentelemetry:opentelemetry-sdk:1.43.0",
+        #        "io.opentelemetry.instrumentation:opentelemetry-spring-webflux-5.3:2.10.0-alpha",
+        #        "io.projectreactor.kotlin:reactor-kotlin-extensions:1.2.3",
+        #        "io.projectreactor:reactor-core:3.6.10",
+        #        "io.projectreactor:reactor-test:3.6.10",
+        #        "io.prometheus:simpleclient:0.9.0",
+        #        "io.prometheus:simpleclient_common:0.9.0",
+        #        "io.r2dbc:r2dbc-pool:1.0.0.RELEASE",
+        #        "io.r2dbc:r2dbc-spi:1.0.0.RELEASE",
+        #        "jakarta.xml.bind:jakarta.xml.bind-api:3.0.0",
+        #        "org.apache.commons:commons-compress:1.26.2",
+        #        "org.apache.commons:commons-csv:1.10.0",
+        #        "org.apache.logging.log4j:log4j-api:2.23.1",
+        #        "org.apache.logging.log4j:log4j-core:2.23.1",
+        #        "org.apache.logging.log4j:log4j-to-slf4j:2.23.1",
+        #        "org.jetbrains.kotlin:kotlin-allopen:1.9.25",
+        #        "org.jetbrains.kotlin:kotlin-stdlib:1.9.25",
+        #        "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1",
+        #        "org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.8.1",
+        #        "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.1",
+        #        "org.jetbrains:annotations:13.0",
+        #        "org.jooq:jooq-codegen:3.19.16",
+        #        "org.jooq:jooq-kotlin:3.19.16",
+        #        "org.jooq:jooq-meta:3.19.16",
+        #        "org.jooq:jooq-meta-extensions:3.19.16",
+        #        "org.jooq:jooq:3.19.16",
+        #        "org.junit.jupiter:junit-jupiter-api:5.10.3",
+        #        "org.junit.jupiter:junit-jupiter-engine:5.10.3",
+        #        "org.junit.jupiter:junit-jupiter-params:5.10.3",
+        #        "org.junit.jupiter:junit-jupiter:5.10.3",
+        #        "org.junit.platform:junit-platform-console:1.10.3",
+        #        "org.mockito.kotlin:mockito-kotlin:5.4.0",
+        #        "org.mockito:mockito-core:5.12.0",
+        #        "org.mockito:mockito-junit-jupiter:5.12.0",
+        #        "org.postgresql:postgresql:42.7.4",
+        #        "org.postgresql:r2dbc-postgresql:1.0.0.RELEASE",
+        #        "org.reactivestreams:reactive-streams:1.0.4",
+        #        "org.springframework.boot:spring-boot-starter-actuator:3.3.4",
+        #        "org.springframework.boot:spring-boot-starter-webflux:3.3.4",
+        #        "org.springframework.boot:spring-boot-starter:3.3.4",
+        #        "org.springframework.boot:spring-boot-test:3.3.4",
+        #        "org.springframework.boot:spring-boot:3.3.4",
+        #        "org.springframework:spring-webflux:6.1.13",
+        #        "software.amazon.awssdk:s3:2.29.1",
+
+        # new
         "ch.qos.logback:logback-classic:1.5.8",
-        "com.fasterxml.jackson.module:jackson-module-kotlin:2.15.0-rc1",
-        "com.github.oshi:oshi-core:6.4.0",
-        "com.google.api.grpc:proto-google-common-protos:2.9.0",
-        "com.google.protobuf:protobuf-java-util:4.28.2",
-        "com.google.protobuf:protobuf-java:4.28.2",
-        "com.google.protobuf:protobuf-kotlin:4.28.2",
-        "com.microsoft.onnxruntime:onnxruntime:1.20.0",
-        "commons-io:commons-io:2.15.1",
-        "io.grpc:grpc-kotlin-stub:1.4.1",
-        "io.grpc:grpc-netty:1.65.1",
-        "io.grpc:grpc-protobuf:1.65.1",
-        "io.grpc:grpc-stub:1.65.1",
-        "io.micrometer:micrometer-core:1.13.4",
-        "io.micrometer:micrometer-observation:1.13.4",
-        "io.micrometer:micrometer-registry-prometheus:1.13.4",
-        "io.netty:netty-transport:4.1.114.Final",
-        "io.netty:netty-transport-classes-epoll:4.1.114.Final",
-        "io.netty:netty-transport-classes-kqueue:4.1.114.Final",
-        "io.netty:netty-transport-native-epoll:4.1.114.Final",
-        "io.netty:netty-transport-native-kqueue:4.1.114.Final",
-        "io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations:2.9.0",
-        "io.opentelemetry.instrumentation:opentelemetry-logback-appender-1.0:2.9.0-alpha",
-        "io.opentelemetry.javaagent:opentelemetry-javaagent:2.9.0",
-        "io.opentelemetry:opentelemetry-sdk:1.43.0",
-        "io.opentelemetry.instrumentation:opentelemetry-spring-webflux-5.3:2.10.0-alpha",
-        "io.projectreactor.kotlin:reactor-kotlin-extensions:1.2.3",
-        "io.projectreactor:reactor-core:3.6.10",
-        "io.projectreactor:reactor-test:3.6.10",
-        "io.prometheus:simpleclient:0.9.0",
-        "io.prometheus:simpleclient_common:0.9.0",
-        "io.r2dbc:r2dbc-pool:1.0.0.RELEASE",
-        "io.r2dbc:r2dbc-spi:1.0.0.RELEASE",
-        "jakarta.xml.bind:jakarta.xml.bind-api:3.0.0",
-        "org.apache.commons:commons-compress:1.26.2",
-        "org.apache.commons:commons-csv:1.10.0",
-        "org.apache.hadoop:hadoop-common:3.4.1",
-        "org.apache.hadoop:hadoop-mapreduce-client-common:3.4.1",
-        "org.apache.logging.log4j:log4j-api:2.23.1",
-        "org.apache.logging.log4j:log4j-core:2.23.1",
-        "org.apache.logging.log4j:log4j-to-slf4j:2.23.1",
-        "org.apache.parquet:parquet-column:1.14.4",
-        "org.apache.parquet:parquet-common:1.14.4",
-        "org.apache.parquet:parquet-hadoop:1.14.4",
-        "org.jetbrains.kotlin:kotlin-allopen:1.9.25",
-        "org.jetbrains.kotlin:kotlin-stdlib:1.9.25",
-        "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1",
-        "org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.8.1",
-        "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.1",
-        "org.jetbrains:annotations:13.0",
-        "org.jooq:jooq-codegen:3.19.16",
-        "org.jooq:jooq-kotlin:3.19.16",
-        "org.jooq:jooq-meta:3.19.16",
-        "org.jooq:jooq-meta-extensions:3.19.16",
-        "org.jooq:jooq:3.19.16",
-        "org.junit.jupiter:junit-jupiter-api:5.10.3",
-        "org.junit.jupiter:junit-jupiter-engine:5.10.3",
-        "org.junit.jupiter:junit-jupiter-params:5.10.3",
-        "org.junit.jupiter:junit-jupiter:5.10.3",
-        "org.junit.platform:junit-platform-console:1.10.3",
-        "org.mockito.kotlin:mockito-kotlin:5.4.0",
-        "org.mockito:mockito-core:5.12.0",
-        "org.mockito:mockito-junit-jupiter:5.12.0",
-        "org.postgresql:postgresql:42.7.4",
-        "org.postgresql:r2dbc-postgresql:1.0.0.RELEASE",
-        "org.reactivestreams:reactive-streams:1.0.4",
         "org.slf4j:slf4j-api:2.0.16",
-        "org.springframework.boot:spring-boot-starter-actuator:3.3.4",
-        "org.springframework.boot:spring-boot-starter-webflux:3.3.4",
-        "org.springframework.boot:spring-boot-starter:3.3.4",
-        "org.springframework.boot:spring-boot-test:3.3.4",
-        "org.springframework.boot:spring-boot:3.3.4",
-        "org.springframework:spring-webflux:6.1.13",
-        "software.amazon.awssdk:s3:2.29.1",
+        "com.github.spullara.mustache.java:compiler:0.9.13",
+        "net.sourceforge.argparse4j:argparse4j:0.9.0",
+        "com.graphql-java:graphql-java:19.2",
+        "org.openapitools:openapi-generator-cli:7.6.0",
+        "com.fasterxml.jackson.module:jackson-module-kotlin:2.15.0-rc1",
     ],
     lock_file = "//:maven_install.json",
     repositories = [
@@ -107,7 +95,17 @@ maven.install(
 use_repo(maven, "maven")
 
 #
-# `kt` toolchain
+# java toolchains
+#
+
+register_toolchains("//java-toolchain:arbrjdk_toolchain_java21_definition")
+
+register_toolchains("//java-toolchain:arbrjdk_runtime_toolchain_definition")
+
+register_toolchains("//java-toolchain:arbrjdk_bootstrap_runtime_toolchain_definition")
+
+#
+# kt toolchain
 #
 
 register_toolchains("//:arbr_kt_toolchain")

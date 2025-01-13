@@ -2,14 +2,9 @@ package com.arbr.graphql.converter.regex
 
 class RegexNamedReplacementRule(
     private val regex: Regex,
+    private val groupNames: List<String>,
     private val substitute: (String, Map<String, MatchGroup>) -> String,
-): RegexReplacementRule {
-    private val groupNames: List<String> = regex.toPattern().namedGroups()
-        .map { (name, number) ->
-            number to name
-        }
-        .sortedBy { it.first }
-        .map { it.second }
+) : RegexReplacementRule {
 
     override fun matches(inputString: String): Boolean {
         return regex.containsMatchIn(inputString)

@@ -114,7 +114,7 @@ internal class GraphQlLangModelParser(
         }
 
         val properModelClassName = mappedClassName(
-            "${selfParentModel.originClass!!.simpleName}Proper"
+            "${selfParentModel.originClass.simpleName}Proper"
         )
 
         // Fields will be identical to parent but all overrides
@@ -420,6 +420,7 @@ internal class GraphQlLangModelParser(
 
             RegexNamedReplacementRule(
                 Regex("(?<prefix>^.*)(?<clsName>${fromName})(?<terminal>[,>\\s]|$)(?<suffix>.*)"),
+                listOf("prefix", "clsName", "terminal", "suffix"),
             ) { _, matchGroupMap ->
                 val prefix = matchGroupMap["prefix"]!!.value
                 val terminal = matchGroupMap["terminal"]!!.value
@@ -500,6 +501,7 @@ internal class GraphQlLangModelParser(
             ),
             RegexNamedReplacementRule(
                 Regex("(?<pre>[,<\\s]|^)int(?<terminal>[,>\\s]|$)"),
+                listOf("pre", "terminal"),
             ) { _, m ->
                 val pre = m["pre"]!!.value
                 val terminal = m["terminal"]!!.value
@@ -507,6 +509,7 @@ internal class GraphQlLangModelParser(
             },
             RegexNamedReplacementRule(
                 Regex("(?<pre>[,<\\s]|^)boolean(?<terminal>[,>\\s]|$)"),
+                listOf("pre", "terminal"),
             ) { _, m ->
                 val pre = m["pre"]!!.value
                 val terminal = m["terminal"]!!.value

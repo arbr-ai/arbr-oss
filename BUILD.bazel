@@ -4,6 +4,7 @@ load("@rules_kotlin//kotlin/internal:toolchains.bzl", "define_kt_toolchain")
 define_kt_toolchain(
     name = "arbr_kt_toolchain",
     api_version = "1.9",
+    jacocorunner = "//java-toolchain/tools:jacoco_coverage_runner",
     jvm_target = "21",
     language_version = "1.9",
 )

@@ -29,7 +29,6 @@ open class SchemaRenderingNodeProcessor(
             is GraphQlLanguageNodeListType -> "[${getConvertedType(type.type!!)}]"
             is GraphQlLanguageNodeNonNullType -> "${getConvertedType(type.type!!)}!"
             is GraphQlLanguageNodeTypeName -> type.name!!
-            else -> throw Exception(type.toString())
         }
     }
 

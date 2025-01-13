@@ -1,0 +1,652 @@
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:10:11
+jvm_import(
+  name = "ch_qos_logback_logback_classic",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=ch.qos.logback:logback-classic:1.5.8", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=89b0f7bec5fa8a9c9246acd1e99f0e84d6cb3bbadaa5b095a14c2cd0f4732d05", "maven_url=https://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.5.8/logback-classic-1.5.8.jar"],
+  jar = "@maven//:ch/qos/logback/logback-classic/1.5.8/logback-classic-1.5.8.jar",
+  deps = ["@maven//:ch_qos_logback_logback_core", "@maven//:org_slf4j_slf4j_api"],
+  maven_coordinates = "ch.qos.logback:logback-classic:1.5.8",
+  maven_url = "https://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.5.8/logback-classic-1.5.8.jar",
+)
+# Rule ch_qos_logback_logback_classic instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:10:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:27:6
+alias(
+  name = "ch_qos_logback_logback_classic_1_5_8",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:ch_qos_logback_logback_classic",
+)
+# Rule ch_qos_logback_logback_classic_1_5_8 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:27:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:32:8
+genrule(
+  name = "ch_qos_logback_logback_classic_1_5_8_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~ch_qos_logback_logback_classic_1_5_8//file:file"],
+  outs = ["@maven//:ch/qos/logback/logback-classic/1.5.8/logback-classic-1.5.8.jar"],
+  cmd = "cp $< $@",
+)
+# Rule ch_qos_logback_logback_classic_1_5_8_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:32:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:39:11
+jvm_import(
+  name = "ch_qos_logback_logback_core",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=ch.qos.logback:logback-core:1.5.8", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=a698e4cff3eac45eec9b2755df93bb7a9725d853f7938030654ce5430b37c41d", "maven_url=https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.5.8/logback-core-1.5.8.jar"],
+  jar = "@maven//:ch/qos/logback/logback-core/1.5.8/logback-core-1.5.8.jar",
+  deps = [],
+  maven_coordinates = "ch.qos.logback:logback-core:1.5.8",
+  maven_url = "https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.5.8/logback-core-1.5.8.jar",
+)
+# Rule ch_qos_logback_logback_core instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:39:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:54:6
+alias(
+  name = "ch_qos_logback_logback_core_1_5_8",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:ch_qos_logback_logback_core",
+)
+# Rule ch_qos_logback_logback_core_1_5_8 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:54:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:59:8
+genrule(
+  name = "ch_qos_logback_logback_core_1_5_8_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~ch_qos_logback_logback_core_1_5_8//file:file"],
+  outs = ["@maven//:ch/qos/logback/logback-core/1.5.8/logback-core-1.5.8.jar"],
+  cmd = "cp $< $@",
+)
+# Rule ch_qos_logback_logback_core_1_5_8_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:59:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:66:11
+jvm_import(
+  name = "com_fasterxml_jackson_core_jackson_annotations",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=com.fasterxml.jackson.core:jackson-annotations:2.15.0-rc1", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=04874b03eac6fa2a12ec875ad59added46f68dfa410284afe0ff6f4e4ca99d4a", "maven_url=https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.15.0-rc1/jackson-annotations-2.15.0-rc1.jar"],
+  jar = "@maven//:com/fasterxml/jackson/core/jackson-annotations/2.15.0-rc1/jackson-annotations-2.15.0-rc1.jar",
+  deps = [],
+  maven_coordinates = "com.fasterxml.jackson.core:jackson-annotations:2.15.0-rc1",
+  maven_url = "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.15.0-rc1/jackson-annotations-2.15.0-rc1.jar",
+)
+# Rule com_fasterxml_jackson_core_jackson_annotations instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:66:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:81:6
+alias(
+  name = "com_fasterxml_jackson_core_jackson_annotations_2_15_0_rc1",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:com_fasterxml_jackson_core_jackson_annotations",
+)
+# Rule com_fasterxml_jackson_core_jackson_annotations_2_15_0_rc1 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:81:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:86:8
+genrule(
+  name = "com_fasterxml_jackson_core_jackson_annotations_2_15_0_rc1_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~com_fasterxml_jackson_core_jackson_annotations_2_15_0_rc1//file:file"],
+  outs = ["@maven//:com/fasterxml/jackson/core/jackson-annotations/2.15.0-rc1/jackson-annotations-2.15.0-rc1.jar"],
+  cmd = "cp $< $@",
+)
+# Rule com_fasterxml_jackson_core_jackson_annotations_2_15_0_rc1_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:86:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:93:11
+jvm_import(
+  name = "com_fasterxml_jackson_core_jackson_core",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=com.fasterxml.jackson.core:jackson-core:2.15.0-rc1", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=1d7c74670cee8fd82207a08f2f0b26be6af9b0c6851d48827e0d88bc828f22c8", "maven_url=https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.15.0-rc1/jackson-core-2.15.0-rc1.jar"],
+  jar = "@maven//:com/fasterxml/jackson/core/jackson-core/2.15.0-rc1/jackson-core-2.15.0-rc1.jar",
+  deps = [],
+  maven_coordinates = "com.fasterxml.jackson.core:jackson-core:2.15.0-rc1",
+  maven_url = "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.15.0-rc1/jackson-core-2.15.0-rc1.jar",
+)
+# Rule com_fasterxml_jackson_core_jackson_core instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:93:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:108:6
+alias(
+  name = "com_fasterxml_jackson_core_jackson_core_2_15_0_rc1",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:com_fasterxml_jackson_core_jackson_core",
+)
+# Rule com_fasterxml_jackson_core_jackson_core_2_15_0_rc1 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:108:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:113:8
+genrule(
+  name = "com_fasterxml_jackson_core_jackson_core_2_15_0_rc1_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~com_fasterxml_jackson_core_jackson_core_2_15_0_rc1//file:file"],
+  outs = ["@maven//:com/fasterxml/jackson/core/jackson-core/2.15.0-rc1/jackson-core-2.15.0-rc1.jar"],
+  cmd = "cp $< $@",
+)
+# Rule com_fasterxml_jackson_core_jackson_core_2_15_0_rc1_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:113:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:120:11
+jvm_import(
+  name = "com_fasterxml_jackson_core_jackson_databind",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=com.fasterxml.jackson.core:jackson-databind:2.15.0-rc1", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=68c6c635f70ed7eb4b58731c4b0a1b45b14babedcd3acad3f1725fe9deb7d3d3", "maven_url=https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.15.0-rc1/jackson-databind-2.15.0-rc1.jar"],
+  jar = "@maven//:com/fasterxml/jackson/core/jackson-databind/2.15.0-rc1/jackson-databind-2.15.0-rc1.jar",
+  deps = ["@maven//:com_fasterxml_jackson_core_jackson_annotations", "@maven//:com_fasterxml_jackson_core_jackson_core"],
+  maven_coordinates = "com.fasterxml.jackson.core:jackson-databind:2.15.0-rc1",
+  maven_url = "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.15.0-rc1/jackson-databind-2.15.0-rc1.jar",
+)
+# Rule com_fasterxml_jackson_core_jackson_databind instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:120:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:137:6
+alias(
+  name = "com_fasterxml_jackson_core_jackson_databind_2_15_0_rc1",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:com_fasterxml_jackson_core_jackson_databind",
+)
+# Rule com_fasterxml_jackson_core_jackson_databind_2_15_0_rc1 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:137:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:142:8
+genrule(
+  name = "com_fasterxml_jackson_core_jackson_databind_2_15_0_rc1_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~com_fasterxml_jackson_core_jackson_databind_2_15_0_rc1//file:file"],
+  outs = ["@maven//:com/fasterxml/jackson/core/jackson-databind/2.15.0-rc1/jackson-databind-2.15.0-rc1.jar"],
+  cmd = "cp $< $@",
+)
+# Rule com_fasterxml_jackson_core_jackson_databind_2_15_0_rc1_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:142:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:149:11
+jvm_import(
+  name = "com_fasterxml_jackson_module_jackson_module_kotlin",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=com.fasterxml.jackson.module:jackson-module-kotlin:2.15.0-rc1", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=2e2c97d1da1cfa4eae7afa5b0ce71f7b3bd1475f005146ac616d39fc7c4f345b", "maven_url=https://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-kotlin/2.15.0-rc1/jackson-module-kotlin-2.15.0-rc1.jar"],
+  jar = "@maven//:com/fasterxml/jackson/module/jackson-module-kotlin/2.15.0-rc1/jackson-module-kotlin-2.15.0-rc1.jar",
+  deps = ["@maven//:com_fasterxml_jackson_core_jackson_annotations", "@maven//:com_fasterxml_jackson_core_jackson_databind", "@maven//:org_jetbrains_kotlin_kotlin_reflect"],
+  maven_coordinates = "com.fasterxml.jackson.module:jackson-module-kotlin:2.15.0-rc1",
+  maven_url = "https://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-kotlin/2.15.0-rc1/jackson-module-kotlin-2.15.0-rc1.jar",
+)
+# Rule com_fasterxml_jackson_module_jackson_module_kotlin instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:149:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:167:6
+alias(
+  name = "com_fasterxml_jackson_module_jackson_module_kotlin_2_15_0_rc1",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:com_fasterxml_jackson_module_jackson_module_kotlin",
+)
+# Rule com_fasterxml_jackson_module_jackson_module_kotlin_2_15_0_rc1 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:167:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:172:8
+genrule(
+  name = "com_fasterxml_jackson_module_jackson_module_kotlin_2_15_0_rc1_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~com_fasterxml_jackson_module_jackson_module_kotlin_2_15_0_rc1//file:file"],
+  outs = ["@maven//:com/fasterxml/jackson/module/jackson-module-kotlin/2.15.0-rc1/jackson-module-kotlin-2.15.0-rc1.jar"],
+  cmd = "cp $< $@",
+)
+# Rule com_fasterxml_jackson_module_jackson_module_kotlin_2_15_0_rc1_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:172:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:179:11
+jvm_import(
+  name = "com_github_spullara_mustache_java_compiler",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=com.github.spullara.mustache.java:compiler:0.9.13", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=086ed3480f5d35b3114fce468b8b63e65669abf338baf0a8c6932e8443a66b6b", "maven_url=https://repo1.maven.org/maven2/com/github/spullara/mustache/java/compiler/0.9.13/compiler-0.9.13.jar"],
+  jar = "@maven//:com/github/spullara/mustache/java/compiler/0.9.13/compiler-0.9.13.jar",
+  deps = [],
+  maven_coordinates = "com.github.spullara.mustache.java:compiler:0.9.13",
+  maven_url = "https://repo1.maven.org/maven2/com/github/spullara/mustache/java/compiler/0.9.13/compiler-0.9.13.jar",
+)
+# Rule com_github_spullara_mustache_java_compiler instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:179:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:194:6
+alias(
+  name = "com_github_spullara_mustache_java_compiler_0_9_13",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:com_github_spullara_mustache_java_compiler",
+)
+# Rule com_github_spullara_mustache_java_compiler_0_9_13 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:194:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:199:8
+genrule(
+  name = "com_github_spullara_mustache_java_compiler_0_9_13_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~com_github_spullara_mustache_java_compiler_0_9_13//file:file"],
+  outs = ["@maven//:com/github/spullara/mustache/java/compiler/0.9.13/compiler-0.9.13.jar"],
+  cmd = "cp $< $@",
+)
+# Rule com_github_spullara_mustache_java_compiler_0_9_13_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:199:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:206:11
+jvm_import(
+  name = "com_graphql_java_graphql_java",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=com.graphql-java:graphql-java:19.2", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=905d695a4e69140cc8ef1ddc70e34f6e3d89cf6c111a0bfe778ec7b698b20692", "maven_url=https://repo1.maven.org/maven2/com/graphql-java/graphql-java/19.2/graphql-java-19.2.jar"],
+  jar = "@maven//:com/graphql-java/graphql-java/19.2/graphql-java-19.2.jar",
+  deps = ["@maven//:com_graphql_java_java_dataloader", "@maven//:org_reactivestreams_reactive_streams", "@maven//:org_slf4j_slf4j_api"],
+  maven_coordinates = "com.graphql-java:graphql-java:19.2",
+  maven_url = "https://repo1.maven.org/maven2/com/graphql-java/graphql-java/19.2/graphql-java-19.2.jar",
+)
+# Rule com_graphql_java_graphql_java instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:206:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:224:6
+alias(
+  name = "com_graphql_java_graphql_java_19_2",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:com_graphql_java_graphql_java",
+)
+# Rule com_graphql_java_graphql_java_19_2 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:224:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:229:8
+genrule(
+  name = "com_graphql_java_graphql_java_19_2_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~com_graphql_java_graphql_java_19_2//file:file"],
+  outs = ["@maven//:com/graphql-java/graphql-java/19.2/graphql-java-19.2.jar"],
+  cmd = "cp $< $@",
+)
+# Rule com_graphql_java_graphql_java_19_2_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:229:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:236:11
+jvm_import(
+  name = "com_graphql_java_java_dataloader",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=com.graphql-java:java-dataloader:3.2.0", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=b9c7d32aef05a2e33dc07c5ce45b713c405b61c6264cb0ed48aac003add3eaa4", "maven_url=https://repo1.maven.org/maven2/com/graphql-java/java-dataloader/3.2.0/java-dataloader-3.2.0.jar"],
+  jar = "@maven//:com/graphql-java/java-dataloader/3.2.0/java-dataloader-3.2.0.jar",
+  deps = ["@maven//:org_slf4j_slf4j_api"],
+  maven_coordinates = "com.graphql-java:java-dataloader:3.2.0",
+  maven_url = "https://repo1.maven.org/maven2/com/graphql-java/java-dataloader/3.2.0/java-dataloader-3.2.0.jar",
+)
+# Rule com_graphql_java_java_dataloader instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:236:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:252:6
+alias(
+  name = "com_graphql_java_java_dataloader_3_2_0",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:com_graphql_java_java_dataloader",
+)
+# Rule com_graphql_java_java_dataloader_3_2_0 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:252:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:257:8
+genrule(
+  name = "com_graphql_java_java_dataloader_3_2_0_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~com_graphql_java_java_dataloader_3_2_0//file:file"],
+  outs = ["@maven//:com/graphql-java/java-dataloader/3.2.0/java-dataloader-3.2.0.jar"],
+  cmd = "cp $< $@",
+)
+# Rule com_graphql_java_java_dataloader_3_2_0_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:257:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:499:12
+bzl_library(
+  name = "defs",
+  visibility = ["//visibility:public"],
+  srcs = ["@maven//:defs.bzl"],
+  deps = ["@rules_jvm_external//:implementation"],
+)
+# Rule defs instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:499:12 in <toplevel>
+# Rule bzl_library defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/bazel_skylib~/bzl_library.bzl:48:19 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:264:11
+jvm_import(
+  name = "net_sourceforge_argparse4j_argparse4j",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=net.sourceforge.argparse4j:argparse4j:0.9.0", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=9eb3b54043038bc111bf0e15a8f69895244f92e3c2bc2800158578ca711f6117", "maven_url=https://repo1.maven.org/maven2/net/sourceforge/argparse4j/argparse4j/0.9.0/argparse4j-0.9.0.jar"],
+  jar = "@maven//:net/sourceforge/argparse4j/argparse4j/0.9.0/argparse4j-0.9.0.jar",
+  deps = [],
+  maven_coordinates = "net.sourceforge.argparse4j:argparse4j:0.9.0",
+  maven_url = "https://repo1.maven.org/maven2/net/sourceforge/argparse4j/argparse4j/0.9.0/argparse4j-0.9.0.jar",
+)
+# Rule net_sourceforge_argparse4j_argparse4j instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:264:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:279:6
+alias(
+  name = "net_sourceforge_argparse4j_argparse4j_0_9_0",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:net_sourceforge_argparse4j_argparse4j",
+)
+# Rule net_sourceforge_argparse4j_argparse4j_0_9_0 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:279:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:284:8
+genrule(
+  name = "net_sourceforge_argparse4j_argparse4j_0_9_0_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~net_sourceforge_argparse4j_argparse4j_0_9_0//file:file"],
+  outs = ["@maven//:net/sourceforge/argparse4j/argparse4j/0.9.0/argparse4j-0.9.0.jar"],
+  cmd = "cp $< $@",
+)
+# Rule net_sourceforge_argparse4j_argparse4j_0_9_0_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:284:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:375:11
+jvm_import(
+  name = "org_jetbrains_annotations",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=org.jetbrains:annotations:13.0", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=ace2a10dc8e2d5fd34925ecac03e4988b2c0f851650c94b8cef49ba1bd111478", "maven_url=https://repo1.maven.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.jar"],
+  jar = "@maven//:org/jetbrains/annotations/13.0/annotations-13.0.jar",
+  deps = [],
+  maven_coordinates = "org.jetbrains:annotations:13.0",
+  maven_url = "https://repo1.maven.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.jar",
+)
+# Rule org_jetbrains_annotations instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:375:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:390:6
+alias(
+  name = "org_jetbrains_annotations_13_0",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:org_jetbrains_annotations",
+)
+# Rule org_jetbrains_annotations_13_0 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:390:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:395:8
+genrule(
+  name = "org_jetbrains_annotations_13_0_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~org_jetbrains_annotations_13_0//file:file"],
+  outs = ["@maven//:org/jetbrains/annotations/13.0/annotations-13.0.jar"],
+  cmd = "cp $< $@",
+)
+# Rule org_jetbrains_annotations_13_0_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:395:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:291:11
+jvm_import(
+  name = "org_jetbrains_kotlin_kotlin_reflect",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=org.jetbrains.kotlin:kotlin-reflect:1.5.32", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=13237fb82d6e49122d897a1de2b17ac9d5c77137d99070760e6d4191ba9cac31", "maven_url=https://repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-reflect/1.5.32/kotlin-reflect-1.5.32.jar"],
+  jar = "@maven//:org/jetbrains/kotlin/kotlin-reflect/1.5.32/kotlin-reflect-1.5.32.jar",
+  deps = ["@maven//:org_jetbrains_kotlin_kotlin_stdlib"],
+  maven_coordinates = "org.jetbrains.kotlin:kotlin-reflect:1.5.32",
+  maven_url = "https://repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-reflect/1.5.32/kotlin-reflect-1.5.32.jar",
+)
+# Rule org_jetbrains_kotlin_kotlin_reflect instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:291:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:307:6
+alias(
+  name = "org_jetbrains_kotlin_kotlin_reflect_1_5_32",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:org_jetbrains_kotlin_kotlin_reflect",
+)
+# Rule org_jetbrains_kotlin_kotlin_reflect_1_5_32 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:307:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:312:8
+genrule(
+  name = "org_jetbrains_kotlin_kotlin_reflect_1_5_32_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~org_jetbrains_kotlin_kotlin_reflect_1_5_32//file:file"],
+  outs = ["@maven//:org/jetbrains/kotlin/kotlin-reflect/1.5.32/kotlin-reflect-1.5.32.jar"],
+  cmd = "cp $< $@",
+)
+# Rule org_jetbrains_kotlin_kotlin_reflect_1_5_32_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:312:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:319:11
+jvm_import(
+  name = "org_jetbrains_kotlin_kotlin_stdlib",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=org.jetbrains.kotlin:kotlin-stdlib:1.5.32", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=452d205f54a1f08673de273cb3d0148fbf9cd95275e5b0068fa1b001f48aee0a", "maven_url=https://repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.5.32/kotlin-stdlib-1.5.32.jar"],
+  jar = "@maven//:org/jetbrains/kotlin/kotlin-stdlib/1.5.32/kotlin-stdlib-1.5.32.jar",
+  deps = ["@maven//:org_jetbrains_kotlin_kotlin_stdlib_common", "@maven//:org_jetbrains_annotations"],
+  maven_coordinates = "org.jetbrains.kotlin:kotlin-stdlib:1.5.32",
+  maven_url = "https://repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.5.32/kotlin-stdlib-1.5.32.jar",
+)
+# Rule org_jetbrains_kotlin_kotlin_stdlib instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:319:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:336:6
+alias(
+  name = "org_jetbrains_kotlin_kotlin_stdlib_1_5_32",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:org_jetbrains_kotlin_kotlin_stdlib",
+)
+# Rule org_jetbrains_kotlin_kotlin_stdlib_1_5_32 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:336:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:341:8
+genrule(
+  name = "org_jetbrains_kotlin_kotlin_stdlib_1_5_32_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~org_jetbrains_kotlin_kotlin_stdlib_1_5_32//file:file"],
+  outs = ["@maven//:org/jetbrains/kotlin/kotlin-stdlib/1.5.32/kotlin-stdlib-1.5.32.jar"],
+  cmd = "cp $< $@",
+)
+# Rule org_jetbrains_kotlin_kotlin_stdlib_1_5_32_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:341:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:348:11
+jvm_import(
+  name = "org_jetbrains_kotlin_kotlin_stdlib_common",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=org.jetbrains.kotlin:kotlin-stdlib-common:1.5.32", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=dc2fb23e280a39c9abde2cbf4c1567b66840f1f1ece6c7bb78d58d38076b5def", "maven_url=https://repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.5.32/kotlin-stdlib-common-1.5.32.jar"],
+  jar = "@maven//:org/jetbrains/kotlin/kotlin-stdlib-common/1.5.32/kotlin-stdlib-common-1.5.32.jar",
+  deps = [],
+  maven_coordinates = "org.jetbrains.kotlin:kotlin-stdlib-common:1.5.32",
+  maven_url = "https://repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.5.32/kotlin-stdlib-common-1.5.32.jar",
+)
+# Rule org_jetbrains_kotlin_kotlin_stdlib_common instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:348:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:363:6
+alias(
+  name = "org_jetbrains_kotlin_kotlin_stdlib_common_1_5_32",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:org_jetbrains_kotlin_kotlin_stdlib_common",
+)
+# Rule org_jetbrains_kotlin_kotlin_stdlib_common_1_5_32 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:363:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:368:8
+genrule(
+  name = "org_jetbrains_kotlin_kotlin_stdlib_common_1_5_32_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~org_jetbrains_kotlin_kotlin_stdlib_common_1_5_32//file:file"],
+  outs = ["@maven//:org/jetbrains/kotlin/kotlin-stdlib-common/1.5.32/kotlin-stdlib-common-1.5.32.jar"],
+  cmd = "cp $< $@",
+)
+# Rule org_jetbrains_kotlin_kotlin_stdlib_common_1_5_32_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:368:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:402:11
+jvm_import(
+  name = "org_openapitools_openapi_generator_cli",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=org.openapitools:openapi-generator-cli:7.6.0", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=35074bdd3cdfc46be9a902e11a54a3faa3cae1e34eb66cbd959d1c8070bbd7d7", "maven_url=https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.6.0/openapi-generator-cli-7.6.0.jar"],
+  jar = "@maven//:org/openapitools/openapi-generator-cli/7.6.0/openapi-generator-cli-7.6.0.jar",
+  deps = [],
+  maven_coordinates = "org.openapitools:openapi-generator-cli:7.6.0",
+  maven_url = "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.6.0/openapi-generator-cli-7.6.0.jar",
+)
+# Rule org_openapitools_openapi_generator_cli instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:402:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:417:6
+alias(
+  name = "org_openapitools_openapi_generator_cli_7_6_0",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:org_openapitools_openapi_generator_cli",
+)
+# Rule org_openapitools_openapi_generator_cli_7_6_0 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:417:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:436:8
+genrule(
+  name = "org_openapitools_openapi_generator_cli_7_6_0_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~org_openapitools_openapi_generator_cli_7_6_0//file:file"],
+  outs = ["@maven//:org/openapitools/openapi-generator-cli/7.6.0/openapi-generator-cli-7.6.0.jar"],
+  cmd = "cp $< $@",
+)
+# Rule org_openapitools_openapi_generator_cli_7_6_0_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:436:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:422:12
+java_plugin(
+  name = "org_openapitools_openapi_generator_cli__java_plugin__lombok_launch_AnnotationProcessorHider_AnnotationProcessor",
+  visibility = ["//visibility:public"],
+  deps = ["@maven//:org_openapitools_openapi_generator_cli"],
+  generates_api = True,
+  processor_class = "lombok.launch.AnnotationProcessorHider$AnnotationProcessor",
+)
+# Rule org_openapitools_openapi_generator_cli__java_plugin__lombok_launch_AnnotationProcessorHider_AnnotationProcessor instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:422:12 in <toplevel>
+# Rule java_plugin defined at (most recent call last):
+#   /virtual_builtins_bzl/common/java/java_plugin.bzl:129:19 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:429:12
+java_plugin(
+  name = "org_openapitools_openapi_generator_cli__java_plugin__lombok_launch_AnnotationProcessorHider_ClaimingProcessor",
+  visibility = ["//visibility:public"],
+  deps = ["@maven//:org_openapitools_openapi_generator_cli"],
+  generates_api = True,
+  processor_class = "lombok.launch.AnnotationProcessorHider$ClaimingProcessor",
+)
+# Rule org_openapitools_openapi_generator_cli__java_plugin__lombok_launch_AnnotationProcessorHider_ClaimingProcessor instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:429:12 in <toplevel>
+# Rule java_plugin defined at (most recent call last):
+#   /virtual_builtins_bzl/common/java/java_plugin.bzl:129:19 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:443:11
+jvm_import(
+  name = "org_reactivestreams_reactive_streams",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=org.reactivestreams:reactive-streams:1.0.3", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=1dee0481072d19c929b623e155e14d2f6085dc011529a0a0dbefc84cf571d865", "maven_url=https://repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar"],
+  jar = "@maven//:org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar",
+  deps = [],
+  maven_coordinates = "org.reactivestreams:reactive-streams:1.0.3",
+  maven_url = "https://repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar",
+)
+# Rule org_reactivestreams_reactive_streams instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:443:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:458:6
+alias(
+  name = "org_reactivestreams_reactive_streams_1_0_3",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:org_reactivestreams_reactive_streams",
+)
+# Rule org_reactivestreams_reactive_streams_1_0_3 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:458:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:463:8
+genrule(
+  name = "org_reactivestreams_reactive_streams_1_0_3_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~org_reactivestreams_reactive_streams_1_0_3//file:file"],
+  outs = ["@maven//:org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar"],
+  cmd = "cp $< $@",
+)
+# Rule org_reactivestreams_reactive_streams_1_0_3_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:463:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:470:11
+jvm_import(
+  name = "org_slf4j_slf4j_api",
+  visibility = ["//visibility:public"],
+  tags = ["maven_coordinates=org.slf4j:slf4j-api:2.0.16", "maven_repository=https://repo1.maven.org/maven2", "maven_sha256=a12578dde1ba00bd9b816d388a0b879928d00bab3c83c240f7013bf4196c579a", "maven_url=https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar"],
+  jar = "@maven//:org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar",
+  deps = [],
+  maven_coordinates = "org.slf4j:slf4j-api:2.0.16",
+  maven_url = "https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar",
+)
+# Rule org_slf4j_slf4j_api instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:470:11 in <toplevel>
+# Rule jvm_import defined at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~/private/rules/jvm_import.bzl:103:18 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:485:6
+alias(
+  name = "org_slf4j_slf4j_api_2_0_16",
+  visibility = ["//visibility:public"],
+  actual = "@maven//:org_slf4j_slf4j_api",
+)
+# Rule org_slf4j_slf4j_api_2_0_16 instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:485:6 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:490:8
+genrule(
+  name = "org_slf4j_slf4j_api_2_0_16_extension",
+  visibility = ["//visibility:public"],
+  srcs = ["@@rules_jvm_external~~maven~org_slf4j_slf4j_api_2_0_16//file:file"],
+  outs = ["@maven//:org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar"],
+  cmd = "cp $< $@",
+)
+# Rule org_slf4j_slf4j_api_2_0_16_extension instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:490:8 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:508:10
+sh_binary(
+  name = "outdated",
+  visibility = ["//visibility:public"],
+  data = ["@rules_jvm_external//private/tools/prebuilt:outdated_deploy.jar", "@maven//:outdated.artifacts", "@maven//:outdated.repositories"],
+  srcs = ["@maven//:outdated.sh"],
+  args = ["$(location @rules_jvm_external//private/tools/prebuilt:outdated_deploy.jar)", "$(location outdated.artifacts)", "$(location outdated.repositories)"],
+)
+# Rule outdated instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:508:10 in <toplevel>
+
+# /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:525:6
+alias(
+  name = "pin",
+  actual = "@@rules_jvm_external~~maven~unpinned_maven//:pin",
+)
+# Rule pin instantiated at (most recent call last):
+#   /private/var/tmp/_bazel_bill/ef161beb5db4ee3af10d1c12f2faceab/external/rules_jvm_external~~maven~maven/BUILD:525:6 in <toplevel>
+

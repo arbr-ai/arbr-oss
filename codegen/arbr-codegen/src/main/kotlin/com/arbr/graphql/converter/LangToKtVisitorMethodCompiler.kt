@@ -59,7 +59,7 @@ internal class LangToKtVisitorMethodCompiler(
         val nodeTypeEnumValue = StringUtils.getCaseSuite(mappedNodeModel.simpleName).screamingSnakeCase
 
         // Hack: not actually a value
-        val assignmentExpr = KtExpr.Value { t, ctx ->
+        val assignmentExpr = KtExpr.Value { t, _ ->
             t.append("val converted = transformer.${conversionMethodName}(${visitorMethodModel.nodeParameterName})")
         }
         val handleExpr = KtExpr.Value { t, _ ->
