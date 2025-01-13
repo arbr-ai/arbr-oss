@@ -15,3 +15,6 @@ api-server-minimal/docs/api-gen-out
 tmp
 repos
 /arbr-codegen/graphql-compiler/openapi-converter/target/
+
+bazel-*
+.ijwb
