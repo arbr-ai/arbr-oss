@@ -1,5 +1,17 @@
-directive @nullable on FIELD_DEFINITION
+directive @nullable on FIELD_DEFINITION | INPUT_FIELD_DEFINITION
 scalar Long
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    root: Root
+}
+type Mutation {
+    setProject(id: String, project: ProjectInput): Project
+}
 
 "Object model: Root"
 type Root {
@@ -11,9 +23,54 @@ type Root {
     
 }
 
-
 "A GitHub repository comprising a software project"
 type Project {
+    ""
+    parent: Root
+
+    "Project Description: A description of the project."
+    description: String
+
+    "Repo Full Name: The full name of the repository, formatted like `organization/repo`."
+    fullName: String
+
+    "Platform: The platform for the application, such as web, iOS, Android, or backend."
+    platform: String @nullable
+
+    "Programming Language: The primary programming language used for the project."
+    primaryLanguage: String @nullable
+
+    "Tech Stack Description: A description of the tech stack powering the application. Maximum 50 words."
+    techStackDescription: String @nullable
+
+    "Project Title: The human-readable title for the software project."
+    title: String @nullable
+
+}
+
+"A GitHub repository comprising a software project"
+input ProjectInput {
+    "Project Description: A description of the project."
+    description: String
+
+    "Repo Full Name: The full name of the repository, formatted like `organization/repo`."
+    fullName: String
+
+    "Platform: The platform for the application, such as web, iOS, Android, or backend."
+    platform: String @nullable
+
+    "Programming Language: The primary programming language used for the project."
+    primaryLanguage: String @nullable
+
+    "Tech Stack Description: A description of the tech stack powering the application. Maximum 50 words."
+    techStackDescription: String @nullable
+
+    "Project Title: The human-readable title for the software project."
+    title: String @nullable
+}
+
+"A GitHub repository comprising a software project"
+output ProjectOutput {
     ""
     parent: Root
     
@@ -36,7 +93,6 @@ type Project {
     title: String @nullable
     
 }
-
 
 "Object model: VectorResource"
 type VectorResource {
