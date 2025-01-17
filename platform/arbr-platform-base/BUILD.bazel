@@ -1,0 +1,39 @@
+load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_library")
+
+package(default_visibility = ["//visibility:public"])
+
+kt_jvm_library(
+    name = "platform-base-lib",
+    srcs = glob([
+        "src/main/**/*.java",
+        "src/main/**/*.kt",
+    ]),
+    plugins = [
+        "//:allopen_plugin",
+    ],
+    deps = [
+        "@maven//:ch_qos_logback_logback_classic",
+        "@maven//:ch_qos_logback_logback_core",
+        "@maven//:com_fasterxml_jackson_core_jackson_annotations",
+        "@maven//:com_fasterxml_jackson_core_jackson_core",
+        "@maven//:com_fasterxml_jackson_core_jackson_databind",
+        "@maven//:com_fasterxml_jackson_module_jackson_module_kotlin",
+        "@maven//:com_h2database_h2",
+        "@maven//:io_projectreactor_kotlin_reactor_kotlin_extensions",
+        "@maven//:io_projectreactor_reactor_core",
+        "@maven//:io_projectreactor_reactor_core_3_6_10",
+        "@maven//:io_r2dbc_r2dbc_pool",
+        "@maven//:io_r2dbc_r2dbc_spi",
+        "@maven//:jakarta_xml_bind_jakarta_xml_bind_api",
+        "@maven//:org_jetbrains_kotlinx_kotlinx_coroutines_reactor",
+        "@maven//:org_jooq_jooq",
+        "@maven//:org_jooq_jooq_codegen",
+        "@maven//:org_jooq_jooq_kotlin",
+        "@maven//:org_jooq_jooq_meta",
+        "@maven//:org_jooq_jooq_meta_extensions",
+        "@maven//:org_postgresql_postgresql",
+        "@maven//:org_postgresql_r2dbc_postgresql",
+        "@maven//:org_reactivestreams_reactive_streams",
+        "@maven//:org_slf4j_slf4j_api",
+    ],
+)

@@ -10,3 +10,5 @@ run --java_runtime_version=arbrjdk_21
 run --tool_java_runtime_version=arbrjdk_21
 
 common --action_env=JAVA_HOME
+
+common --experimental_ui_max_stdouterr_bytes=20485760
